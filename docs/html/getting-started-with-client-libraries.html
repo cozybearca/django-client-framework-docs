@@ -1,0 +1,296 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Getting Starting with Client Libraries &mdash; Django Client Framework  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/tabs.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Django Client Framework
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="doc-for-dcf.html">Django Client Framework Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend-refs/index.html">Django Client Framework Backend API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc-for-doc.html">Modify this documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Django Client Framework</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Getting Starting with Client Libraries</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/getting-started-with-client-libraries.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-starting-with-client-libraries">
+<h1>Getting Starting with Client Libraries<a class="headerlink" href="#getting-starting-with-client-libraries" title="Permalink to this headline">¶</a></h1>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>This tutorial follows the previous tutorial “<a href="#id1"><span class="problematic" id="id2">`Getting Starting with Django
+Backend`_</span></a>”. In this section, we assume the <cite>Product</cite> and <cite>Brand</cite> models are
+correctly set up.</p>
+</div>
+<p>Instead of sending HTTP requests manually to query the backend RESTful API,
+Django Client Framework’s client libraries support quering the backend in
+frontend’s native programming language, with a set of APIs that are similar to
+Django’s <cite>QuerySet</cite>.</p>
+<div class="section" id="install-client-libraries">
+<h2>Install client libraries<a class="headerlink" href="#install-client-libraries" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="typescript">
+<h3>TypeScript<a class="headerlink" href="#typescript" title="Permalink to this headline">¶</a></h3>
+<p>The TypeScript client can be installed with the npm or yarn package
+managers.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-TlBN" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-0-TlBN" name="TlBN" role="tab" tabindex="0">NPM</button><button aria-controls="panel-0-WWFybg==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-0-WWFybg==" name="WWFybg==" role="tab" tabindex="-1">Yarn</button></div><div aria-labelledby="tab-0-TlBN" class="sphinx-tabs-panel code-tab group-tab" id="panel-0-TlBN" name="TlBN" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm install django-client-framework
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-WWFybg==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-0-WWFybg==" name="WWFybg==" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>yarn add django-client-framework
+</pre></div>
+</div>
+</div></div>
+</div>
+<div class="section" id="swift">
+<h3>Swift<a class="headerlink" href="#swift" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="kotlin">
+<h3>Kotlin<a class="headerlink" href="#kotlin" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="define-a-model-class">
+<h2>Define a model class<a class="headerlink" href="#define-a-model-class" title="Permalink to this headline">¶</a></h2>
+<p>Since a <cite>Product</cite> model is defined at the Django backend, we need to define a
+<cite>Product</cite> model that mirrors the backend in the frontend language.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A more accurate statement is the <cite>Product</cite> model in the frontend mirrors the
+<cite>ProductSerializer</cite> in the backend. This is because a serializer can support
+fields that doesn’t exist on the model, for instance, through
+<cite>SerializerMethodField</cite>.</p>
+</div>
+<p>Similar to the Django models, the <cite>Product</cite> model in the frontend should also
+extend the <cite>Model</cite> base class.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-1-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-1-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-1-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">Model</span><span class="p">,</span> <span class="nx">CollectionManager</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;django-client-framework&quot;</span>
+
+<span class="kd">class</span> <span class="nx">Product</span> <span class="k">extends</span> <span class="nx">Model</span> <span class="p">{</span>
+    <span class="k">static</span> <span class="k">readonly</span> <span class="nx">objects</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CollectionManager</span><span class="p">(</span><span class="nx">Product</span><span class="p">)</span>
+    <span class="nx">barcode</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></div>
+</div>
+<div class="section" id="retrieve-a-model-instance">
+<h2>Retrieve a model instance<a class="headerlink" href="#retrieve-a-model-instance" title="Permalink to this headline">¶</a></h2>
+<p>To retrieve a <cite>Product</cite> instance, we use the <cite>CollectionManager</cite> class. To
+retrieve an instance of the <cite>CollectionManager</cite>, you can either create it
+yourself, or access it through tbe <cite>.objects</cite> static member on the <cite>Product</cite>
+class.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-2-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-2-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-2-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">Ajax</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;django-client-framework&quot;</span>
+
+<span class="nx">Ajax</span><span class="p">.</span><span class="nx">url_prefix</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000&quot;</span>
+
+<span class="kd">let</span> <span class="nx">page</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">Product</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">page</span><span class="p">({})</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">page</span><span class="p">)</span>
+
+<span class="cm">/*</span>
+<span class="cm">    PageResult {</span>
+<span class="cm">        page: 1,</span>
+<span class="cm">        limit: 50,</span>
+<span class="cm">        total: 1,</span>
+<span class="cm">        previous: null,</span>
+<span class="cm">        next: null,</span>
+<span class="cm">        objects: [ Product { id: 1, barcode: &#39;xxyy&#39; } ]</span>
+<span class="cm">    }</span>
+<span class="cm">*/</span>
+</pre></div>
+</div>
+</div></div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Besides retrieving object, the client libraries also support methods that
+modify and delete objects. See the full set of APIs here. [todo]</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Yu.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

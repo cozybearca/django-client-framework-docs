@@ -1,9 +1,4 @@
-
-
-Django Client Framework
-#######################
-
-An Overview of The Framework
+An Overview of the Framework
 ============================
 
 Django Client Framework is meant to work with the famous python server framework
@@ -73,7 +68,7 @@ by the Django Client Framework, which is extremely similar to the Django's:
          product.save().await()
 
 
-.. warning::
+.. note::
 
    The Django Client Framework has two components, the frontend libraries,
    and the backend API server based on Django. You need to install both components
@@ -82,3 +77,6 @@ by the Django Client Framework, which is extremely similar to the Django's:
 Internally, a communication protocol based on RESTful API is used between the
 frontend and the backend. The protocol is considered an internal detail of the
 Django Client Framework, and you should not need to worry about it.
+
+.. image:: images/overview1.jpg
+
