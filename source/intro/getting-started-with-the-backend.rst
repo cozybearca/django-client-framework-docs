@@ -1,5 +1,5 @@
-Getting Starting with Django Backend
-====================================
+Getting Started with the Backend
+================================
 
 .. seealso::
 
@@ -473,7 +473,7 @@ Now to query the product's brand, send a GET request to this url:
         # {id: 1, name: "nike"}
 
 
-Conversely, we can visit all products under the brand:
+Conversely, we can retrieve all products under the brand:
 
 .. code-block:: bash
 
@@ -490,7 +490,7 @@ Conversely, we can visit all products under the brand:
 
 .. warning::
 
-    The last part of the url, ie, `/products`, comes from the
+    The last part of the url, `/products`, comes from the
     `related_name="products"` argument when defining the brand `ForeignKey`
     field on `Product`. This is the same `.related_name` in Django that allows
     you to write

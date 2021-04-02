@@ -1,4 +1,4 @@
-Django Client Framework Backend API Reference
-#############################################
+Backend API Reference
+#####################
 
 .. include:: models.rst

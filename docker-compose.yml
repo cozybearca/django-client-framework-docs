@@ -1,0 +1,8 @@
+version: "3.7"
+services:
+  make:
+    build: .
+    entrypoint: make
+    volumes:
+      - ./source:/doc-builder/source:ro
+      - ./docs:/doc-builder/docs # output

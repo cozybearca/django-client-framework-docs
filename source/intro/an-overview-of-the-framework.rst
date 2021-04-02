@@ -78,5 +78,5 @@ Internally, a communication protocol based on RESTful API is used between the
 frontend and the backend. The protocol is considered an internal detail of the
 Django Client Framework, and you should not need to worry about it.
 
-.. image:: images/overview1.jpg
+.. image:: /images/overview1.jpg
 
