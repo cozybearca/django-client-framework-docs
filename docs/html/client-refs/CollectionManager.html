@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>CollectionManager&lt;T: `Model`_&gt; &mdash; Django Client Framework  documentation</title>
+  <title>CollectionManager&lt;T&gt; &mdash; Django Client Framework  documentation</title>
   
 
   
@@ -86,9 +86,71 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introduction to the Framework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend-refs/index.html">Backend API Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Client Libraries Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introduction to the Framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/index.html#an-overview-of-the-framework">An Overview of the Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/index.html#getting-started-with-the-backend">Getting Started with the Backend</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#installation-with-pip3-git">Installation with pip3+git</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#configure-django-s-settings-py-file">Configure Django’s settings.py file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#add-routing-handlers-to-urls-py">Add routing handlers to <code class="docutils literal notranslate"><span class="pre">urls.py</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#add-a-serializable-model">Add a Serializable model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#make-an-accesscontrolled-model">Make an AccessControlled model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#query-objects-via-http-requests">Query objects via HTTP requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#query-relational-objects-via-http">Query relational objects via HTTP</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/index.html#getting-starting-with-client-libraries">Getting Starting with Client Libraries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#install-client-libraries">Install client libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../intro/index.html#typescript">TypeScript</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../intro/index.html#swift">Swift</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../intro/index.html#kotlin">Kotlin</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#define-a-model-class">Define a model class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#retrieve-a-model-object">Retrieve a model object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#retrieve-a-relational-object">Retrieve a relational object</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../backend-refs/index.html">Backend API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../backend-refs/index.html#models">Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../backend-refs/index.html#serialiazable">Serialiazable</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Client Libraries Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#model">Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#required-fields">Required fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#optional-fields">Optional fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#custom-fields">Custom fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#collectionmanager-t">CollectionManager&lt;T&gt;</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#constructor">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#page-query-pagination">.page(query, pagination)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#get-query">.get(query)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#create-data">.create(data)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#get-or-create-query-defaults">.get_or_create(query, defaults)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#update-or-create-query-defaults">.update_or_create(query, defaults)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#objectmanager-t">ObjectManager&lt;T&gt;</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id2">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#refresh">.refresh()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#save">.save()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#update">.update()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#delete">.delete()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#relatedcollectionmanager-t-p">RelatedCollectionManager&lt;T, P&gt;</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id3">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#relatedcollectionmanager-page">.page(query, pagination)</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../doc-for-doc.html">Modify this documentation</a></li>
 </ul>
 
@@ -112,7 +174,7 @@
 
       <div class="wy-nav-content">
         
-        <div class="rst-content">
+        <div class="rst-content style-external-links">
         
           
 
@@ -138,7 +200,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>CollectionManager&lt;T: `Model`_&gt;</li>
+      <li>CollectionManager&lt;T&gt;</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -157,14 +219,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="collectionmanager-t-model">
-<span id="dcf-collectionmanager"></span><h1>CollectionManager&lt;T: <a href="#id1"><span class="problematic" id="id2">`Model`_</span></a>&gt;<a class="headerlink" href="#collectionmanager-t-model" title="Permalink to this headline">¶</a></h1>
-<p>A generic class where <code class="docutils literal notranslate"><span class="pre">T</span></code> is constrained by <a href="#id3"><span class="problematic" id="id4">`Model`_</span></a>. This class provides the
+  <div class="section" id="collectionmanager-t">
+<span id="collectionmanager"></span><h1>CollectionManager&lt;T&gt;<a class="headerlink" href="#collectionmanager-t" title="Permalink to this headline">¶</a></h1>
+<p>A generic class where <code class="docutils literal notranslate"><span class="pre">T</span></code> is constrained by <a href="#id1"><span class="problematic" id="id2">`Model`_</span></a>. This class provides the
 access to backend objects. You should use this class to retrieve an
 <code class="docutils literal notranslate"><span class="pre">ObjectManager</span></code> for an model object, instead of creating an <code class="docutils literal notranslate"><span class="pre">ObjectManager</span></code>
 directly.</p>
-<div class="section" id="consturctor">
-<h2>Consturctor<a class="headerlink" href="#consturctor" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="constructor">
+<h2>Constructor<a class="headerlink" href="#constructor" title="Permalink to this headline">¶</a></h2>
 <p>Implementation varies. For TypeScript and Kotlin, you need to pass the
 constructor of <code class="docutils literal notranslate"><span class="pre">T</span></code> in to the constructor, because the type information is
 erased during the runtime.</p>
@@ -182,13 +244,14 @@ class, so that you can retrieve the <code class="docutils literal notranslate"><
 </div>
 </div></div>
 </div>
+<p><strong>Methods</strong></p>
 </div>
-<div class="section" id="methods">
-<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="page-query-pagination">
-<span id="collectionmanager-page"></span><h3>.page(query, pagination)<a class="headerlink" href="#page-query-pagination" title="Permalink to this headline">¶</a></h3>
+<span id="collectionmanager-page"></span><h2>.page(query, pagination)<a class="headerlink" href="#page-query-pagination" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><dl>
+<div><p>Returns a filtered collection of the model objects, with the desired
+pagination. It sends a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request to the server.</p>
+<dl>
 <dt>query</dt><dd><p>A dictionary of query parameters that eventually get encoded as the query
 parts of the URL. The key names are agnostic to <a class="reference external" href="https://docs.djangoproject.com/en/3.1/ref/models/querysets">Django’s QuerySet
 API</a>. Keys such as <code class="docutils literal notranslate"><span class="pre">id__in</span></code> (with an array of ids as
@@ -203,7 +266,7 @@ have <code class="docutils literal notranslate"><span class="pre">[]</span></cod
 </pre></div>
 </div>
 <p>will be encoded as
-<code class="docutils literal notranslate"><span class="pre">?id__in[]=1&amp;id__in[]=2&amp;barcode=xxyy&amp;price__gt=12.00</span></code></p>
+<code class="docutils literal notranslate"><span class="pre">?id__in[]=1&amp;id__in[]=2&amp;barcode=xxyy&amp;price__gt=12.00</span></code>.</p>
 <dl class="simple">
 <dt>Suppoted keys</dt><dd><p>Any property name of the model, or any <a class="reference external" href="https://docs.djangoproject.com/en/3.1/ref/models/querysets/#field-lookups">Django’s Field
 lookup keys</a>.</p>
@@ -245,19 +308,113 @@ reverse order. Use <code class="docutils literal notranslate"><span class="pre">
 <dt>Returns</dt><dd><p>A <code class="docutils literal notranslate"><span class="pre">PageResult</span></code> that contains the objects.</p>
 </dd>
 </dl>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-1-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-1-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-1-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">page</span>: <span class="kt">PageResult</span><span class="o">&lt;</span><span class="nx">Product</span><span class="o">&gt;</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">Product</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">page</span><span class="p">({</span>
+    <span class="nx">query</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">barcode__contains</span><span class="o">=</span><span class="s2">&quot;xy&quot;</span>
+        <span class="nx">price</span>: <span class="kt">null</span>
+    <span class="p">},</span>
+    <span class="nx">page</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">limit</span>: <span class="kt">10</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+<span class="c1">// GET /product?barcode__contains=xy&amp;price=&amp;_limit=10</span>
+</pre></div>
+</div>
+</div></div>
 </div></blockquote>
 </div>
 <div class="section" id="get-query">
-<span id="collectionmanager-get"></span><h3>.get(query)<a class="headerlink" href="#get-query" title="Permalink to this headline">¶</a></h3>
+<span id="collectionmanager-get"></span><h2>.get(query)<a class="headerlink" href="#get-query" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>This method does the same thing as <a class="reference internal" href="index.html#collectionmanager-page"><span class="std std-ref">.page(query, pagination)</span></a> except
-that it expects exactly one object to be returned from the server.</p>
+that it expects exactly one object to be returned from the server. If less
+or more than one object is returned, an InvalidObjectCount error is thrown.</p>
 <dl class="simple">
-<dt>Returns</dt><dd><p>An <span class="xref std std-ref">ObjectManager</span> object wrapping the model.</p>
+<dt>Returns</dt><dd><p>An <a class="reference internal" href="index.html#objectmanager"><span class="std std-ref">ObjectManager&lt;T&gt;</span></a> object wrapping the model.</p>
 </dd>
 </dl>
 </div></blockquote>
 </div>
+<div class="section" id="create-data">
+<span id="collectionmanager-create"></span><h2>.create(data)<a class="headerlink" href="#create-data" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Saves an object on the server with the provided dictionary of data. It sends
+a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request to the server.</p>
+<dl class="simple">
+<dt>Suppoted key-values</dt><dd><p>Any property name and value of type defined on the model.</p>
+</dd>
+</dl>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-2-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-2-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-2-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">product</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Product</span><span class="o">&gt;</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">Product</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;xxyy&quot;</span><span class="p">,</span>
+    <span class="nx">price</span>: <span class="kt">null</span>
+<span class="p">})</span>
+<span class="c1">// POST /product {&quot;name&quot;: &quot;xxyy&quot;, &quot;price&quot;: null}</span>
+</pre></div>
+</div>
+</div></div>
+<dl class="simple">
+<dt>Returns</dt><dd><p>An <a class="reference internal" href="index.html#objectmanager"><span class="std std-ref">ObjectManager&lt;T&gt;</span></a> object wrapping the created model.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="get-or-create-query-defaults">
+<span id="collectionmanager-get-or-create"></span><h2>.get_or_create(query, defaults)<a class="headerlink" href="#get-or-create-query-defaults" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>First tries to <a class="reference internal" href="index.html#collectionmanager-get"><span class="std std-ref">.get(query)</span></a> the object with the query
+dictionary. If the object does not exist, then
+<a class="reference internal" href="index.html#collectionmanager-create"><span class="std std-ref">.create(data)</span></a> the object by using the combined values
+on query and defaults. It sends a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request, and if the object does
+not exist, then sends a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request.</p>
+<dl class="simple">
+<dt>Returns</dt><dd><p>An <a class="reference internal" href="index.html#objectmanager"><span class="std std-ref">ObjectManager&lt;T&gt;</span></a> object wrapping the model.</p>
+</dd>
+</dl>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-3-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-3-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-3-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">product</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Product</span><span class="o">&gt;</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">Product</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">get_or_create</span><span class="p">({</span>
+    <span class="nx">query</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;xxyy&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="nx">defaults</span><span class="o">:</span>  <span class="p">{</span>
+        <span class="nx">price</span>: <span class="kt">null</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+<span class="c1">// GET /product?name=&quot;xxyy&quot;</span>
+<span class="c1">// POST /product {&quot;name&quot;: &quot;xxyy&quot;, &quot;price&quot;: null}</span>
+</pre></div>
+</div>
+</div></div>
+</div></blockquote>
+</div>
+<div class="section" id="update-or-create-query-defaults">
+<span id="collectionmanager-update-or-create"></span><h2>.update_or_create(query, defaults)<a class="headerlink" href="#update-or-create-query-defaults" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>First tries to <a class="reference internal" href="index.html#collectionmanager-get"><span class="std std-ref">.get(query)</span></a> the object with the
+<code class="docutils literal notranslate"><span class="pre">query</span></code> dictionary. If the object does not exist, then it follows the
+<a class="reference internal" href="index.html#collectionmanager-get-or-create"><span class="std std-ref">.get_or_create(query, defaults)</span></a> logic. If the object already
+exists, then it updates the object with values in the <code class="docutils literal notranslate"><span class="pre">defaults</span></code>
+dictionary. When updating, sends a <code class="docutils literal notranslate"><span class="pre">PATCH</span></code> request.</p>
+<dl class="simple">
+<dt>Returns</dt><dd><p>An <a class="reference internal" href="index.html#objectmanager"><span class="std std-ref">ObjectManager&lt;T&gt;</span></a> object wrapping the model.</p>
+</dd>
+</dl>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-4-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-4-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-4-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-4-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">product</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Product</span><span class="o">&gt;</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">Product</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">update_or_create</span><span class="p">({</span>
+    <span class="nx">query</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;xxyy&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="nx">defaults</span><span class="o">:</span>  <span class="p">{</span>
+        <span class="nx">price</span>: <span class="kt">null</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+<span class="c1">// GET /product?name=&quot;xxyy&quot;</span>
+<span class="c1">// (assumes id is 1) PATCH /product/1 {&quot;price&quot;: null}</span>
+</pre></div>
+</div>
+</div></div>
+</div></blockquote>
 </div>
 </div>
 

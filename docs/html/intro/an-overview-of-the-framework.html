@@ -86,9 +86,71 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Introduction to the Framework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend-refs/index.html">Backend API Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../client-refs/index.html">Client Libraries Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Introduction to the Framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#an-overview-of-the-framework">An Overview of the Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#getting-started-with-the-backend">Getting Started with the Backend</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#installation-with-pip3-git">Installation with pip3+git</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#configure-django-s-settings-py-file">Configure Django’s settings.py file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#add-routing-handlers-to-urls-py">Add routing handlers to <code class="docutils literal notranslate"><span class="pre">urls.py</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#add-a-serializable-model">Add a Serializable model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#make-an-accesscontrolled-model">Make an AccessControlled model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#query-objects-via-http-requests">Query objects via HTTP requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#query-relational-objects-via-http">Query relational objects via HTTP</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#getting-starting-with-client-libraries">Getting Starting with Client Libraries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#install-client-libraries">Install client libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="index.html#typescript">TypeScript</a></li>
+<li class="toctree-l4"><a class="reference internal" href="index.html#swift">Swift</a></li>
+<li class="toctree-l4"><a class="reference internal" href="index.html#kotlin">Kotlin</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#define-a-model-class">Define a model class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#retrieve-a-model-object">Retrieve a model object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#retrieve-a-relational-object">Retrieve a relational object</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../backend-refs/index.html">Backend API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../backend-refs/index.html#models">Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../backend-refs/index.html#serialiazable">Serialiazable</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../client-refs/index.html">Client Libraries Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../client-refs/index.html#model">Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#required-fields">Required fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#optional-fields">Optional fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#custom-fields">Custom fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../client-refs/index.html#collectionmanager-t">CollectionManager&lt;T&gt;</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#constructor">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#page-query-pagination">.page(query, pagination)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#get-query">.get(query)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#create-data">.create(data)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#get-or-create-query-defaults">.get_or_create(query, defaults)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#update-or-create-query-defaults">.update_or_create(query, defaults)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../client-refs/index.html#objectmanager-t">ObjectManager&lt;T&gt;</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#id2">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#refresh">.refresh()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#save">.save()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#update">.update()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#delete">.delete()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../client-refs/index.html#relatedcollectionmanager-t-p">RelatedCollectionManager&lt;T, P&gt;</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#id3">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#id4">.page(query, pagination)</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../doc-for-doc.html">Modify this documentation</a></li>
 </ul>
 
@@ -112,7 +174,7 @@
 
       <div class="wy-nav-content">
         
-        <div class="rst-content">
+        <div class="rst-content style-external-links">
         
           
 

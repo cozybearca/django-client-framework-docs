@@ -1,7 +1,7 @@
 .. _ObjectManager:
 
-ObjectManager<T: `Model`_>
-==========================
+ObjectManager<T>
+================
 
 A generic class where ``T`` is constrained by :ref:`Model`. This class provides the
 ability to modify an model object. When constructing an ``ObjectManager``
@@ -12,7 +12,7 @@ provides methods that are used to modify the wrapped model object, and save the
 changes to the backend.
 
 
-Consturctor
+Constructor
 -----------
 
 Pass the model object into the ``ObjectManager`` constructor.
@@ -24,8 +24,7 @@ Pass the model object into the ``ObjectManager`` constructor.
     creating one yourself.
 
 
-Example
-^^^^^^^
+**Example**
 
 .. tabs::
 
@@ -34,11 +33,17 @@ Example
         let product_model = new Product()
         let product = new ObjectManagerImpl(product_model)
 
-Methods
--------
+.. warning::
+
+    Due to a limitation of TypeScript, the constructor is named
+    ``ObjectManagerImpl`` instead of ``ObjectManager``, which is a type
+    alias.
+
+
+**Methods**
 
 .refresh()
-^^^^^^^^^^
+----------
 
     Pulls data from the server and updates the local data.
     It sends a ``GET`` request to the server.
@@ -54,7 +59,7 @@ Methods
 
 
 .save()
-^^^^^^^
+-------
 
     Updates the server with properties that have been changed on the object. It
     sends a ``PATCH`` request to the server.
@@ -71,7 +76,7 @@ Methods
             await product.save()
 
 .update()
-^^^^^^^^^
+---------
 
     Updates the server with a dictionary, and also saves the changes locally. If
     the dictionary contains a key that is not a property name, the method throws
@@ -89,7 +94,7 @@ Methods
             )}
 
 .delete()
-^^^^^^^^^
+---------
 
     Removes the data from the server. It sends a DELETE request to the server.
 

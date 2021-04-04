@@ -114,8 +114,45 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../backend-refs/index.html">Backend API Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../client-refs/index.html">Client Libraries Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend-refs/index.html">Backend API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../backend-refs/index.html#models">Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../backend-refs/index.html#serialiazable">Serialiazable</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../client-refs/index.html">Client Libraries Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../client-refs/index.html#model">Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#required-fields">Required fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#optional-fields">Optional fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#custom-fields">Custom fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../client-refs/index.html#collectionmanager-t">CollectionManager&lt;T&gt;</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#constructor">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#page-query-pagination">.page(query, pagination)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#get-query">.get(query)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#create-data">.create(data)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#get-or-create-query-defaults">.get_or_create(query, defaults)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#update-or-create-query-defaults">.update_or_create(query, defaults)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../client-refs/index.html#objectmanager-t">ObjectManager&lt;T&gt;</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#id2">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#refresh">.refresh()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#save">.save()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#update">.update()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#delete">.delete()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../client-refs/index.html#relatedcollectionmanager-t-p">RelatedCollectionManager&lt;T, P&gt;</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#id3">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#id4">.page(query, pagination)</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../doc-for-doc.html">Modify this documentation</a></li>
 </ul>
 
@@ -139,7 +176,7 @@
 
       <div class="wy-nav-content">
         
-        <div class="rst-content">
+        <div class="rst-content style-external-links">
         
           
 
@@ -723,7 +760,7 @@ can support fields that doesn’t exist on the model, for instance, through
 the <cite>SerializerMethodField</cite>.</p>
 </div>
 <p>Similar to the Django models, the <cite>Product</cite> model in the frontend should also
-extend the <span class="xref std std-ref">Model</span> base class.</p>
+extend the <a class="reference internal" href="../client-refs/index.html#model"><span class="std std-ref">Model</span></a> base class.</p>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-3-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-3-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-3-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">Model</span><span class="p">,</span> <span class="nx">CollectionManager</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;django-client-framework&quot;</span>
 

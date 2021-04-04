@@ -88,40 +88,74 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introduction to the Framework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend-refs/index.html">Backend API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introduction to the Framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/index.html#an-overview-of-the-framework">An Overview of the Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/index.html#getting-started-with-the-backend">Getting Started with the Backend</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#installation-with-pip3-git">Installation with pip3+git</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#configure-django-s-settings-py-file">Configure Django’s settings.py file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#add-routing-handlers-to-urls-py">Add routing handlers to <code class="docutils literal notranslate"><span class="pre">urls.py</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#add-a-serializable-model">Add a Serializable model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#make-an-accesscontrolled-model">Make an AccessControlled model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#query-objects-via-http-requests">Query objects via HTTP requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#query-relational-objects-via-http">Query relational objects via HTTP</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/index.html#getting-starting-with-client-libraries">Getting Starting with Client Libraries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#install-client-libraries">Install client libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../intro/index.html#typescript">TypeScript</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../intro/index.html#swift">Swift</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../intro/index.html#kotlin">Kotlin</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#define-a-model-class">Define a model class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#retrieve-a-model-object">Retrieve a model object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#retrieve-a-relational-object">Retrieve a relational object</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../backend-refs/index.html">Backend API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../backend-refs/index.html#models">Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../backend-refs/index.html#serialiazable">Serialiazable</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Client Libraries Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#model">Model</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#subclassing">Subclassing</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#required-fields">Required fields</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#optional-fields">Optional fields</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#custom-fields">Custom fields</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#example">Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#required-fields">Required fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#optional-fields">Optional fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-fields">Custom fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#collectionmanager-t">CollectionManager&lt;T&gt;</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#constructor">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#page-query-pagination">.page(query, pagination)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-query">.get(query)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-data">.create(data)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-or-create-query-defaults">.get_or_create(query, defaults)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-or-create-query-defaults">.update_or_create(query, defaults)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#collectionmanager-t-model">CollectionManager&lt;T: Model&gt;</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#consturctor">Consturctor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#methods">Methods</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#page-query-pagination">.page(query, pagination)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#get-query">.get(query)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#objectmanager-t">ObjectManager&lt;T&gt;</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#refresh">.refresh()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#save">.save()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update">.update()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delete">.delete()</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#objectmanager-t-model">ObjectManager&lt;T: Model&gt;</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">Consturctor</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id2">Example</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">Methods</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#refresh">.refresh()</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#save">.save()</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#update">.update()</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#delete">.delete()</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#relatedcollectionmanager-t-p">RelatedCollectionManager&lt;T, P&gt;</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#relatedcollectionmanager-page">.page(query, pagination)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-query-pagination">.get(query, pagination)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-ids-ids">.add_ids(ids)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-ids-ids">.set_ids(ids)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#remove-ids-ids">.remove_ids(ids)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-objs">.add(objs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-objs">.set(objs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#remove-objs">.remove(objs)</a></li>
 </ul>
 </li>
 </ul>
@@ -149,7 +183,7 @@
 
       <div class="wy-nav-content">
         
-        <div class="rst-content">
+        <div class="rst-content style-external-links">
         
           
 
@@ -197,23 +231,22 @@
   <div class="section" id="client-libraries-reference">
 <h1>Client Libraries Reference<a class="headerlink" href="#client-libraries-reference" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="model">
-<h2>Model<a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2>Model<a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h2>
 <p>Similar to the <a class="reference external" href="https://docs.djangoproject.com/en/3.1/ref/models/instances">Model class in Django</a>, <cite>Model</cite> is
 the base class of all user defined models in the frontend. The implementation
 varies between the frontend languages, but generally, the <cite>Model</cite> base class
 enforces the existance of an read-only <cite>id</cite> field. In addition, a <cite>Model</cite>
 subclass can be serialized/deserialized from/to an JSON representation.</p>
-<div class="section" id="subclassing">
-<h3>Subclassing<a class="headerlink" href="#subclassing" title="Permalink to this headline">¶</a></h3>
+<p><strong>Subclassing</strong></p>
 <div class="section" id="required-fields">
-<h4>Required fields<a class="headerlink" href="#required-fields" title="Permalink to this headline">¶</a></h4>
+<h3>Required fields<a class="headerlink" href="#required-fields" title="Permalink to this headline">¶</a></h3>
 <dl class="simple">
 <dt>id</dt><dd><p>An <cite>id</cite> field must be defined. If the language allows, <cite>id</cite> should be read-only.</p>
 </dd>
 </dl>
 </div>
 <div class="section" id="optional-fields">
-<h4>Optional fields<a class="headerlink" href="#optional-fields" title="Permalink to this headline">¶</a></h4>
+<h3>Optional fields<a class="headerlink" href="#optional-fields" title="Permalink to this headline">¶</a></h3>
 <dl class="simple">
 <dt><cite>static</cite> objects</dt><dd><p>A static member of the <code class="docutils literal notranslate"><span class="pre">CollectionManager</span></code> type for the model class, used
 to quickly access the <code class="docutils literal notranslate"><span class="pre">CollectionManager</span></code> instead of having to create a
@@ -222,11 +255,11 @@ new one.</p>
 </dl>
 </div>
 <div class="section" id="custom-fields">
-<h4>Custom fields<a class="headerlink" href="#custom-fields" title="Permalink to this headline">¶</a></h4>
+<h3>Custom fields<a class="headerlink" href="#custom-fields" title="Permalink to this headline">¶</a></h3>
 <p>Any fields of native types, <code class="docutils literal notranslate"><span class="pre">RelatedObjectManager</span></code>, or <code class="docutils literal notranslate"><span class="pre">RelatedCollectionManager</span></code> types.</p>
 </div>
 <div class="section" id="example">
-<h4>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-0-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-0-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-0-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">Product</span> <span class="k">extends</span> <span class="nx">Model</span> <span class="p">{</span>
     <span class="k">static</span> <span class="k">readonly</span> <span class="nx">objects</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CollectionManager</span><span class="p">(</span><span class="nx">Product</span><span class="p">)</span>
@@ -241,15 +274,14 @@ new one.</p>
 </div></div>
 </div>
 </div>
-</div>
-<div class="section" id="collectionmanager-t-model">
-<span id="dcf-collectionmanager"></span><h2>CollectionManager&lt;T: <a class="reference internal" href="#model">Model</a>&gt;<a class="headerlink" href="#collectionmanager-t-model" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="collectionmanager-t">
+<span id="collectionmanager"></span><h2>CollectionManager&lt;T&gt;<a class="headerlink" href="#collectionmanager-t" title="Permalink to this headline">¶</a></h2>
 <p>A generic class where <code class="docutils literal notranslate"><span class="pre">T</span></code> is constrained by <a class="reference internal" href="#model">Model</a>. This class provides the
 access to backend objects. You should use this class to retrieve an
 <code class="docutils literal notranslate"><span class="pre">ObjectManager</span></code> for an model object, instead of creating an <code class="docutils literal notranslate"><span class="pre">ObjectManager</span></code>
 directly.</p>
-<div class="section" id="consturctor">
-<h3>Consturctor<a class="headerlink" href="#consturctor" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="constructor">
+<h3>Constructor<a class="headerlink" href="#constructor" title="Permalink to this headline">¶</a></h3>
 <p>Implementation varies. For TypeScript and Kotlin, you need to pass the
 constructor of <code class="docutils literal notranslate"><span class="pre">T</span></code> in to the constructor, because the type information is
 erased during the runtime.</p>
@@ -267,13 +299,14 @@ class, so that you can retrieve the <code class="docutils literal notranslate"><
 </div>
 </div></div>
 </div>
+<p><strong>Methods</strong></p>
 </div>
-<div class="section" id="methods">
-<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="page-query-pagination">
-<span id="collectionmanager-page"></span><h4>.page(query, pagination)<a class="headerlink" href="#page-query-pagination" title="Permalink to this headline">¶</a></h4>
+<span id="collectionmanager-page"></span><h3>.page(query, pagination)<a class="headerlink" href="#page-query-pagination" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><dl>
+<div><p>Returns a filtered collection of the model objects, with the desired
+pagination. It sends a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request to the server.</p>
+<dl>
 <dt>query</dt><dd><p>A dictionary of query parameters that eventually get encoded as the query
 parts of the URL. The key names are agnostic to <a class="reference external" href="https://docs.djangoproject.com/en/3.1/ref/models/querysets">Django’s QuerySet
 API</a>. Keys such as <code class="docutils literal notranslate"><span class="pre">id__in</span></code> (with an array of ids as
@@ -288,7 +321,7 @@ have <code class="docutils literal notranslate"><span class="pre">[]</span></cod
 </pre></div>
 </div>
 <p>will be encoded as
-<code class="docutils literal notranslate"><span class="pre">?id__in[]=1&amp;id__in[]=2&amp;barcode=xxyy&amp;price__gt=12.00</span></code></p>
+<code class="docutils literal notranslate"><span class="pre">?id__in[]=1&amp;id__in[]=2&amp;barcode=xxyy&amp;price__gt=12.00</span></code>.</p>
 <dl class="simple">
 <dt>Suppoted keys</dt><dd><p>Any property name of the model, or any <a class="reference external" href="https://docs.djangoproject.com/en/3.1/ref/models/querysets/#field-lookups">Django’s Field
 lookup keys</a>.</p>
@@ -330,32 +363,126 @@ reverse order. Use <code class="docutils literal notranslate"><span class="pre">
 <dt>Returns</dt><dd><p>A <code class="docutils literal notranslate"><span class="pre">PageResult</span></code> that contains the objects.</p>
 </dd>
 </dl>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-2-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-2-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-2-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">page</span>: <span class="kt">PageResult</span><span class="o">&lt;</span><span class="nx">Product</span><span class="o">&gt;</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">Product</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">page</span><span class="p">({</span>
+    <span class="nx">query</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">barcode__contains</span><span class="o">=</span><span class="s2">&quot;xy&quot;</span>
+        <span class="nx">price</span>: <span class="kt">null</span>
+    <span class="p">},</span>
+    <span class="nx">page</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">limit</span>: <span class="kt">10</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+<span class="c1">// GET /product?barcode__contains=xy&amp;price=&amp;_limit=10</span>
+</pre></div>
+</div>
+</div></div>
 </div></blockquote>
 </div>
 <div class="section" id="get-query">
-<span id="collectionmanager-get"></span><h4>.get(query)<a class="headerlink" href="#get-query" title="Permalink to this headline">¶</a></h4>
+<span id="collectionmanager-get"></span><h3>.get(query)<a class="headerlink" href="#get-query" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>This method does the same thing as <a class="reference internal" href="#collectionmanager-page"><span class="std std-ref">.page(query, pagination)</span></a> except
-that it expects exactly one object to be returned from the server.</p>
+that it expects exactly one object to be returned from the server. If less
+or more than one object is returned, an InvalidObjectCount error is thrown.</p>
 <dl class="simple">
-<dt>Returns</dt><dd><p>An <a class="reference internal" href="#objectmanager"><span class="std std-ref">ObjectManager&lt;T: Model&gt;</span></a> object wrapping the model.</p>
+<dt>Returns</dt><dd><p>An <a class="reference internal" href="#objectmanager"><span class="std std-ref">ObjectManager&lt;T&gt;</span></a> object wrapping the model.</p>
 </dd>
 </dl>
 </div></blockquote>
 </div>
+<div class="section" id="create-data">
+<span id="collectionmanager-create"></span><h3>.create(data)<a class="headerlink" href="#create-data" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Saves an object on the server with the provided dictionary of data. It sends
+a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request to the server.</p>
+<dl class="simple">
+<dt>Suppoted key-values</dt><dd><p>Any property name and value of type defined on the model.</p>
+</dd>
+</dl>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-3-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-3-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-3-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">product</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Product</span><span class="o">&gt;</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">Product</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;xxyy&quot;</span><span class="p">,</span>
+    <span class="nx">price</span>: <span class="kt">null</span>
+<span class="p">})</span>
+<span class="c1">// POST /product {&quot;name&quot;: &quot;xxyy&quot;, &quot;price&quot;: null}</span>
+</pre></div>
+</div>
+</div></div>
+<dl class="simple">
+<dt>Returns</dt><dd><p>An <a class="reference internal" href="#objectmanager"><span class="std std-ref">ObjectManager&lt;T&gt;</span></a> object wrapping the created model.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="get-or-create-query-defaults">
+<span id="collectionmanager-get-or-create"></span><h3>.get_or_create(query, defaults)<a class="headerlink" href="#get-or-create-query-defaults" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>First tries to <a class="reference internal" href="#collectionmanager-get"><span class="std std-ref">.get(query)</span></a> the object with the query
+dictionary. If the object does not exist, then
+<a class="reference internal" href="#collectionmanager-create"><span class="std std-ref">.create(data)</span></a> the object by using the combined values
+on query and defaults. It sends a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request, and if the object does
+not exist, then sends a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request.</p>
+<dl class="simple">
+<dt>Returns</dt><dd><p>An <a class="reference internal" href="#objectmanager"><span class="std std-ref">ObjectManager&lt;T&gt;</span></a> object wrapping the model.</p>
+</dd>
+</dl>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-4-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-4-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-4-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-4-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">product</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Product</span><span class="o">&gt;</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">Product</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">get_or_create</span><span class="p">({</span>
+    <span class="nx">query</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;xxyy&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="nx">defaults</span><span class="o">:</span>  <span class="p">{</span>
+        <span class="nx">price</span>: <span class="kt">null</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+<span class="c1">// GET /product?name=&quot;xxyy&quot;</span>
+<span class="c1">// POST /product {&quot;name&quot;: &quot;xxyy&quot;, &quot;price&quot;: null}</span>
+</pre></div>
+</div>
+</div></div>
+</div></blockquote>
+</div>
+<div class="section" id="update-or-create-query-defaults">
+<span id="collectionmanager-update-or-create"></span><h3>.update_or_create(query, defaults)<a class="headerlink" href="#update-or-create-query-defaults" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>First tries to <a class="reference internal" href="#collectionmanager-get"><span class="std std-ref">.get(query)</span></a> the object with the
+<code class="docutils literal notranslate"><span class="pre">query</span></code> dictionary. If the object does not exist, then it follows the
+<a class="reference internal" href="#collectionmanager-get-or-create"><span class="std std-ref">.get_or_create(query, defaults)</span></a> logic. If the object already
+exists, then it updates the object with values in the <code class="docutils literal notranslate"><span class="pre">defaults</span></code>
+dictionary. When updating, sends a <code class="docutils literal notranslate"><span class="pre">PATCH</span></code> request.</p>
+<dl class="simple">
+<dt>Returns</dt><dd><p>An <a class="reference internal" href="#objectmanager"><span class="std std-ref">ObjectManager&lt;T&gt;</span></a> object wrapping the model.</p>
+</dd>
+</dl>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-5-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-5-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-5-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-5-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">product</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Product</span><span class="o">&gt;</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">Product</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">update_or_create</span><span class="p">({</span>
+    <span class="nx">query</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;xxyy&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="nx">defaults</span><span class="o">:</span>  <span class="p">{</span>
+        <span class="nx">price</span>: <span class="kt">null</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+<span class="c1">// GET /product?name=&quot;xxyy&quot;</span>
+<span class="c1">// (assumes id is 1) PATCH /product/1 {&quot;price&quot;: null}</span>
+</pre></div>
+</div>
+</div></div>
+</div></blockquote>
 </div>
 </div>
-<div class="section" id="objectmanager-t-model">
-<span id="objectmanager"></span><h2>ObjectManager&lt;T: <a class="reference internal" href="#model">Model</a>&gt;<a class="headerlink" href="#objectmanager-t-model" title="Permalink to this headline">¶</a></h2>
-<p>A generic class where <code class="docutils literal notranslate"><span class="pre">T</span></code> is constrained by <span class="xref std std-ref">Model</span>. This class provides the
+<div class="section" id="objectmanager-t">
+<span id="objectmanager"></span><h2>ObjectManager&lt;T&gt;<a class="headerlink" href="#objectmanager-t" title="Permalink to this headline">¶</a></h2>
+<p>A generic class where <code class="docutils literal notranslate"><span class="pre">T</span></code> is constrained by <a class="reference internal" href="#model"><span class="std std-ref">Model</span></a>. This class provides the
 ability to modify an model object. When constructing an <code class="docutils literal notranslate"><span class="pre">ObjectManager</span></code>
 instance, an model object is passed into the <code class="docutils literal notranslate"><span class="pre">ObjectManager</span></code> class
 constructor. Any field that’s available on the model objects becomes available
 on the <code class="docutils literal notranslate"><span class="pre">ObjectManager</span></code> object. In addition, the <code class="docutils literal notranslate"><span class="pre">ObjectManager</span></code> object
 provides methods that are used to modify the wrapped model object, and save the
 changes to the backend.</p>
-<div class="section" id="id1">
-<h3>Consturctor<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>Constructor<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>Pass the model object into the <code class="docutils literal notranslate"><span class="pre">ObjectManager</span></code> constructor.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -363,25 +490,28 @@ changes to the backend.</p>
 <a class="reference internal" href="#collectionmanager-page">CollectionManager.page(…)</a> or <a class="reference internal" href="#collectionmanager-get">CollectionManager.get(…)</a>, instead of
 creating one yourself.</p>
 </div>
-<div class="section" id="id2">
-<h4>Example<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p><strong>Example</strong></p>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-2-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-2-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-2-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">product_model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Product</span><span class="p">()</span>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-6-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-6-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-6-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-6-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">product_model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Product</span><span class="p">()</span>
 <span class="kd">let</span> <span class="nx">product</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ObjectManagerImpl</span><span class="p">(</span><span class="nx">product_model</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Due to a limitation of TypeScript, the constructor is named
+<code class="docutils literal notranslate"><span class="pre">ObjectManagerImpl</span></code> instead of <code class="docutils literal notranslate"><span class="pre">ObjectManager</span></code>, which is a type
+alias.</p>
 </div>
+<p><strong>Methods</strong></p>
 </div>
-<div class="section" id="id3">
-<h3>Methods<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="refresh">
-<h4>.refresh()<a class="headerlink" href="#refresh" title="Permalink to this headline">¶</a></h4>
+<h3>.refresh()<a class="headerlink" href="#refresh" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Pulls data from the server and updates the local data.
 It sends a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request to the server.</p>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-3-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-3-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-3-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">product</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Product</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">...</span>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-7-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-7-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-7-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-7-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">product</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Product</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">...</span>
 <span class="nx">product</span><span class="p">.</span><span class="nx">barcode</span> <span class="o">=</span> <span class="s1">&#39;xxyy&#39;</span>
 <span class="c1">// GET /product/1</span>
 <span class="k">await</span> <span class="nx">product</span><span class="p">.</span><span class="nx">refresh</span><span class="p">()</span> <span class="c1">// resets product barcode</span>
@@ -391,12 +521,12 @@ It sends a <code class="docutils literal notranslate"><span class="pre">GET</spa
 </div></blockquote>
 </div>
 <div class="section" id="save">
-<h4>.save()<a class="headerlink" href="#save" title="Permalink to this headline">¶</a></h4>
+<h3>.save()<a class="headerlink" href="#save" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Updates the server with properties that have been changed on the object. It
 sends a <code class="docutils literal notranslate"><span class="pre">PATCH</span></code> request to the server.</p>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-4-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-4-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-4-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-4-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">product</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Product</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">...</span>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-8-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-8-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-8-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-8-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">product</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Product</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">...</span>
 <span class="nx">product</span><span class="p">.</span><span class="nx">barcode</span> <span class="o">=</span> <span class="s2">&quot;xxyy&quot;</span>
 <span class="nx">product</span><span class="p">.</span><span class="nx">price</span> <span class="o">=</span> <span class="kc">null</span>
 <span class="nx">product</span><span class="p">.</span><span class="nx">brand_id</span> <span class="o">=</span> <span class="mf">2</span>
@@ -408,13 +538,13 @@ sends a <code class="docutils literal notranslate"><span class="pre">PATCH</span
 </div></blockquote>
 </div>
 <div class="section" id="update">
-<h4>.update()<a class="headerlink" href="#update" title="Permalink to this headline">¶</a></h4>
+<h3>.update()<a class="headerlink" href="#update" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Updates the server with a dictionary, and also saves the changes locally. If
 the dictionary contains a key that is not a property name, the method throws
 an error. It sends a <code class="docutils literal notranslate"><span class="pre">PATCH</span></code> request to the server.</p>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-5-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-5-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-5-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-5-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">product</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Product</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">...</span>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-9-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-9-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-9-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-9-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">product</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Product</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">...</span>
 <span class="c1">// PATCH /product/1 {&quot;barcode&quot;: &quot;xxyy&quot;, &quot;price&quot;: null}</span>
 <span class="k">await</span> <span class="nx">product</span><span class="p">.</span><span class="nx">update</span><span class="p">({</span>
     <span class="nx">barcode</span><span class="o">:</span> <span class="s2">&quot;xxyy&quot;</span><span class="p">,</span>
@@ -426,11 +556,11 @@ an error. It sends a <code class="docutils literal notranslate"><span class="pre
 </div></blockquote>
 </div>
 <div class="section" id="delete">
-<h4>.delete()<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h4>
+<h3>.delete()<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Removes the data from the server. It sends a DELETE request to the server.</p>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-6-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-6-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-6-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-6-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">product</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Product</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">...</span>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-10-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-10-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-10-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-10-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">product</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Product</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">...</span>
 <span class="c1">// DELETE /product/1</span>
 <span class="k">await</span> <span class="nx">product</span><span class="p">.</span><span class="k">delete</span><span class="p">()</span>
 </pre></div>
@@ -438,6 +568,162 @@ an error. It sends a <code class="docutils literal notranslate"><span class="pre
 </div></div>
 </div></blockquote>
 </div>
+</div>
+<div class="section" id="relatedcollectionmanager-t-p">
+<span id="relatedcollectionmanager"></span><h2>RelatedCollectionManager&lt;T, P&gt;<a class="headerlink" href="#relatedcollectionmanager-t-p" title="Permalink to this headline">¶</a></h2>
+<p>A generic class where <code class="docutils literal notranslate"><span class="pre">T</span></code> and <code class="docutils literal notranslate"><span class="pre">P</span></code> are constrained by <a class="reference internal" href="#model">Model</a>. This class
+provides the ability access and modify object relations, for example, two object
+related by a foreign key column.</p>
+<div class="section" id="id3">
+<h3>Constructor<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Implementation varies. Most commonly, three values are passed into the constructor:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>The constructor of <code class="docutils literal notranslate"><span class="pre">T</span></code>, the model to be retrieved via the manager.</p></li>
+<li><p>The manager’s parent object of type <code class="docutils literal notranslate"><span class="pre">P</span></code>. Usually, this is the <code class="docutils literal notranslate"><span class="pre">this</span></code> keyword.</p></li>
+<li><p>The property’s name on the model.</p></li>
+</ol>
+</div></blockquote>
+<p>For instance, for the <cite>Product</cite> and <cite>Brand</cite> relation, a brand has many products. In
+this case:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>The constructor of <code class="docutils literal notranslate"><span class="pre">T</span></code> is <code class="docutils literal notranslate"><span class="pre">Product</span></code>.</p></li>
+<li><p>The <cite>parent</cite> is the brand object.</p></li>
+<li><p>Finally, the property’s name on <code class="docutils literal notranslate"><span class="pre">Brand</span></code> is <code class="docutils literal notranslate"><span class="pre">products</span></code>.</p></li>
+</ol>
+</div></blockquote>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-11-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-11-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-11-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-11-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">Product</span> <span class="k">extends</span> <span class="nx">Model</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">Brand</span> <span class="k">extends</span> <span class="nx">Model</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="nx">get</span> <span class="nx">products</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">new</span> <span class="nx">RelatedCollectionManager</span><span class="p">(</span><span class="nx">Product</span><span class="p">,</span> <span class="k">this</span><span class="p">,</span> <span class="s2">&quot;products&quot;</span><span class="p">)</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></div>
+</div>
+<div class="section" id="relatedcollectionmanager-page">
+<span id="id4"></span><h3>.page(query, pagination)<a class="headerlink" href="#relatedcollectionmanager-page" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>This method is agnostic to <a class="reference internal" href="#collectionmanager-page">CollectionManager.page(…)</a>, but to retrieve a
+collection of related model objects. It sends a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request to the
+server.</p>
+</div></blockquote>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-12-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-12-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-12-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-12-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">brand</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Brand</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">...</span> <span class="c1">// assumes id is 1</span>
+<span class="kd">let</span> <span class="nx">products</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">brand</span><span class="p">.</span><span class="nx">products</span><span class="p">.</span><span class="nx">page</span><span class="p">({</span>
+    <span class="nx">query</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">name__contains</span><span class="o">:</span> <span class="s2">&quot;xy&quot;</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+<span class="c1">// GET /brand/1/products?name__contains=xy</span>
+</pre></div>
+</div>
+</div></div>
+</div>
+<div class="section" id="get-query-pagination">
+<span id="relatedcollectionmanager-get"></span><h3>.get(query, pagination)<a class="headerlink" href="#get-query-pagination" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>This method is agnostic to <a class="reference internal" href="#collectionmanager-get">CollectionManager.get(…)</a>, but to retrieve a
+collection of related model objects. It sends a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request to the
+server.</p>
+</div></blockquote>
+</div>
+<div class="section" id="add-ids-ids">
+<span id="relatedcollectionmanager-add-ids"></span><h3>.add_ids(ids)<a class="headerlink" href="#add-ids-ids" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Creates object relations using object ids. It sends a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request to
+the server.</p>
+<dl class="simple">
+<dt>ids</dt><dd><p>The ids of the objects to be added to the collection.</p>
+</dd>
+</dl>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-13-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-13-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-13-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-13-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">brand</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Brand</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">...</span> <span class="c1">// assumes id is 1</span>
+<span class="kd">let</span> <span class="nx">product</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Product</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">...</span> <span class="c1">// assumes id is 1</span>
+<span class="k">await</span> <span class="nx">brand</span><span class="p">.</span><span class="nx">products</span><span class="p">.</span><span class="nx">add_ids</span><span class="p">([</span><span class="nx">product</span><span class="p">.</span><span class="nx">id</span><span class="p">])</span>
+<span class="c1">// POST /brand/1/products [1]</span>
+</pre></div>
+</div>
+</div></div>
+</div></blockquote>
+</div>
+<div class="section" id="set-ids-ids">
+<span id="relatedcollectionmanager-set-ids"></span><h3>.set_ids(ids)<a class="headerlink" href="#set-ids-ids" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Clear the object relations first, before adding new ones using the object
+ids. It sends a <code class="docutils literal notranslate"><span class="pre">PUT</span></code> request to the server.</p>
+<dl class="simple">
+<dt>ids</dt><dd><p>The ids of the objects to be used as the collection.</p>
+</dd>
+</dl>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-14-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-14-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-14-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-14-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">brand</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Brand</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">...</span> <span class="c1">// assumes id is 1</span>
+<span class="kd">let</span> <span class="nx">product</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Product</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">...</span> <span class="c1">// assumes id is 1</span>
+<span class="k">await</span> <span class="nx">brand</span><span class="p">.</span><span class="nx">products</span><span class="p">.</span><span class="nx">set_ids</span><span class="p">([</span><span class="nx">product</span><span class="p">.</span><span class="nx">id</span><span class="p">])</span>
+<span class="c1">// PUT /brand/1/product [1]</span>
+</pre></div>
+</div>
+</div></div>
+</div></blockquote>
+</div>
+<div class="section" id="remove-ids-ids">
+<span id="relatedcollectionmanager-remove-ids"></span><h3>.remove_ids(ids)<a class="headerlink" href="#remove-ids-ids" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Removes object relations using object ids. The method only removes the
+relation. It does not delete the objects. It sends a <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> request to
+the server.</p>
+<dl class="simple">
+<dt>ids</dt><dd><p>The ids of the objects to be removed from the collection.</p>
+</dd>
+</dl>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-15-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-15-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-15-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-15-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">brand</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Brand</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">...</span> <span class="c1">// assumes id is 1</span>
+<span class="kd">let</span> <span class="nx">product</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Product</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">...</span> <span class="c1">// assumes id is 1</span>
+<span class="k">await</span> <span class="nx">brand</span><span class="p">.</span><span class="nx">products</span><span class="p">.</span><span class="nx">remove_ids</span><span class="p">([</span><span class="nx">product</span><span class="p">.</span><span class="nx">id</span><span class="p">])</span>
+<span class="c1">// DELETE /brand/1/product [1]</span>
+</pre></div>
+</div>
+</div></div>
+</div></blockquote>
+</div>
+<div class="section" id="add-objs">
+<h3>.add(objs)<a class="headerlink" href="#add-objs" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Same as <a class="reference internal" href="#relatedcollectionmanager-add-ids">RelatedCollectionManager.add_ids(…)</a> but takes a set of
+<a class="reference internal" href="#objectmanager">ObjectManager</a> objects instead.</p>
+<dl class="simple">
+<dt>objs</dt><dd><p>A set of <a class="reference internal" href="#objectmanager">ObjectManager</a> objects whose ids are added to the collection.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="set-objs">
+<h3>.set(objs)<a class="headerlink" href="#set-objs" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Same as <a class="reference internal" href="#relatedcollectionmanager-set-ids">RelatedCollectionManager.set_ids(…)</a> but takes a set of
+<a class="reference internal" href="#objectmanager">ObjectManager</a> objects instead.</p>
+<dl class="simple">
+<dt>objs</dt><dd><p>A set of <a class="reference internal" href="#objectmanager">ObjectManager</a> objects whose ids are set as the collection.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="remove-objs">
+<h3>.remove(objs)<a class="headerlink" href="#remove-objs" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Same as <a class="reference internal" href="#relatedcollectionmanager-remove-ids">RelatedCollectionManager.remove_ids(…)</a> but takes a set of
+<a class="reference internal" href="#objectmanager">ObjectManager</a> objects instead.</p>
+<dl class="simple">
+<dt>objs</dt><dd><p>A set of <a class="reference internal" href="#objectmanager">ObjectManager</a> objects whose ids are removed from the
+collection.</p>
+</dd>
+</dl>
+</div></blockquote>
 </div>
 </div>
 </div>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>ObjectManager&lt;T: `Model`_&gt; &mdash; Django Client Framework  documentation</title>
+  <title>ObjectManager&lt;T&gt; &mdash; Django Client Framework  documentation</title>
   
 
   
@@ -86,9 +86,71 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introduction to the Framework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend-refs/index.html">Backend API Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Client Libraries Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introduction to the Framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/index.html#an-overview-of-the-framework">An Overview of the Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/index.html#getting-started-with-the-backend">Getting Started with the Backend</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#installation-with-pip3-git">Installation with pip3+git</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#configure-django-s-settings-py-file">Configure Django’s settings.py file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#add-routing-handlers-to-urls-py">Add routing handlers to <code class="docutils literal notranslate"><span class="pre">urls.py</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#add-a-serializable-model">Add a Serializable model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#make-an-accesscontrolled-model">Make an AccessControlled model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#query-objects-via-http-requests">Query objects via HTTP requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#query-relational-objects-via-http">Query relational objects via HTTP</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/index.html#getting-starting-with-client-libraries">Getting Starting with Client Libraries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#install-client-libraries">Install client libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../intro/index.html#typescript">TypeScript</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../intro/index.html#swift">Swift</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../intro/index.html#kotlin">Kotlin</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#define-a-model-class">Define a model class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#retrieve-a-model-object">Retrieve a model object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#retrieve-a-relational-object">Retrieve a relational object</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../backend-refs/index.html">Backend API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../backend-refs/index.html#models">Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../backend-refs/index.html#serialiazable">Serialiazable</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Client Libraries Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#model">Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#required-fields">Required fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#optional-fields">Optional fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#custom-fields">Custom fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#collectionmanager-t">CollectionManager&lt;T&gt;</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#constructor">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#page-query-pagination">.page(query, pagination)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#get-query">.get(query)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#create-data">.create(data)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#get-or-create-query-defaults">.get_or_create(query, defaults)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#update-or-create-query-defaults">.update_or_create(query, defaults)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#objectmanager-t">ObjectManager&lt;T&gt;</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id2">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#refresh">.refresh()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#save">.save()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#update">.update()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#delete">.delete()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#relatedcollectionmanager-t-p">RelatedCollectionManager&lt;T, P&gt;</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id3">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id4">.page(query, pagination)</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../doc-for-doc.html">Modify this documentation</a></li>
 </ul>
 
@@ -112,7 +174,7 @@
 
       <div class="wy-nav-content">
         
-        <div class="rst-content">
+        <div class="rst-content style-external-links">
         
           
 
@@ -138,7 +200,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>ObjectManager&lt;T: `Model`_&gt;</li>
+      <li>ObjectManager&lt;T&gt;</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -157,38 +219,41 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="objectmanager-t-model">
-<span id="objectmanager"></span><h1>ObjectManager&lt;T: <a href="#id1"><span class="problematic" id="id2">`Model`_</span></a>&gt;<a class="headerlink" href="#objectmanager-t-model" title="Permalink to this headline">¶</a></h1>
-<p>A generic class where <code class="docutils literal notranslate"><span class="pre">T</span></code> is constrained by <span class="xref std std-ref">Model</span>. This class provides the
+  <div class="section" id="objectmanager-t">
+<span id="objectmanager"></span><h1>ObjectManager&lt;T&gt;<a class="headerlink" href="#objectmanager-t" title="Permalink to this headline">¶</a></h1>
+<p>A generic class where <code class="docutils literal notranslate"><span class="pre">T</span></code> is constrained by <a class="reference internal" href="index.html#model"><span class="std std-ref">Model</span></a>. This class provides the
 ability to modify an model object. When constructing an <code class="docutils literal notranslate"><span class="pre">ObjectManager</span></code>
 instance, an model object is passed into the <code class="docutils literal notranslate"><span class="pre">ObjectManager</span></code> class
 constructor. Any field that’s available on the model objects becomes available
 on the <code class="docutils literal notranslate"><span class="pre">ObjectManager</span></code> object. In addition, the <code class="docutils literal notranslate"><span class="pre">ObjectManager</span></code> object
 provides methods that are used to modify the wrapped model object, and save the
 changes to the backend.</p>
-<div class="section" id="consturctor">
-<h2>Consturctor<a class="headerlink" href="#consturctor" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="constructor">
+<h2>Constructor<a class="headerlink" href="#constructor" title="Permalink to this headline">¶</a></h2>
 <p>Pass the model object into the <code class="docutils literal notranslate"><span class="pre">ObjectManager</span></code> constructor.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Most of time, you should use the <code class="docutils literal notranslate"><span class="pre">ObjectManager</span></code> returned by
-<a href="#id3"><span class="problematic" id="id4">`CollectionManager.page(...)`_</span></a> or <a href="#id5"><span class="problematic" id="id6">`CollectionManager.get(...)`_</span></a>, instead of
+<a href="#id1"><span class="problematic" id="id2">`CollectionManager.page(...)`_</span></a> or <a href="#id3"><span class="problematic" id="id4">`CollectionManager.get(...)`_</span></a>, instead of
 creating one yourself.</p>
 </div>
-<div class="section" id="example">
-<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p><strong>Example</strong></p>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-0-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-0-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-0-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">product_model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Product</span><span class="p">()</span>
 <span class="kd">let</span> <span class="nx">product</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ObjectManagerImpl</span><span class="p">(</span><span class="nx">product_model</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Due to a limitation of TypeScript, the constructor is named
+<code class="docutils literal notranslate"><span class="pre">ObjectManagerImpl</span></code> instead of <code class="docutils literal notranslate"><span class="pre">ObjectManager</span></code>, which is a type
+alias.</p>
 </div>
+<p><strong>Methods</strong></p>
 </div>
-<div class="section" id="methods">
-<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="refresh">
-<h3>.refresh()<a class="headerlink" href="#refresh" title="Permalink to this headline">¶</a></h3>
+<h2>.refresh()<a class="headerlink" href="#refresh" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Pulls data from the server and updates the local data.
 It sends a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request to the server.</p>
@@ -203,7 +268,7 @@ It sends a <code class="docutils literal notranslate"><span class="pre">GET</spa
 </div></blockquote>
 </div>
 <div class="section" id="save">
-<h3>.save()<a class="headerlink" href="#save" title="Permalink to this headline">¶</a></h3>
+<h2>.save()<a class="headerlink" href="#save" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Updates the server with properties that have been changed on the object. It
 sends a <code class="docutils literal notranslate"><span class="pre">PATCH</span></code> request to the server.</p>
@@ -220,7 +285,7 @@ sends a <code class="docutils literal notranslate"><span class="pre">PATCH</span
 </div></blockquote>
 </div>
 <div class="section" id="update">
-<h3>.update()<a class="headerlink" href="#update" title="Permalink to this headline">¶</a></h3>
+<h2>.update()<a class="headerlink" href="#update" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Updates the server with a dictionary, and also saves the changes locally. If
 the dictionary contains a key that is not a property name, the method throws
@@ -238,7 +303,7 @@ an error. It sends a <code class="docutils literal notranslate"><span class="pre
 </div></blockquote>
 </div>
 <div class="section" id="delete">
-<h3>.delete()<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h3>
+<h2>.delete()<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Removes the data from the server. It sends a DELETE request to the server.</p>
 <div class="sphinx-tabs docutils container">
@@ -249,7 +314,6 @@ an error. It sends a <code class="docutils literal notranslate"><span class="pre
 </div>
 </div></div>
 </div></blockquote>
-</div>
 </div>
 </div>
 
