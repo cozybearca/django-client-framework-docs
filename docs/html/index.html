@@ -40,7 +40,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Django Client Framework Introduction" href="doc-for-dcf.html" /> 
+    <link rel="next" title="Introduction to the Framework" href="intro/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,8 +86,9 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="doc-for-dcf.html">Django Client Framework Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend-refs/index.html">Django Client Framework Backend API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro/index.html">Introduction to the Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend-refs/index.html">Backend API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-refs/index.html">Client Libraries Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="doc-for-doc.html">Modify this documentation</a></li>
 </ul>
 
@@ -160,34 +161,71 @@
 <h1>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="doc-for-dcf.html">Django Client Framework Introduction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="doc-for-dcf.html#an-overview-of-the-framework">An Overview of the Framework</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doc-for-dcf.html#getting-starting-with-django-backend">Getting Starting with Django Backend</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="doc-for-dcf.html#installation-with-pip3-git">Installation with pip3+git</a></li>
-<li class="toctree-l3"><a class="reference internal" href="doc-for-dcf.html#configure-django-s-settings-py-file">Configure Django’s settings.py file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="doc-for-dcf.html#add-routing-handlers-to-urls-py">Add routing handlers to urls.py</a></li>
-<li class="toctree-l3"><a class="reference internal" href="doc-for-dcf.html#add-a-serializable-model">Add a Serializable model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="doc-for-dcf.html#make-an-accesscontrolled-model">Make an AccessControlled model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="doc-for-dcf.html#query-objects-via-http-requests">Query objects via HTTP requests</a></li>
-<li class="toctree-l3"><a class="reference internal" href="doc-for-dcf.html#query-relational-objects-via-http">Query relational objects via HTTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro/index.html">Introduction to the Framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro/index.html#an-overview-of-the-framework">An Overview of the Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro/index.html#getting-started-with-the-backend">Getting Started with the Backend</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#installation-with-pip3-git">Installation with pip3+git</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#configure-django-s-settings-py-file">Configure Django’s settings.py file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#add-routing-handlers-to-urls-py">Add routing handlers to <code class="docutils literal notranslate"><span class="pre">urls.py</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#add-a-serializable-model">Add a Serializable model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#make-an-accesscontrolled-model">Make an AccessControlled model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#query-objects-via-http-requests">Query objects via HTTP requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#query-relational-objects-via-http">Query relational objects via HTTP</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="doc-for-dcf.html#getting-starting-with-client-libraries">Getting Starting with Client Libraries</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="doc-for-dcf.html#install-client-libraries">Install client libraries</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="doc-for-dcf.html#typescript">TypeScript</a></li>
-<li class="toctree-l4"><a class="reference internal" href="doc-for-dcf.html#swift">Swift</a></li>
-<li class="toctree-l4"><a class="reference internal" href="doc-for-dcf.html#kotlin">Kotlin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro/index.html#getting-starting-with-client-libraries">Getting Starting with Client Libraries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#install-client-libraries">Install client libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="intro/index.html#typescript">TypeScript</a></li>
+<li class="toctree-l4"><a class="reference internal" href="intro/index.html#swift">Swift</a></li>
+<li class="toctree-l4"><a class="reference internal" href="intro/index.html#kotlin">Kotlin</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="doc-for-dcf.html#define-a-model-class">Define a model class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="doc-for-dcf.html#retrieve-a-model-instance">Retrieve a model instance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#define-a-model-class">Define a model class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#retrieve-a-model-object">Retrieve a model object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#retrieve-a-relational-object">Retrieve a relational object</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="backend-refs/index.html">Django Client Framework Backend API Reference</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="backend-refs/index.html">Backend API Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="backend-refs/index.html#models">Models</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="backend-refs/index.html#serialiazable">Serialiazable</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client-refs/index.html">Client Libraries Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="client-refs/index.html#model">Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="client-refs/index.html#subclassing">Subclassing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="client-refs/index.html#required-fields">Required fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="client-refs/index.html#optional-fields">Optional fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="client-refs/index.html#custom-fields">Custom fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="client-refs/index.html#example">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="client-refs/index.html#collectionmanager-t-model">CollectionManager&lt;T: Model&gt;</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="client-refs/index.html#consturctor">Consturctor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client-refs/index.html#methods">Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="client-refs/index.html#page-query-pagination">.page(query, pagination)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="client-refs/index.html#get-query">.get(query)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="client-refs/index.html#objectmanager-t-model">ObjectManager&lt;T: Model&gt;</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="client-refs/index.html#id1">Consturctor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="client-refs/index.html#id2">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="client-refs/index.html#id3">Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="client-refs/index.html#refresh">.refresh()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="client-refs/index.html#save">.save()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="client-refs/index.html#update">.update()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="client-refs/index.html#delete">.delete()</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -203,7 +241,7 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="doc-for-dcf.html" class="btn btn-neutral float-right" title="Django Client Framework Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="intro/index.html" class="btn btn-neutral float-right" title="Introduction to the Framework" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

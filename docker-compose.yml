@@ -4,5 +4,16 @@ services:
     build: .
     entrypoint: make
     volumes:
-      - ./source:/doc-builder/source:ro
-      - ./docs:/doc-builder/docs # output
+      - ./typedoc.json:/typedoc.json:ro
+      - ./Makefile:/Makefile:ro
+      - ./libs:/libs:ro
+      - ./source:/source:ro
+      - ./docs:/docs # output
+
+  server:
+    build: .
+    entrypoint: nginx -g "daemon off;"
+    volumes:
+      - ./docs:/docs:ro
+    ports:
+      - "12800:80"

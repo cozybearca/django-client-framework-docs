@@ -2,6 +2,8 @@ Table of Contents
 #################
 
 .. toctree::
-    doc-for-dcf
+
+    intro/index
     backend-refs/index
+    client-refs/index
     doc-for-doc
