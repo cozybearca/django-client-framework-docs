@@ -4,8 +4,8 @@ RelatedCollectionManager<T, P>
 ==============================
 
 A generic class where ``T`` and ``P`` are constrained by `Model`_. This class
-provides the ability access and modify object relations, for example, two object
-related by a foreign key column.
+provides the ability access and modify many-to-one or many-to-many object
+relations.
 
 Constructor
 -----------

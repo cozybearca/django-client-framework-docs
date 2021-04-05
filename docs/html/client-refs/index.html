@@ -158,6 +158,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#remove-objs">.remove(objs)</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#relatedobjectmanager-t-p">RelatedObjectManager&lt;T, P&gt;</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get">.get()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-target">.set(target?)</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../doc-for-doc.html">Modify this documentation</a></li>
@@ -572,8 +578,8 @@ an error. It sends a <code class="docutils literal notranslate"><span class="pre
 <div class="section" id="relatedcollectionmanager-t-p">
 <span id="relatedcollectionmanager"></span><h2>RelatedCollectionManager&lt;T, P&gt;<a class="headerlink" href="#relatedcollectionmanager-t-p" title="Permalink to this headline">¶</a></h2>
 <p>A generic class where <code class="docutils literal notranslate"><span class="pre">T</span></code> and <code class="docutils literal notranslate"><span class="pre">P</span></code> are constrained by <a class="reference internal" href="#model">Model</a>. This class
-provides the ability access and modify object relations, for example, two object
-related by a foreign key column.</p>
+provides the ability access and modify many-to-one or many-to-many object
+relations.</p>
 <div class="section" id="id3">
 <h3>Constructor<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>Implementation varies. Most commonly, three values are passed into the constructor:</p>
@@ -723,6 +729,81 @@ the server.</p>
 collection.</p>
 </dd>
 </dl>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="relatedobjectmanager-t-p">
+<span id="relatedobjectmanager"></span><h2>RelatedObjectManager&lt;T, P&gt;<a class="headerlink" href="#relatedobjectmanager-t-p" title="Permalink to this headline">¶</a></h2>
+<p>A generic class where <code class="docutils literal notranslate"><span class="pre">T</span></code> and <code class="docutils literal notranslate"><span class="pre">P</span></code> are constrained by <a class="reference internal" href="#model">Model</a>. This class
+provides the ability access and modify one-to-one relations between two object.</p>
+<div class="section" id="id5">
+<h3>Constructor<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Implementation varies. Most commonly, three values are passed into the constructor:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>The constructor of <code class="docutils literal notranslate"><span class="pre">T</span></code>, the model to be retrieved via the manager.</p></li>
+<li><p>The manager’s parent object of type <code class="docutils literal notranslate"><span class="pre">P</span></code>. Usually, this is the <code class="docutils literal notranslate"><span class="pre">this</span></code> keyword.</p></li>
+<li><p>The property’s name on the model.</p></li>
+</ol>
+</div></blockquote>
+<p>For instance, for the <cite>Product</cite> and <cite>Brand</cite> relation, a product is owned by one brand. In
+this case:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>The constructor of <code class="docutils literal notranslate"><span class="pre">T</span></code> is <code class="docutils literal notranslate"><span class="pre">Brand</span></code>.</p></li>
+<li><p>The <cite>parent</cite> is the product object.</p></li>
+<li><p>Finally, the property’s name on <code class="docutils literal notranslate"><span class="pre">Product</span></code> is <code class="docutils literal notranslate"><span class="pre">brand</span></code>.</p></li>
+</ol>
+</div></blockquote>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-16-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-16-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-16-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-16-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">Brand</span> <span class="k">extends</span> <span class="nx">Model</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">Product</span> <span class="k">extends</span> <span class="nx">Model</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="nx">get</span> <span class="nx">brand</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">new</span> <span class="nx">RelatedObjectManager</span><span class="p">(</span><span class="nx">Brand</span><span class="p">,</span> <span class="k">this</span><span class="p">,</span> <span class="s2">&quot;brand&quot;</span><span class="p">)</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></div>
+</div>
+<div class="section" id="get">
+<h3>.get()<a class="headerlink" href="#get" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="simple">
+<dt>Returns</dt><dd><p>An <a class="reference internal" href="#objectmanager">ObjectManager</a> wrapping the object that’s related to the parent. It
+sends a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request to the server.</p>
+</dd>
+</dl>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-17-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-17-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-17-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-17-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">product</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Product</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">...</span> <span class="c1">// assumes id is 1</span>
+<span class="kd">let</span> <span class="nx">brand</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Brand</span><span class="o">&gt;</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">product</span><span class="p">.</span><span class="nx">brand</span><span class="p">.</span><span class="nx">get</span><span class="p">()</span>
+<span class="c1">// GET /product/1/brand</span>
+</pre></div>
+</div>
+</div></div>
+</div></blockquote>
+</div>
+<div class="section" id="set-target">
+<h3>.set(target?)<a class="headerlink" href="#set-target" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Sets the object related to the parent object. This is an alternative to
+setting the foreign id directly on the parent. It sends a <code class="docutils literal notranslate"><span class="pre">PUT</span></code> request to
+the server.</p>
+<dl class="simple">
+<dt>target</dt><dd><p>An <a class="reference internal" href="#objectmanager">ObjectManager</a> wrapping the object that’s set to be related to the
+parent.</p>
+</dd>
+</dl>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-18-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-18-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-18-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-18-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">product</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Product</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">...</span> <span class="c1">// assumes id is 1</span>
+<span class="kd">let</span> <span class="nx">brand</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Brand</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">...</span> <span class="c1">// assumes id is 1</span>
+<span class="nx">product</span><span class="p">.</span><span class="nx">brand</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">brand</span><span class="p">)</span>
+<span class="c1">// PUT /product/1/brand [1]</span>
+</pre></div>
+</div>
+</div></div>
 </div></blockquote>
 </div>
 </div>

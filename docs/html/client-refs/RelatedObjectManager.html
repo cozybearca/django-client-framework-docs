@@ -1,0 +1,355 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>RelatedObjectManager&lt;T, P&gt; &mdash; Django Client Framework  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/tabs.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Django Client Framework
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introduction to the Framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/index.html#an-overview-of-the-framework">An Overview of the Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/index.html#getting-started-with-the-backend">Getting Started with the Backend</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#installation-with-pip3-git">Installation with pip3+git</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#configure-django-s-settings-py-file">Configure Django’s settings.py file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#add-routing-handlers-to-urls-py">Add routing handlers to <code class="docutils literal notranslate"><span class="pre">urls.py</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#add-a-serializable-model">Add a Serializable model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#make-an-accesscontrolled-model">Make an AccessControlled model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#query-objects-via-http-requests">Query objects via HTTP requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#query-relational-objects-via-http">Query relational objects via HTTP</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/index.html#getting-starting-with-client-libraries">Getting Starting with Client Libraries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#install-client-libraries">Install client libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../intro/index.html#typescript">TypeScript</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../intro/index.html#swift">Swift</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../intro/index.html#kotlin">Kotlin</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#define-a-model-class">Define a model class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#retrieve-a-model-object">Retrieve a model object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#retrieve-a-relational-object">Retrieve a relational object</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../backend-refs/index.html">Backend API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../backend-refs/index.html#models">Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../backend-refs/index.html#serialiazable">Serialiazable</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Client Libraries Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#model">Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#required-fields">Required fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#optional-fields">Optional fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#custom-fields">Custom fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#collectionmanager-t">CollectionManager&lt;T&gt;</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#constructor">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#page-query-pagination">.page(query, pagination)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#get-query">.get(query)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#create-data">.create(data)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#get-or-create-query-defaults">.get_or_create(query, defaults)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#update-or-create-query-defaults">.update_or_create(query, defaults)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#objectmanager-t">ObjectManager&lt;T&gt;</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id2">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#refresh">.refresh()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#save">.save()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#update">.update()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#delete">.delete()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#relatedcollectionmanager-t-p">RelatedCollectionManager&lt;T, P&gt;</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id3">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#relatedcollectionmanager-page">.page(query, pagination)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#get-query-pagination">.get(query, pagination)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#add-ids-ids">.add_ids(ids)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#set-ids-ids">.set_ids(ids)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#remove-ids-ids">.remove_ids(ids)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#add-objs">.add(objs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#set-objs">.set(objs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#remove-objs">.remove(objs)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#relatedobjectmanager-t-p">RelatedObjectManager&lt;T, P&gt;</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id5">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#get">.get()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#set-target">.set(target?)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../doc-for-doc.html">Modify this documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Django Client Framework</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>RelatedObjectManager&lt;T, P&gt;</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/client-refs/RelatedObjectManager.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="relatedobjectmanager-t-p">
+<span id="relatedobjectmanager"></span><h1>RelatedObjectManager&lt;T, P&gt;<a class="headerlink" href="#relatedobjectmanager-t-p" title="Permalink to this headline">¶</a></h1>
+<p>A generic class where <code class="docutils literal notranslate"><span class="pre">T</span></code> and <code class="docutils literal notranslate"><span class="pre">P</span></code> are constrained by <a href="#id1"><span class="problematic" id="id2">`Model`_</span></a>. This class
+provides the ability access and modify one-to-one relations between two object.</p>
+<div class="section" id="constructor">
+<h2>Constructor<a class="headerlink" href="#constructor" title="Permalink to this headline">¶</a></h2>
+<p>Implementation varies. Most commonly, three values are passed into the constructor:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>The constructor of <code class="docutils literal notranslate"><span class="pre">T</span></code>, the model to be retrieved via the manager.</p></li>
+<li><p>The manager’s parent object of type <code class="docutils literal notranslate"><span class="pre">P</span></code>. Usually, this is the <code class="docutils literal notranslate"><span class="pre">this</span></code> keyword.</p></li>
+<li><p>The property’s name on the model.</p></li>
+</ol>
+</div></blockquote>
+<p>For instance, for the <cite>Product</cite> and <cite>Brand</cite> relation, a product is owned by one brand. In
+this case:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>The constructor of <code class="docutils literal notranslate"><span class="pre">T</span></code> is <code class="docutils literal notranslate"><span class="pre">Brand</span></code>.</p></li>
+<li><p>The <cite>parent</cite> is the product object.</p></li>
+<li><p>Finally, the property’s name on <code class="docutils literal notranslate"><span class="pre">Product</span></code> is <code class="docutils literal notranslate"><span class="pre">brand</span></code>.</p></li>
+</ol>
+</div></blockquote>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-0-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-0-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-0-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">Brand</span> <span class="k">extends</span> <span class="nx">Model</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">Product</span> <span class="k">extends</span> <span class="nx">Model</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="nx">get</span> <span class="nx">brand</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">new</span> <span class="nx">RelatedObjectManager</span><span class="p">(</span><span class="nx">Brand</span><span class="p">,</span> <span class="k">this</span><span class="p">,</span> <span class="s2">&quot;brand&quot;</span><span class="p">)</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></div>
+</div>
+<div class="section" id="get">
+<h2>.get()<a class="headerlink" href="#get" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="simple">
+<dt>Returns</dt><dd><p>An <a href="#id3"><span class="problematic" id="id4">`ObjectManager`_</span></a> wrapping the object that’s related to the parent. It
+sends a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request to the server.</p>
+</dd>
+</dl>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-1-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-1-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-1-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">product</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Product</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">...</span> <span class="c1">// assumes id is 1</span>
+<span class="kd">let</span> <span class="nx">brand</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Brand</span><span class="o">&gt;</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">product</span><span class="p">.</span><span class="nx">brand</span><span class="p">.</span><span class="nx">get</span><span class="p">()</span>
+<span class="c1">// GET /product/1/brand</span>
+</pre></div>
+</div>
+</div></div>
+</div></blockquote>
+</div>
+<div class="section" id="set-target">
+<h2>.set(target?)<a class="headerlink" href="#set-target" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Sets the object related to the parent object. This is an alternative to
+setting the foreign id directly on the parent. It sends a <code class="docutils literal notranslate"><span class="pre">PUT</span></code> request to
+the server.</p>
+<dl class="simple">
+<dt>target</dt><dd><p>An <a href="#id5"><span class="problematic" id="id6">`ObjectManager`_</span></a> wrapping the object that’s set to be related to the
+parent.</p>
+</dd>
+</dl>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-2-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-2-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-2-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">product</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Product</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">...</span> <span class="c1">// assumes id is 1</span>
+<span class="kd">let</span> <span class="nx">brand</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Brand</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">...</span> <span class="c1">// assumes id is 1</span>
+<span class="nx">product</span><span class="p">.</span><span class="nx">brand</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">brand</span><span class="p">)</span>
+<span class="c1">// PUT /product/1/brand [1]</span>
+</pre></div>
+</div>
+</div></div>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Yu.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

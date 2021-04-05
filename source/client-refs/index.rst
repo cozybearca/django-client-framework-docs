@@ -5,3 +5,4 @@ Client Libraries Reference
 .. include:: CollectionManager.rst
 .. include:: ObjectManager.rst
 .. include:: RelatedCollectionManager.rst
+.. include:: RelatedObjectManager.rst
