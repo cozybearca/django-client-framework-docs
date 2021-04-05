@@ -3,23 +3,23 @@
 ObjectManager<T>
 ================
 
-A generic class where ``T`` is constrained by :ref:`Model`. This class provides the
-ability to modify an model object. When constructing an ``ObjectManager``
-instance, an model object is passed into the ``ObjectManager`` class
-constructor. Any field that's available on the model objects becomes available
-on the ``ObjectManager`` object. In addition, the ``ObjectManager`` object
-provides methods that are used to modify the wrapped model object, and save the
-changes to the backend.
+A generic class where ``T`` is constrained by :ref:`Model`. This class provides
+the ability to modify an model object. When constructing an `ObjectManager`_
+instance, an model object is passed into the `ObjectManager`_ class constructor.
+Any field that's available on the model objects becomes available on the
+`ObjectManager`_ object. In addition, the `ObjectManager`_ object provides
+methods that are used to modify the wrapped model object, and save the changes
+to the backend.
 
 
 Constructor
 -----------
 
-Pass the model object into the ``ObjectManager`` constructor.
+Pass the model object into the `ObjectManager`_ constructor.
 
 .. warning::
 
-    Most of time, you should use the ``ObjectManager`` returned by
+    Most of time, you should use the `ObjectManager`_ returned by
     `CollectionManager.page(...)`_ or `CollectionManager.get(...)`_, instead of
     creating one yourself.
 
@@ -36,7 +36,7 @@ Pass the model object into the ``ObjectManager`` constructor.
 .. warning::
 
     Due to a limitation of TypeScript, the constructor is named
-    ``ObjectManagerImpl`` instead of ``ObjectManager``, which is a type
+    ``ObjectManagerImpl`` instead of `ObjectManager`_, which is a type
     alias.
 
 
@@ -58,6 +58,8 @@ Pass the model object into the ``ObjectManager`` constructor.
             await product.refresh() // resets product barcode
 
 
+.. _ObjectManager.save():
+
 .save()
 -------
 
@@ -75,12 +77,21 @@ Pass the model object into the ``ObjectManager`` constructor.
             // PATCH /product/1 {"barcode": "xxyy", "price": null, "brand_id": 2}
             await product.save()
 
-.update()
----------
 
-    Updates the server with a dictionary, and also saves the changes locally. If
-    the dictionary contains a key that is not a property name, the method throws
-    an error. It sends a ``PATCH`` request to the server.
+.. _ObjectManager.update(...):
+
+.update(data)
+-------------
+
+    Updates the server with a dictionary, and also saves the changes locally. It
+    sends a ``PATCH`` request to the server.
+
+
+.. only:: internal
+
+    .. seealso::
+
+        `The Design Decision for Type-safety`_.
 
     .. tabs::
 

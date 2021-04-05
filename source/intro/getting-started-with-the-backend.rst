@@ -93,7 +93,8 @@ An example of the ``settings.py`` file is as follows:
 Add routing handlers to ``urls.py``
 -----------------------------------
 
-Next, add Django Client Framework's API route handlers to app's ``urls.py`` file:
+Next, append Django Client Framework's API route handlers to your app's
+``urls.py`` file:
 
 .. seealso::
 
@@ -103,12 +104,14 @@ Next, add Django Client Framework's API route handlers to app's ``urls.py`` file
 
 .. code-block:: py
 
+    from django.urls import path, include
     import django_client_framework.api.urls
 
-    app_name = "api_v1"
+    app_name = "myapp"
 
-    urlpatterns = django_client_framework.api.urls.urlpatterns + [
+    urlpatterns = [
         ... # other routes
+        path("", include(django_client_framework.api.urls))
     ]
 
 

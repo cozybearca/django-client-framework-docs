@@ -58,4 +58,5 @@ html_css_files = ["custom.css"]
 extlinks = {
     "ts-class": ("/ts/classes/%s", ""),
     "django": ("https://docs.djangoproject.com/en/3.1/ref/%s", ""),
+    "drf": ("https://www.django-rest-framework.org/api-guide/%s", ""),
 }

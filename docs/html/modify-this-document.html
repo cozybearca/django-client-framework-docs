@@ -1,0 +1,316 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Modify this documentation &mdash; Django Client Framework  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Client Libraries Reference" href="client-refs/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Django Client Framework
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro/index.html">Introduction to the Framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro/index.html#an-overview-of-the-framework">An Overview of the Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro/index.html#getting-started-with-the-backend">Getting Started with the Backend</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#installation-with-pip3-git">Installation with pip3+git</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#configure-django-s-settings-py-file">Configure Django’s settings.py file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#add-routing-handlers-to-urls-py">Add routing handlers to <code class="docutils literal notranslate"><span class="pre">urls.py</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#add-a-serializable-model">Add a Serializable model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#make-an-accesscontrolled-model">Make an AccessControlled model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#query-objects-via-http-requests">Query objects via HTTP requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#query-relational-objects-via-http">Query relational objects via HTTP</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="intro/index.html#getting-starting-with-client-libraries">Getting Starting with Client Libraries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#install-client-libraries">Install client libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="intro/index.html#typescript">TypeScript</a></li>
+<li class="toctree-l4"><a class="reference internal" href="intro/index.html#swift">Swift</a></li>
+<li class="toctree-l4"><a class="reference internal" href="intro/index.html#kotlin">Kotlin</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#define-a-model-class">Define a model class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#retrieve-a-model-object">Retrieve a model object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#retrieve-a-relational-object">Retrieve a relational object</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="backend-refs/index.html">Backend API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="backend-refs/index.html#models-module">models module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backend-refs/index.html#serializable">Serializable</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend-refs/index.html#inheritance">Inheritance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend-refs/index.html#serializer-class-cls">.serializer_class(cls)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend-refs/index.html#serializer">.serializer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend-refs/index.html#get-serialization-cache-timeout">.get_serialization_cache_timeout()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backend-refs/index.html#api-module">api module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backend-refs/index.html#urls-py">urls.py</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backend-refs/index.html#serializers-module">serializers module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backend-refs/index.html#id1">Serializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend-refs/index.html#modelserializer">ModelSerializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend-refs/index.html#delegateserializer">DelegateSerializer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client-refs/index.html">Client Libraries Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="client-refs/index.html#model">Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="client-refs/index.html#inheritance">Inheritance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="client-refs/index.html#collectionmanager-t">CollectionManager&lt;T&gt;</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="client-refs/index.html#constructor">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client-refs/index.html#page-query-pagination">.page(query, pagination)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client-refs/index.html#get-query">.get(query)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client-refs/index.html#create-data">.create(data)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client-refs/index.html#get-or-create-query-defaults">.get_or_create(query, defaults)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client-refs/index.html#update-or-create-query-defaults">.update_or_create(query, defaults)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="client-refs/index.html#objectmanager-t">ObjectManager&lt;T&gt;</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="client-refs/index.html#id2">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client-refs/index.html#refresh">.refresh()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client-refs/index.html#save">.save()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client-refs/index.html#update-data">.update(data)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client-refs/index.html#delete">.delete()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="client-refs/index.html#relatedcollectionmanager-t-p">RelatedCollectionManager&lt;T, P&gt;</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="client-refs/index.html#id3">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client-refs/index.html#relatedcollectionmanager-page">.page(query, pagination)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client-refs/index.html#get-query-pagination">.get(query, pagination)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client-refs/index.html#add-ids-ids">.add_ids(ids)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client-refs/index.html#set-ids-ids">.set_ids(ids)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client-refs/index.html#remove-ids-ids">.remove_ids(ids)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client-refs/index.html#add-objs">.add(objs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client-refs/index.html#set-objs">.set(objs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client-refs/index.html#remove-objs">.remove(objs)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="client-refs/index.html#relatedobjectmanager-t-p">RelatedObjectManager&lt;T, P&gt;</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="client-refs/index.html#id5">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client-refs/index.html#get">.get()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client-refs/index.html#set-target">.set(target?)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="client-refs/index.html#the-design-decision-for-api-type-safety">The design decision for API type-safety</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Modify this documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Django Client Framework</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Modify this documentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/modify-this-document.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="modify-this-documentation">
+<h1>Modify this documentation<a class="headerlink" href="#modify-this-documentation" title="Permalink to this headline">¶</a></h1>
+<p>This documentation is made
+with Sphinx. The syntax used to compose this documentation is called
+reStructuredText (RST). For a convenient documentation visit
+<a class="reference external" href="https://sphinx-tutorial.readthedocs.io/step-1/">https://sphinx-tutorial.readthedocs.io/step-1/</a>.</p>
+<p>THe doc requires some dependencies to compile. If you have docker, it is much
+easier.</p>
+<p>With docker, you can launch a local server by running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker-compose build
+docker-compose up server
+</pre></div>
+</div>
+<p>Then visit <code class="docutils literal notranslate"><span class="pre">http://localhost:12800</span></code> for the documentation.</p>
+<p>To compile the documentation, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker-compose run make html
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="client-refs/index.html" class="btn btn-neutral float-left" title="Client Libraries Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Yu.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -114,18 +114,31 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Backend API Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#models">Models</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#serialiazable">Serialiazable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#models-module">models module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#serializable">Serializable</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#inheritance">Inheritance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#serializer-class-cls">.serializer_class(cls)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#serializer">.serializer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-serialization-cache-timeout">.get_serialization_cache_timeout()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#api-module">api module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#urls-py">urls.py</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#serializers-module">serializers module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Serializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modelserializer">ModelSerializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delegateserializer">DelegateSerializer</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../client-refs/index.html">Client Libraries Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../client-refs/index.html#model">Model</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#required-fields">Required fields</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#optional-fields">Optional fields</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#custom-fields">Custom fields</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#example">Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#inheritance">Inheritance</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../client-refs/index.html#collectionmanager-t">CollectionManager&lt;T&gt;</a><ul>
@@ -141,18 +154,32 @@
 <li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#id2">Constructor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#refresh">.refresh()</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#save">.save()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#update">.update()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#update-data">.update(data)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#delete">.delete()</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../client-refs/index.html#relatedcollectionmanager-t-p">RelatedCollectionManager&lt;T, P&gt;</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#id3">Constructor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#id4">.page(query, pagination)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#relatedcollectionmanager-page">.page(query, pagination)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#get-query-pagination">.get(query, pagination)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#add-ids-ids">.add_ids(ids)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#set-ids-ids">.set_ids(ids)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#remove-ids-ids">.remove_ids(ids)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#add-objs">.add(objs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#set-objs">.set(objs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#remove-objs">.remove(objs)</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../client-refs/index.html#relatedobjectmanager-t-p">RelatedObjectManager&lt;T, P&gt;</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#id5">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#get">.get()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-refs/index.html#set-target">.set(target?)</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../doc-for-doc.html">Modify this documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client-refs/index.html#the-design-decision-for-api-type-safety">The design decision for API type-safety</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../modify-this-document.html">Modify this documentation</a></li>
 </ul>
 
             
@@ -222,10 +249,112 @@
             
   <div class="section" id="backend-api-reference">
 <h1>Backend API Reference<a class="headerlink" href="#backend-api-reference" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="models">
-<h2>Models<a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="serialiazable">
-<h3>Serialiazable<a class="headerlink" href="#serialiazable" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="models-module">
+<h2>models module<a class="headerlink" href="#models-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="serializable">
+<h3>Serializable<a class="headerlink" href="#serializable" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django_client_framework.models</span> <span class="kn">import</span> <span class="n">Serializable</span>
+</pre></div>
+</div>
+<p>This abstract model class provides caches for serialization.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Any <a class="reference internal" href="../client-refs/index.html#model"><span class="std std-ref">Model</span></a> to be registered as an API must inherit this class.</p>
+</div>
+<div class="section" id="inheritance">
+<h4>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline">¶</a></h4>
+<p>Subclasses of <a class="reference internal" href="#serializable">Serializable</a> must override <code class="docutils literal notranslate"><span class="pre">.serializer_class(cls)</span></code> which
+returns a <a class="reference internal" href="#id1">Serializer</a> class.</p>
+</div>
+<div class="section" id="serializer-class-cls">
+<span id="serializable-serializer-class"></span><h4>.serializer_class(cls)<a class="headerlink" href="#serializer-class-cls" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p><cite>required</cite>, <cite>classmethod</cite></p>
+<dl class="simple">
+<dt>Returns</dt><dd><p>The <a class="reference internal" href="#id1">Serializer</a> class for the model.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="serializer">
+<span id="serializable-serializer"></span><h4>.serializer<a class="headerlink" href="#serializer" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><dl class="simple">
+<dt>Property</dt><dd><p>An instance of the <a class="reference internal" href="#id1">Serializer</a> class returned by
+<a class="reference internal" href="#serializable-serializer-class">Serializable.serializer_class()</a>.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="get-serialization-cache-timeout">
+<span id="serializable-get-serialization-cache-timeout"></span><h4>.get_serialization_cache_timeout()<a class="headerlink" href="#get-serialization-cache-timeout" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><dl class="simple">
+<dt>Returns</dt><dd><p>How long to cache the seriali</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+</div>
+</div>
+<div class="section" id="api-module">
+<h2>api module<a class="headerlink" href="#api-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="urls-py">
+<h3>urls.py<a class="headerlink" href="#urls-py" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">django_client_framework.api.urls</span>
+</pre></div>
+</div>
+<p>This module defines a global constant <code class="docutils literal notranslate"><span class="pre">urlpatterns</span></code>.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>urlpatterns</dt><dd><p>This global constant contains the routing handlers for models’ RESTful APIs. You
+can include <code class="docutils literal notranslate"><span class="pre">django_client_framework.api.urls</span></code> to your custom <code class="docutils literal notranslate"><span class="pre">urlpatterns</span></code>
+in any <code class="docutils literal notranslate"><span class="pre">urls.py</span></code> file. Then the handlers will become available with your
+custom prefix.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Example</strong></p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">django_client_framework.api.urls</span>
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span><span class="p">,</span> <span class="n">include</span>
+
+<span class="n">app_name</span> <span class="o">=</span> <span class="s2">&quot;myapp&quot;</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;login&quot;</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">PasswordLogin</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;passwd_login&quot;</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;logout&quot;</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">Logout</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;logout&quot;</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="n">django_client_framework</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">urls</span><span class="p">)),</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="serializers-module">
+<h2>serializers module<a class="headerlink" href="#serializers-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Serializer<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>An abstract base class of <a class="reference internal" href="#modelserializer">ModelSerializer</a> and <a class="reference internal" href="#delegateserializer">DelegateSerializer</a>.</p>
+</div>
+<div class="section" id="modelserializer">
+<h3>ModelSerializer<a class="headerlink" href="#modelserializer" title="Permalink to this headline">¶</a></h3>
+<p>This class is agnostic to <a class="reference external" href="https://www.django-rest-framework.org/api-guide/serializers/#modelserializer">Django Rest Framework (DRF)’s ModelSerializer</a>. The usage is exactly the same as DRF.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You should always use this class over the DRF’s version, otherwise things
+will not work properly!</p>
+</div>
+<p><strong>Example</strong></p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django_client_framework.serializers</span> <span class="kn">import</span> <span class="n">ModelSerializer</span>
+
+<span class="k">class</span> <span class="nc">ProductSerializer</span><span class="p">(</span><span class="n">ModelSerializer</span><span class="p">):</span>
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">Product</span>
+        <span class="n">exclude</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="delegateserializer">
+<h3>DelegateSerializer<a class="headerlink" href="#delegateserializer" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 </div>

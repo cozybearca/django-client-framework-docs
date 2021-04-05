@@ -1,0 +1,21 @@
+Serializable
+============
+
+.. code-block:: py
+
+    from django_client_framework.models import Serializable
+
+This abstract model class provides caches for serialization.
+
+.. note::
+
+    Any :ref:`Model` to be registered as an API must inherit this class.
+
+Inheritance
+-----------
+
+Subclasses of `Serializable`_ must override ``.serializer_class(cls)`` which
+returns a `Serializer`_ class.
+
+`classmethod` .serializer_class(cls) `(required)`
+    This

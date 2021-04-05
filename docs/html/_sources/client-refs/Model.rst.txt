@@ -9,28 +9,24 @@ varies between the frontend languages, but generally, the `Model` base class
 enforces the existance of an read-only `id` field. In addition, a `Model`
 subclass can be serialized/deserialized from/to an JSON representation.
 
-**Subclassing**
+Inheritance
+-----------
 
-Required fields
----------------
-id
+id `(required)`
     An `id` field must be defined. If the language allows, `id` should be read-only.
 
-Optional fields
----------------
 
-`static` objects
-    A static member of the ``CollectionManager`` type for the model class, used
-    to quickly access the ``CollectionManager`` instead of having to create a
+`static` objects `(optional)`
+    A static member of the `CollectionManager`_ type for the model class, used
+    to quickly access the `CollectionManager`_ instead of having to create a
     new one.
 
-Custom fields
--------------
+Others
+    Any optional fields of native types, `RelatedObjectManager`_, or
+    `RelatedCollectionManager`_ types.
 
-Any fields of native types, ``RelatedObjectManager``, or ``RelatedCollectionManager`` types.
 
-Example
--------
+**Example**
 
 .. tabs::
 

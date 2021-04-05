@@ -1,0 +1,24 @@
+urlpatterns
+===========
+
+.. code-block:: py
+
+    import django_client_framework.api.urlpatterns
+
+This global constant contains the routing handlers for models' RESTful API. You
+can append this constant to your custom ``urlpatterns`` in any ``urls.py`` file.
+Then the handlers will become available with your custom prefix.
+
+**Example**
+
+.. code-block:: py
+
+    import django_client_framework.api.urls
+    from django.urls import path
+
+    app_name = "myapp"
+
+    urlpatterns = [
+        path("login", v.PasswordLogin.as_view(), name="passwd_login"),
+        path("logout", v.Logout.as_view(), name="logout"),
+    ] + django_client_framework.api.urls.urlpatterns

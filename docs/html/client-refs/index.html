@@ -41,7 +41,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Modify this documentation" href="../doc-for-doc.html" />
+    <link rel="next" title="Modify this documentation" href="../modify-this-document.html" />
     <link rel="prev" title="Backend API Reference" href="../backend-refs/index.html" /> 
 </head>
 
@@ -115,18 +115,31 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../backend-refs/index.html">Backend API Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../backend-refs/index.html#models">Models</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../backend-refs/index.html#serialiazable">Serialiazable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backend-refs/index.html#models-module">models module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../backend-refs/index.html#serializable">Serializable</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../backend-refs/index.html#inheritance">Inheritance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../backend-refs/index.html#serializer-class-cls">.serializer_class(cls)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../backend-refs/index.html#serializer">.serializer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../backend-refs/index.html#get-serialization-cache-timeout">.get_serialization_cache_timeout()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../backend-refs/index.html#api-module">api module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../backend-refs/index.html#urls-py">urls.py</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../backend-refs/index.html#serializers-module">serializers module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../backend-refs/index.html#id1">Serializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../backend-refs/index.html#modelserializer">ModelSerializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../backend-refs/index.html#delegateserializer">DelegateSerializer</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Client Libraries Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#model">Model</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#required-fields">Required fields</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#optional-fields">Optional fields</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#custom-fields">Custom fields</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inheritance">Inheritance</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#collectionmanager-t">CollectionManager&lt;T&gt;</a><ul>
@@ -142,7 +155,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#id2">Constructor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#refresh">.refresh()</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#save">.save()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#update">.update()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-data">.update(data)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#delete">.delete()</a></li>
 </ul>
 </li>
@@ -164,9 +177,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#set-target">.set(target?)</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#the-design-decision-for-api-type-safety">The design decision for API type-safety</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../doc-for-doc.html">Modify this documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modify-this-document.html">Modify this documentation</a></li>
 </ul>
 
             
@@ -243,29 +257,20 @@ the base class of all user defined models in the frontend. The implementation
 varies between the frontend languages, but generally, the <cite>Model</cite> base class
 enforces the existance of an read-only <cite>id</cite> field. In addition, a <cite>Model</cite>
 subclass can be serialized/deserialized from/to an JSON representation.</p>
-<p><strong>Subclassing</strong></p>
-<div class="section" id="required-fields">
-<h3>Required fields<a class="headerlink" href="#required-fields" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="inheritance">
+<h3>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline">¶</a></h3>
 <dl class="simple">
-<dt>id</dt><dd><p>An <cite>id</cite> field must be defined. If the language allows, <cite>id</cite> should be read-only.</p>
+<dt>id <cite>(required)</cite></dt><dd><p>An <cite>id</cite> field must be defined. If the language allows, <cite>id</cite> should be read-only.</p>
 </dd>
-</dl>
-</div>
-<div class="section" id="optional-fields">
-<h3>Optional fields<a class="headerlink" href="#optional-fields" title="Permalink to this headline">¶</a></h3>
-<dl class="simple">
-<dt><cite>static</cite> objects</dt><dd><p>A static member of the <code class="docutils literal notranslate"><span class="pre">CollectionManager</span></code> type for the model class, used
-to quickly access the <code class="docutils literal notranslate"><span class="pre">CollectionManager</span></code> instead of having to create a
+<dt><cite>static</cite> objects <cite>(optional)</cite></dt><dd><p>A static member of the <a class="reference internal" href="#collectionmanager">CollectionManager</a> type for the model class, used
+to quickly access the <a class="reference internal" href="#collectionmanager">CollectionManager</a> instead of having to create a
 new one.</p>
 </dd>
+<dt>Others</dt><dd><p>Any optional fields of native types, <a class="reference internal" href="#relatedobjectmanager">RelatedObjectManager</a>, or
+<a class="reference internal" href="#relatedcollectionmanager">RelatedCollectionManager</a> types.</p>
+</dd>
 </dl>
-</div>
-<div class="section" id="custom-fields">
-<h3>Custom fields<a class="headerlink" href="#custom-fields" title="Permalink to this headline">¶</a></h3>
-<p>Any fields of native types, <code class="docutils literal notranslate"><span class="pre">RelatedObjectManager</span></code>, or <code class="docutils literal notranslate"><span class="pre">RelatedCollectionManager</span></code> types.</p>
-</div>
-<div class="section" id="example">
-<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p><strong>Example</strong></p>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-0-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-0-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-0-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">Product</span> <span class="k">extends</span> <span class="nx">Model</span> <span class="p">{</span>
     <span class="k">static</span> <span class="k">readonly</span> <span class="nx">objects</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CollectionManager</span><span class="p">(</span><span class="nx">Product</span><span class="p">)</span>
@@ -403,7 +408,7 @@ or more than one object is returned, an InvalidObjectCount error is thrown.</p>
 <div><p>Saves an object on the server with the provided dictionary of data. It sends
 a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request to the server.</p>
 <dl class="simple">
-<dt>Suppoted key-values</dt><dd><p>Any property name and value of type defined on the model.</p>
+<dt>Suppoted key-values</dt><dd><p>Any property name and value of type accepted by on the model API.</p>
 </dd>
 </dl>
 <div class="sphinx-tabs docutils container">
@@ -480,19 +485,19 @@ dictionary. When updating, sends a <code class="docutils literal notranslate"><s
 </div>
 <div class="section" id="objectmanager-t">
 <span id="objectmanager"></span><h2>ObjectManager&lt;T&gt;<a class="headerlink" href="#objectmanager-t" title="Permalink to this headline">¶</a></h2>
-<p>A generic class where <code class="docutils literal notranslate"><span class="pre">T</span></code> is constrained by <a class="reference internal" href="#model"><span class="std std-ref">Model</span></a>. This class provides the
-ability to modify an model object. When constructing an <code class="docutils literal notranslate"><span class="pre">ObjectManager</span></code>
-instance, an model object is passed into the <code class="docutils literal notranslate"><span class="pre">ObjectManager</span></code> class
-constructor. Any field that’s available on the model objects becomes available
-on the <code class="docutils literal notranslate"><span class="pre">ObjectManager</span></code> object. In addition, the <code class="docutils literal notranslate"><span class="pre">ObjectManager</span></code> object
-provides methods that are used to modify the wrapped model object, and save the
-changes to the backend.</p>
+<p>A generic class where <code class="docutils literal notranslate"><span class="pre">T</span></code> is constrained by <a class="reference internal" href="#model"><span class="std std-ref">Model</span></a>. This class provides
+the ability to modify an model object. When constructing an <a class="reference internal" href="#objectmanager">ObjectManager</a>
+instance, an model object is passed into the <a class="reference internal" href="#objectmanager">ObjectManager</a> class constructor.
+Any field that’s available on the model objects becomes available on the
+<a class="reference internal" href="#objectmanager">ObjectManager</a> object. In addition, the <a class="reference internal" href="#objectmanager">ObjectManager</a> object provides
+methods that are used to modify the wrapped model object, and save the changes
+to the backend.</p>
 <div class="section" id="id2">
 <h3>Constructor<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<p>Pass the model object into the <code class="docutils literal notranslate"><span class="pre">ObjectManager</span></code> constructor.</p>
+<p>Pass the model object into the <a class="reference internal" href="#objectmanager">ObjectManager</a> constructor.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Most of time, you should use the <code class="docutils literal notranslate"><span class="pre">ObjectManager</span></code> returned by
+<p>Most of time, you should use the <a class="reference internal" href="#objectmanager">ObjectManager</a> returned by
 <a class="reference internal" href="#collectionmanager-page">CollectionManager.page(…)</a> or <a class="reference internal" href="#collectionmanager-get">CollectionManager.get(…)</a>, instead of
 creating one yourself.</p>
 </div>
@@ -506,7 +511,7 @@ creating one yourself.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Due to a limitation of TypeScript, the constructor is named
-<code class="docutils literal notranslate"><span class="pre">ObjectManagerImpl</span></code> instead of <code class="docutils literal notranslate"><span class="pre">ObjectManager</span></code>, which is a type
+<code class="docutils literal notranslate"><span class="pre">ObjectManagerImpl</span></code> instead of <a class="reference internal" href="#objectmanager">ObjectManager</a>, which is a type
 alias.</p>
 </div>
 <p><strong>Methods</strong></p>
@@ -527,7 +532,7 @@ It sends a <code class="docutils literal notranslate"><span class="pre">GET</spa
 </div></blockquote>
 </div>
 <div class="section" id="save">
-<h3>.save()<a class="headerlink" href="#save" title="Permalink to this headline">¶</a></h3>
+<span id="objectmanager-save"></span><h3>.save()<a class="headerlink" href="#save" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Updates the server with properties that have been changed on the object. It
 sends a <code class="docutils literal notranslate"><span class="pre">PATCH</span></code> request to the server.</p>
@@ -543,12 +548,16 @@ sends a <code class="docutils literal notranslate"><span class="pre">PATCH</span
 </div></div>
 </div></blockquote>
 </div>
-<div class="section" id="update">
-<h3>.update()<a class="headerlink" href="#update" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="update-data">
+<span id="objectmanager-update"></span><h3>.update(data)<a class="headerlink" href="#update-data" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><p>Updates the server with a dictionary, and also saves the changes locally. If
-the dictionary contains a key that is not a property name, the method throws
-an error. It sends a <code class="docutils literal notranslate"><span class="pre">PATCH</span></code> request to the server.</p>
+<div><p>Updates the server with a dictionary, and also saves the changes locally. It
+sends a <code class="docutils literal notranslate"><span class="pre">PATCH</span></code> request to the server.</p>
+</div></blockquote>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a href="#id6"><span class="problematic" id="id7">`The Design Decision for Type-safety`_</span></a>.</p>
+</div>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-9-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-9-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-9-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-9-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">product</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Product</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">...</span>
 <span class="c1">// PATCH /product/1 {&quot;barcode&quot;: &quot;xxyy&quot;, &quot;price&quot;: null}</span>
@@ -559,7 +568,6 @@ an error. It sends a <code class="docutils literal notranslate"><span class="pre
 </pre></div>
 </div>
 </div></div>
-</div></blockquote>
 </div>
 <div class="section" id="delete">
 <h3>.delete()<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h3>
@@ -807,6 +815,65 @@ parent.</p>
 </div></blockquote>
 </div>
 </div>
+<div class="section" id="the-design-decision-for-api-type-safety">
+<h2>The design decision for API type-safety<a class="headerlink" href="#the-design-decision-for-api-type-safety" title="Permalink to this headline">¶</a></h2>
+<p>The goal of the client libraries is to provide type safety to gard against typos
+that could be made on model properties, at the same type, utilize Django’s
+flexible QuerySet API. We would also like to keep a consistent API interface
+across all supported programming languages, so that the learning curve can be
+flat. Finally, we would like the client’s model code to be automatically
+generated according to the backend code.</p>
+<p>There are some difficulties when designing such API. For instance, we can only
+use features that are present in all supported programming languages. Advance
+features such as the <code class="docutils literal notranslate"><span class="pre">Partial&lt;T&gt;</span></code> type in <cite>TypeScript</cite>, or <cite>associated types</cite>
+in <cite>Swift</cite> cannot be used, because they don’t exist in other languages, and the
+API would be inconsistent.</p>
+<p>We want to prevent typos made when querying and updating objects. The current
+API provides limited guarantees. For instance, when modifying model properties
+and call <a class="reference internal" href="#objectmanager-save">ObjectManager.save()</a>, typos are prevented because the programming
+language only allows access on defined properties.</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">product</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Product</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">...</span>
+<span class="nx">product</span><span class="p">.</span><span class="nx">barcode</span> <span class="o">=</span> <span class="s2">&quot;xxyy&quot;</span>
+<span class="nx">product</span><span class="p">.</span><span class="nx">save</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>How can we make APIs such as <a class="reference internal" href="#objectmanager-update">ObjectManager.update(…)</a> or
+<a class="reference internal" href="#collectionmanager-page">CollectionManager.page(…)</a> type safe? There are two types of difficulties we
+must take into consideration. First, you need to realize that the backend modal
+API such as <code class="docutils literal notranslate"><span class="pre">PATCH</span> <span class="pre">/product/1</span></code> does not only accept valid properties that are
+defined on the model. In fact, the backend could use <a href="#id8"><span class="problematic" id="id9">`DelegatedSerializer`_</span></a> to
+accept a variaty of key-value pairs. For instance, if a <cite>User</cite> model API is
+designed to change user password, the backend will expect an request such as:</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span>// PATCH /user/1
+
+{
+    old_password: &quot;1234&quot;,
+    new_password: &quot;xxyy&quot;,
+}
+</pre></div>
+</div>
+<p>The backend can achieve this with the <a href="#id10"><span class="problematic" id="id11">`DelegatedSerializer`_</span></a> class. However,
+neither <cite>old_password</cite> and <cite>new_password</cite> are keys on the <cite>User</cite> model.</p>
+<p>To resolve this issue, we can consider making the <a class="reference internal" href="#objectmanager-update">ObjectManager.update(…)</a> a
+generic method such as:</p>
+<div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="nx">update</span><span class="o">&lt;</span><span class="nx">X</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">data</span>: <span class="kt">X</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>where X is any type that is serializable. This way we have define a separate interface such as</p>
+<div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span> <span class="nx">UserUpdatePassword</span> <span class="p">{</span>
+    <span class="nx">old_password</span>: <span class="kt">string</span>
+    <span class="nx">new_password</span>: <span class="kt">string</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Then when calling the <a class="reference internal" href="#objectmanager-update">ObjectManager.update(…)</a> method you can specify the <code class="docutils literal notranslate"><span class="pre">X</span></code>:</p>
+<div class="highlight-TypeScript notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nx">update</span><span class="o">&lt;</span><span class="nx">UserUpdatePassword</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>[to be continued]</p>
+</div>
 </div>
 
 
@@ -815,7 +882,7 @@ parent.</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../doc-for-doc.html" class="btn btn-neutral float-right" title="Modify this documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../modify-this-document.html" class="btn btn-neutral float-right" title="Modify this documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="../backend-refs/index.html" class="btn btn-neutral float-left" title="Backend API Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

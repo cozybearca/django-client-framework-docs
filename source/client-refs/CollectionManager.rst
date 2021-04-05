@@ -138,7 +138,7 @@ erased during the runtime.
     a ``POST`` request to the server.
 
     Suppoted key-values
-        Any property name and value of type defined on the model.
+        Any property name and value of type accepted by on the model API.
 
     .. tabs::
 

@@ -113,18 +113,31 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../backend-refs/index.html">Backend API Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../backend-refs/index.html#models">Models</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../backend-refs/index.html#serialiazable">Serialiazable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backend-refs/index.html#models-module">models module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../backend-refs/index.html#serializable">Serializable</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../backend-refs/index.html#inheritance">Inheritance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../backend-refs/index.html#serializer-class-cls">.serializer_class(cls)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../backend-refs/index.html#serializer">.serializer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../backend-refs/index.html#get-serialization-cache-timeout">.get_serialization_cache_timeout()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../backend-refs/index.html#api-module">api module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../backend-refs/index.html#urls-py">urls.py</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../backend-refs/index.html#serializers-module">serializers module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../backend-refs/index.html#id1">Serializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../backend-refs/index.html#modelserializer">ModelSerializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../backend-refs/index.html#delegateserializer">DelegateSerializer</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="index.html">Client Libraries Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="index.html#model">Model</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#required-fields">Required fields</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#optional-fields">Optional fields</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#custom-fields">Custom fields</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#example">Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#inheritance">Inheritance</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#collectionmanager-t">CollectionManager&lt;T&gt;</a><ul>
@@ -140,18 +153,32 @@
 <li class="toctree-l3"><a class="reference internal" href="index.html#id2">Constructor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="index.html#refresh">.refresh()</a></li>
 <li class="toctree-l3"><a class="reference internal" href="index.html#save">.save()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#update">.update()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#update-data">.update(data)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="index.html#delete">.delete()</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#relatedcollectionmanager-t-p">RelatedCollectionManager&lt;T, P&gt;</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="index.html#id3">Constructor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#id4">.page(query, pagination)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#relatedcollectionmanager-page">.page(query, pagination)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#get-query-pagination">.get(query, pagination)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#add-ids-ids">.add_ids(ids)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#set-ids-ids">.set_ids(ids)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#remove-ids-ids">.remove_ids(ids)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#add-objs">.add(objs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#set-objs">.set(objs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#remove-objs">.remove(objs)</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#relatedobjectmanager-t-p">RelatedObjectManager&lt;T, P&gt;</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id5">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#get">.get()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#set-target">.set(target?)</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../doc-for-doc.html">Modify this documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#the-design-decision-for-api-type-safety">The design decision for API type-safety</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../modify-this-document.html">Modify this documentation</a></li>
 </ul>
 
             
@@ -226,29 +253,20 @@ the base class of all user defined models in the frontend. The implementation
 varies between the frontend languages, but generally, the <cite>Model</cite> base class
 enforces the existance of an read-only <cite>id</cite> field. In addition, a <cite>Model</cite>
 subclass can be serialized/deserialized from/to an JSON representation.</p>
-<p><strong>Subclassing</strong></p>
-<div class="section" id="required-fields">
-<h2>Required fields<a class="headerlink" href="#required-fields" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="inheritance">
+<h2>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
-<dt>id</dt><dd><p>An <cite>id</cite> field must be defined. If the language allows, <cite>id</cite> should be read-only.</p>
+<dt>id <cite>(required)</cite></dt><dd><p>An <cite>id</cite> field must be defined. If the language allows, <cite>id</cite> should be read-only.</p>
 </dd>
-</dl>
-</div>
-<div class="section" id="optional-fields">
-<h2>Optional fields<a class="headerlink" href="#optional-fields" title="Permalink to this headline">¶</a></h2>
-<dl class="simple">
-<dt><cite>static</cite> objects</dt><dd><p>A static member of the <code class="docutils literal notranslate"><span class="pre">CollectionManager</span></code> type for the model class, used
-to quickly access the <code class="docutils literal notranslate"><span class="pre">CollectionManager</span></code> instead of having to create a
+<dt><cite>static</cite> objects <cite>(optional)</cite></dt><dd><p>A static member of the <a href="#id2"><span class="problematic" id="id3">`CollectionManager`_</span></a> type for the model class, used
+to quickly access the <a href="#id4"><span class="problematic" id="id5">`CollectionManager`_</span></a> instead of having to create a
 new one.</p>
 </dd>
+<dt>Others</dt><dd><p>Any optional fields of native types, <a href="#id6"><span class="problematic" id="id7">`RelatedObjectManager`_</span></a>, or
+<a href="#id8"><span class="problematic" id="id9">`RelatedCollectionManager`_</span></a> types.</p>
+</dd>
 </dl>
-</div>
-<div class="section" id="custom-fields">
-<h2>Custom fields<a class="headerlink" href="#custom-fields" title="Permalink to this headline">¶</a></h2>
-<p>Any fields of native types, <code class="docutils literal notranslate"><span class="pre">RelatedObjectManager</span></code>, or <code class="docutils literal notranslate"><span class="pre">RelatedCollectionManager</span></code> types.</p>
-</div>
-<div class="section" id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p><strong>Example</strong></p>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-0-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-0-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-0-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">Product</span> <span class="k">extends</span> <span class="nx">Model</span> <span class="p">{</span>
     <span class="k">static</span> <span class="k">readonly</span> <span class="nx">objects</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CollectionManager</span><span class="p">(</span><span class="nx">Product</span><span class="p">)</span>

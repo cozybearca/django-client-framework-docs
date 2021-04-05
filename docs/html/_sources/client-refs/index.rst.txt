@@ -6,3 +6,7 @@ Client Libraries Reference
 .. include:: ObjectManager.rst
 .. include:: RelatedCollectionManager.rst
 .. include:: RelatedObjectManager.rst
+
+.. only:: internal
+
+    .. include:: the-design-decision-for-type-safety.rst
