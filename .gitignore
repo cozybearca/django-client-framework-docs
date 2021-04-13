@@ -2,3 +2,4 @@ docs/.nojekyll # force added
 docs/index.html # force added
 .DS_Store
 docs/doctrees/
+docs/html
