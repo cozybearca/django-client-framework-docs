@@ -1,21 +1,29 @@
 Backend API Reference
 #####################
 
-models module
-*************
+`module` models
+**********************************
 
 .. include:: models/Serializable.rst
+.. include:: models/AccessControlled.rst
 
-api module
-**********
+`module` api.urls
+**********************************
+
 
 .. include:: api/urls.rst
 
 
-serializers module
-******************
+`module` serializers
+**********************************
 
 .. include:: serializers/Serializer.rst
 .. include:: serializers/ModelSerializer.rst
 .. include:: serializers/DelegateSerializer.rst
 
+
+`module` permissions
+**********************************
+
+
+.. include:: permissions/index.rst

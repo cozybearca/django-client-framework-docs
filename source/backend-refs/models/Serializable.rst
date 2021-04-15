@@ -1,5 +1,7 @@
-Serializable
-============
+.. _Serializable:
+
+`class` Serializable
+==========================
 
 .. code-block:: py
 
@@ -12,37 +14,33 @@ This abstract model class provides caches for serialization.
     Any :ref:`Model` to be registered as an API must inherit this class.
 
 
-Inheritance
------------
+**Inheritance**
 
-Subclasses of `Serializable`_ must override ``.serializer_class(cls)`` which
+Subclasses of `Serializable`_ must override `Serializable.serializer_class()`_ which
 returns a `Serializer`_ class.
 
 
 .. _Serializable.serializer_class():
 
-.serializer_class(cls)
-----------------------
-    `required`, `classmethod`
+`classmethod` .serializer_class `(cls)`
+-----------------------------------------------------------
 
-    Returns
-        The `Serializer`_ class for the model.
+    `required`
+
+    Override this method to return the `Serializer`_ class for the model.
 
 
 .. _Serializable.serializer:
 
-.serializer
------------
-
-    Property
-        An instance of the `Serializer`_ class returned by
-        `Serializable.serializer_class()`_.
+`property` .serializer
+------------------------------
+    An instance of the `Serializer`_ class returned by
+    `Serializable.serializer_class()`_.
 
 
 .. _Serializable.get_serialization_cache_timeout():
 
-.get_serialization_cache_timeout()
-----------------------------------
-
-    Returns
-        How long to cache the seriali
+`classmethod` .get_serialization_cache_timeout `(cls)`
+---------------------------------------------------------------
+    Override this method to change how long to cache the serialized
+    data in seconds.

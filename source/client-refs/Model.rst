@@ -9,8 +9,7 @@ varies between the frontend languages, but generally, the `Model` base class
 enforces the existance of an read-only `id` field. In addition, a `Model`
 subclass can be serialized/deserialized from/to an JSON representation.
 
-Inheritance
------------
+**Inheritance**
 
 id `(required)`
     An `id` field must be defined. If the language allows, `id` should be read-only.

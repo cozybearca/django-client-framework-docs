@@ -14,13 +14,20 @@ help:
 
 .PHONY: help Makefile serve
 
-# Catch-all target: route all unknown targets to Sphinx using the new
-# "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
-%: Makefile
-	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O) -t internal
-
 serve:
 	nginx -g "daemon off;"
 
 typedoc:
 	typedoc --options typedoc.json
+
+sass:
+	sass "$(SOURCEDIR)/_static/custom.scss" "$(BUILDDIR)/html/_static/custom.css"
+
+html:
+	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O) -t internal
+	make sass
+
+# Catch-all target: route all unknown targets to Sphinx using the new
+# "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
+%: Makefile
+	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O) -t internal

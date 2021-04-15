@@ -16,7 +16,7 @@ shell:
 
 .. code-block:: bash
 
-    pip3 install -e git+https://github.com/cozybearca/django-client-framework.git#egg=django_client_framework
+    pip3 install --user git+https://github.com/cozybearca/django-client-framework.git#egg=django_client_framework
 
 
 Configure Django's settings.py file
@@ -217,8 +217,8 @@ Now you can run migration to apply the new model.
 
 .. code-block:: bash
 
-    django-admin makemigrations
-    django-admin migrate
+    python3 ./manage.py makemigrations
+    python3 ./manage.py migrate
 
 
 .. seealso::
@@ -243,14 +243,14 @@ The default implementation of ``.get_permissionmanager_class()`` looks for a cla
 named ``PermissionManager`` in the model class.
 
 To give anyone the read permission to the Product model, we import the
-``default_groups.anyone`` and ``set_perms_shortcut`` from
+``default_groups.anyone`` and ``add_perms_shortcut`` from
 ``django_client_framework.permissions`` and use them to set the permissions.
 
 .. code-block:: py
 
     from django_client_framework.models import Serializable, AccessControlled
     from django_client_framework.serializers import ModelSerializer
-    from django_client_framework.permissions import default_groups, set_perms_shortcut
+    from django_client_framework.permissions import default_groups, add_perms_shortcut
     from django.db.models import CharField
 
 
@@ -263,7 +263,7 @@ To give anyone the read permission to the Product model, we import the
 
         class PermissionManager(AccessControlled.PermissionManager):
             def add_perms(self, product):
-                set_perms_shortcut(default_groups.anyone, product, "r")
+                add_perms_shortcut(default_groups.anyone, product, "r")
 
 
     class ProductSerializer(ModelSerializer):
@@ -276,19 +276,19 @@ Now to refresh the permission stored in the database, run this in Django shell:
 
 .. code-block:: bash
 
-    django-admin shell
+    python3 ./manage.py shell
 
 .. code-block:: py
 
     # inside shell
 
-    from django_client_framework.permissions import setup_permissions
+    from django_client_framework.permissions import reset_permissions
 
-    setup_permissions()
+    reset_permissions()
 
 .. warning::
 
-    Consider running ``setup_permissions()`` during the django migrations whenever
+    Consider running ``reset_permissions()`` during the django migrations whenever
     the permission is changed on a model.
 
 
@@ -304,7 +304,7 @@ class.
 
     from django_client_framework.models import Serializable, AccessControlled
     from django_client_framework.serializers import ModelSerializer
-    from django_client_framework.permissions import default_groups, set_perms_shortcut
+    from django_client_framework.permissions import default_groups, add_perms_shortcut
     from django.db.models import CharField
     from django_client_framework.api import register_api_model
 
@@ -318,7 +318,7 @@ class.
 
         class PermissionManager(AccessControlled.PermissionManager):
             def add_perms(self, product):
-                set_perms_shortcut(default_groups.anyone, product, "r")
+                add_perms_shortcut(default_groups.anyone, product, "r")
 
 
     class ProductSerializer(ModelSerializer):
@@ -332,7 +332,7 @@ Now that the ``Product`` model is correctly configured, you can create a
 
 .. code-block:: bash
 
-    django-admin shell
+    python3 ./manage.py shell
 
 .. code-block:: py
 
@@ -346,7 +346,7 @@ Start the django development server:
 
 .. code-block:: bash
 
-    django-admin runserver # Starting development server at http://127.0.0.1:8000/
+    python3 ./manage.py runserver # Starting development server at http://127.0.0.1:8000/
 
 
 To visit the list of products, send a GET request to this url:
@@ -394,7 +394,7 @@ Therefore, we define the two classes as follows:
 
     from django_client_framework.models import Serializable, AccessControlled
     from django_client_framework.serializers import ModelSerializer
-    from django_client_framework.permissions import default_groups, set_perms_shortcut
+    from django_client_framework.permissions import default_groups, add_perms_shortcut
     from django_client_framework.api import register_api_model
     from django.db.models import CharField, ForeignKey, CASCADE
 
@@ -409,7 +409,7 @@ Therefore, we define the two classes as follows:
 
         class PermissionManager(AccessControlled.PermissionManager):
             def add_perms(self, brand):
-                set_perms_shortcut(default_groups.anyone, brand, "r")
+                add_perms_shortcut(default_groups.anyone, brand, "r")
 
 
     class BrandSerializer(ModelSerializer):
@@ -429,7 +429,7 @@ Therefore, we define the two classes as follows:
 
         class PermissionManager(AccessControlled.PermissionManager):
             def add_perms(self, product):
-                set_perms_shortcut(default_groups.anyone, product, "r")
+                add_perms_shortcut(default_groups.anyone, product, "r")
 
 
     class ProductSerializer(ModelSerializer):

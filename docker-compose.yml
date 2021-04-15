@@ -1,19 +1,10 @@
 version: "3.7"
 services:
-  make:
-    build: .
-    entrypoint: make
-    volumes:
-      - ./typedoc.json:/typedoc.json:ro
-      - ./Makefile:/Makefile:ro
-      - ./libs:/libs:ro
-      - ./source:/source:ro
-      - ./docs:/docs # output
-
   server:
     build: .
-    entrypoint: nginx -g "daemon off;"
+    command: sh /entrypoint.bash
     volumes:
-      - ./docs:/docs:ro
+      - ./:/_:ro
+      - ./docs:/_/docs # output
     ports:
       - "12800:80"
