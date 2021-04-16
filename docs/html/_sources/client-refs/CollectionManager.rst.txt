@@ -1,15 +1,15 @@
 .. _CollectionManager:
 
-CollectionManager<T>
-====================
+`class` CollectionManager `<T:Model>`
+=======================================
 
 A generic class where ``T`` is constrained by `Model`_. This class provides the
 access to backend objects. You should use this class to retrieve an
 ``ObjectManager`` for an model object, instead of creating an ``ObjectManager``
 directly.
 
-Constructor
------------
+**Constructor**
+
 
 Implementation varies. For TypeScript and Kotlin, you need to pass the
 constructor of ``T`` in to the constructor, because the type information is
@@ -35,8 +35,8 @@ erased during the runtime.
 
 .. _CollectionManager.page(...):
 
-.page(query, pagination)
-------------------------
+`method` .page `(query, pagination)`
+--------------------------------------
 
     Returns a filtered collection of the model objects, with the desired
     pagination. It sends a ``GET`` request to the server.
@@ -117,8 +117,8 @@ erased during the runtime.
 
 .. _CollectionManager.get(...):
 
-.get(query)
------------
+`method` .get `(query)`
+---------------------------
 
     This method does the same thing as :ref:`CollectionManager.page(...)` except
     that it expects exactly one object to be returned from the server. If less
@@ -131,8 +131,8 @@ erased during the runtime.
 
 .. _CollectionManager.create(...):
 
-.create(data)
--------------
+`method` .create `(data)`
+-------------------------------
 
     Saves an object on the server with the provided dictionary of data. It sends
     a ``POST`` request to the server.
@@ -157,8 +157,8 @@ erased during the runtime.
 
 .. _CollectionManager.get_or_create(...):
 
-.get_or_create(query, defaults)
--------------------------------
+`method` .get_or_create `(query, defaults)`
+---------------------------------------------------
 
     First tries to :ref:`CollectionManager.get(...)` the object with the query
     dictionary. If the object does not exist, then
@@ -189,8 +189,8 @@ erased during the runtime.
 
 .. _CollectionManager.update_or_create(...):
 
-.update_or_create(query, defaults)
-----------------------------------
+`method` .update_or_create `(query, defaults)`
+------------------------------------------------------
 
     First tries to :ref:`CollectionManager.get(...)` the object with the
     ``query`` dictionary. If the object does not exist, then it follows the

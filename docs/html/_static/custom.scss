@@ -29,6 +29,7 @@
   z-index: 2;
 }
 
+// Add indentation to classes
 .section[id^="class-"] {
   > * {
     margin-left: 2em;
@@ -52,6 +53,7 @@
 .section[id^="func-"],
 .section[id^="file-"],
 .section[id^="method-"],
+.section[id^="static-"],
 .section[id^="classmethod-"],
 .section[id^="method-"],
 .section[id^="global-"],
@@ -68,17 +70,13 @@
     h6 {
       cite {
         font-weight: lighter;
-        font-size: 70%;
+        font-size: 65%;
+        font-family: monospace;
+      }
+      code {
+        display: none; // hide dedup code
       }
     }
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
   }
 }
 
@@ -102,6 +100,7 @@
 nav {
   a[href^="#class-"],
   a[href^="#method-"],
+  a[href^="#static-"],
   a[href^="#func-"],
   a[href^="#property-"],
   a[href^="#classproperty-"],
@@ -109,7 +108,17 @@ nav {
   a[href^="#module-"],
   a[href^="#const-"] {
     white-space: nowrap;
+    // overflow-x: hidden;
+    text-overflow: ellipsis;
+    cite:first-of-type {
+      display: none;
+    }
     cite {
+      font-size: 65%;
+      color: #333;
+      font-family: monospace;
+    }
+    code {
       display: none;
     }
   }
@@ -118,8 +127,8 @@ nav {
   a[href^="#method-"],
   a[href^="#classproperty-"],
   a[href^="#classmethod-"] {
-    &::after {
-      content: "(...)";
-    }
+    // &::after {
+    //   content: "(...)";
+    // }
   }
 }

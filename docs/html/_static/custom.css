@@ -68,6 +68,12 @@
 .section[id^=method-] > h4 cite,
 .section[id^=method-] > h5 cite,
 .section[id^=method-] > h6 cite,
+.section[id^=static-] > h1 cite,
+.section[id^=static-] > h2 cite,
+.section[id^=static-] > h3 cite,
+.section[id^=static-] > h4 cite,
+.section[id^=static-] > h5 cite,
+.section[id^=static-] > h6 cite,
 .section[id^=classmethod-] > h1 cite,
 .section[id^=classmethod-] > h2 cite,
 .section[id^=classmethod-] > h3 cite,
@@ -111,8 +117,84 @@
 .section[id^=class-] > h5 cite,
 .section[id^=class-] > h6 cite {
   font-weight: lighter;
-  font-size: 70%;
+  font-size: 65%;
+  font-family: monospace;
 }
+.section[id^=module-] > h1 code,
+.section[id^=module-] > h2 code,
+.section[id^=module-] > h3 code,
+.section[id^=module-] > h4 code,
+.section[id^=module-] > h5 code,
+.section[id^=module-] > h6 code,
+.section[id^=func-] > h1 code,
+.section[id^=func-] > h2 code,
+.section[id^=func-] > h3 code,
+.section[id^=func-] > h4 code,
+.section[id^=func-] > h5 code,
+.section[id^=func-] > h6 code,
+.section[id^=file-] > h1 code,
+.section[id^=file-] > h2 code,
+.section[id^=file-] > h3 code,
+.section[id^=file-] > h4 code,
+.section[id^=file-] > h5 code,
+.section[id^=file-] > h6 code,
+.section[id^=method-] > h1 code,
+.section[id^=method-] > h2 code,
+.section[id^=method-] > h3 code,
+.section[id^=method-] > h4 code,
+.section[id^=method-] > h5 code,
+.section[id^=method-] > h6 code,
+.section[id^=static-] > h1 code,
+.section[id^=static-] > h2 code,
+.section[id^=static-] > h3 code,
+.section[id^=static-] > h4 code,
+.section[id^=static-] > h5 code,
+.section[id^=static-] > h6 code,
+.section[id^=classmethod-] > h1 code,
+.section[id^=classmethod-] > h2 code,
+.section[id^=classmethod-] > h3 code,
+.section[id^=classmethod-] > h4 code,
+.section[id^=classmethod-] > h5 code,
+.section[id^=classmethod-] > h6 code,
+.section[id^=method-] > h1 code,
+.section[id^=method-] > h2 code,
+.section[id^=method-] > h3 code,
+.section[id^=method-] > h4 code,
+.section[id^=method-] > h5 code,
+.section[id^=method-] > h6 code,
+.section[id^=global-] > h1 code,
+.section[id^=global-] > h2 code,
+.section[id^=global-] > h3 code,
+.section[id^=global-] > h4 code,
+.section[id^=global-] > h5 code,
+.section[id^=global-] > h6 code,
+.section[id^=const-] > h1 code,
+.section[id^=const-] > h2 code,
+.section[id^=const-] > h3 code,
+.section[id^=const-] > h4 code,
+.section[id^=const-] > h5 code,
+.section[id^=const-] > h6 code,
+.section[id^=var-] > h1 code,
+.section[id^=var-] > h2 code,
+.section[id^=var-] > h3 code,
+.section[id^=var-] > h4 code,
+.section[id^=var-] > h5 code,
+.section[id^=var-] > h6 code,
+.section[id^=property-] > h1 code,
+.section[id^=property-] > h2 code,
+.section[id^=property-] > h3 code,
+.section[id^=property-] > h4 code,
+.section[id^=property-] > h5 code,
+.section[id^=property-] > h6 code,
+.section[id^=class-] > h1 code,
+.section[id^=class-] > h2 code,
+.section[id^=class-] > h3 code,
+.section[id^=class-] > h4 code,
+.section[id^=class-] > h5 code,
+.section[id^=class-] > h6 code {
+  display: none;
+}
+
 .section[id^=module-] > h1::after,
 .section[id^=module-] > h2::after,
 .section[id^=module-] > h3::after,
@@ -126,6 +208,7 @@
 
 nav a[href^="#class-"],
 nav a[href^="#method-"],
+nav a[href^="#static-"],
 nav a[href^="#func-"],
 nav a[href^="#property-"],
 nav a[href^="#classproperty-"],
@@ -133,22 +216,42 @@ nav a[href^="#classmethod-"],
 nav a[href^="#module-"],
 nav a[href^="#const-"] {
   white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+nav a[href^="#class-"] cite:first-of-type,
+nav a[href^="#method-"] cite:first-of-type,
+nav a[href^="#static-"] cite:first-of-type,
+nav a[href^="#func-"] cite:first-of-type,
+nav a[href^="#property-"] cite:first-of-type,
+nav a[href^="#classproperty-"] cite:first-of-type,
+nav a[href^="#classmethod-"] cite:first-of-type,
+nav a[href^="#module-"] cite:first-of-type,
+nav a[href^="#const-"] cite:first-of-type {
+  display: none;
 }
 nav a[href^="#class-"] cite,
 nav a[href^="#method-"] cite,
+nav a[href^="#static-"] cite,
 nav a[href^="#func-"] cite,
 nav a[href^="#property-"] cite,
 nav a[href^="#classproperty-"] cite,
 nav a[href^="#classmethod-"] cite,
 nav a[href^="#module-"] cite,
 nav a[href^="#const-"] cite {
-  display: none;
+  font-size: 65%;
+  font-family: monospace;
 }
-nav a[href^="#func-"]::after,
-nav a[href^="#method-"]::after,
-nav a[href^="#classproperty-"]::after,
-nav a[href^="#classmethod-"]::after {
-  content: "(...)";
+nav a[href^="#class-"] code,
+nav a[href^="#method-"] code,
+nav a[href^="#static-"] code,
+nav a[href^="#func-"] code,
+nav a[href^="#property-"] code,
+nav a[href^="#classproperty-"] code,
+nav a[href^="#classmethod-"] code,
+nav a[href^="#module-"] code,
+nav a[href^="#const-"] code {
+  display: none;
 }
 
 /*# sourceMappingURL=custom.css.map */

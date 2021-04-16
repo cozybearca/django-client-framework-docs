@@ -1,14 +1,13 @@
 .. _RelatedObjectManager:
 
-RelatedObjectManager<T, P>
-==========================
+`class` RelatedObjectManager `<T:Model, P:Model>`
+===============================================================================================
 
 
 A generic class where ``T`` and ``P`` are constrained by `Model`_. This class
 provides the ability access and modify one-to-one relations between two object.
 
-Constructor
------------
+**Constructor**
 
 Implementation varies. Most commonly, three values are passed into the constructor:
 
@@ -38,8 +37,8 @@ this case:
         }
 
 
-.get()
-------
+`method` .get `()`
+--------------------
 
     Returns
         An `ObjectManager`_ wrapping the object that's related to the parent. It
@@ -54,8 +53,8 @@ this case:
             // GET /product/1/brand
 
 
-.set(target?)
--------------
+`method` .set `(target?)`
+--------------------------
 
     Sets the object related to the parent object. This is an alternative to
     setting the foreign id directly on the parent. It sends a ``PUT`` request to

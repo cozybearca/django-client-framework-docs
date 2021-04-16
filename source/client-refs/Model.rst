@@ -1,7 +1,7 @@
 .. _Model:
 
-Model
-=====
+`class` Model
+=============================
 
 Similar to the :django:`Model class in Django <models/instances>`, `Model` is
 the base class of all user defined models in the frontend. The implementation

@@ -1,7 +1,7 @@
 .. _ObjectManager:
 
-ObjectManager<T>
-================
+`class` ObjectManager `<T: Model>: T`
+==========================================================
 
 A generic class where ``T`` is constrained by :ref:`Model`. This class provides
 the ability to modify an model object. When constructing an `ObjectManager`_
@@ -12,8 +12,7 @@ methods that are used to modify the wrapped model object, and save the changes
 to the backend.
 
 
-Constructor
------------
+**Constructor**
 
 Pass the model object into the `ObjectManager`_ constructor.
 
@@ -42,8 +41,8 @@ Pass the model object into the `ObjectManager`_ constructor.
 
 **Methods**
 
-.refresh()
-----------
+`method` .refresh `()`
+-------------------------
 
     Pulls data from the server and updates the local data.
     It sends a ``GET`` request to the server.
@@ -60,8 +59,8 @@ Pass the model object into the `ObjectManager`_ constructor.
 
 .. _ObjectManager.save():
 
-.save()
--------
+`method` .save `()`
+---------------------
 
     Updates the server with properties that have been changed on the object. It
     sends a ``PATCH`` request to the server.
@@ -80,8 +79,8 @@ Pass the model object into the `ObjectManager`_ constructor.
 
 .. _ObjectManager.update(...):
 
-.update(data)
--------------
+`method` .update `(data)`
+------------------------------
 
     Updates the server with a dictionary, and also saves the changes locally. It
     sends a ``PATCH`` request to the server.
@@ -104,8 +103,8 @@ Pass the model object into the `ObjectManager`_ constructor.
                 price: null
             )}
 
-.delete()
----------
+`method` .delete `()`
+----------------------------
 
     Removes the data from the server. It sends a DELETE request to the server.
 

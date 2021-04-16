@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>RelatedObjectManager&lt;T, P&gt; &mdash; Django Client Framework  documentation</title>
+  <title>class RelatedObjectManager &lt;T:Model, P:Model&gt; &mdash; Django Client Framework  documentation</title>
   
 
   
@@ -138,7 +138,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>RelatedObjectManager&lt;T, P&gt;</li>
+      <li><cite>class</cite> RelatedObjectManager <cite>&lt;T:Model, P:Model&gt;</cite></li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -157,12 +157,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="relatedobjectmanager-t-p">
-<span id="relatedobjectmanager"></span><h1>RelatedObjectManager&lt;T, P&gt;<a class="headerlink" href="#relatedobjectmanager-t-p" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="class-relatedobjectmanager-t-model-p-model">
+<span id="relatedobjectmanager"></span><h1><cite>class</cite> RelatedObjectManager <cite>&lt;T:Model, P:Model&gt;</cite><a class="headerlink" href="#class-relatedobjectmanager-t-model-p-model" title="Permalink to this headline">¶</a></h1>
 <p>A generic class where <code class="docutils literal notranslate"><span class="pre">T</span></code> and <code class="docutils literal notranslate"><span class="pre">P</span></code> are constrained by <a href="#id1"><span class="problematic" id="id2">`Model`_</span></a>. This class
 provides the ability access and modify one-to-one relations between two object.</p>
-<div class="section" id="constructor">
-<h2>Constructor<a class="headerlink" href="#constructor" title="Permalink to this headline">¶</a></h2>
+<p><strong>Constructor</strong></p>
 <p>Implementation varies. Most commonly, three values are passed into the constructor:</p>
 <blockquote>
 <div><ol class="arabic simple">
@@ -192,9 +191,8 @@ this case:</p>
 </pre></div>
 </div>
 </div></div>
-</div>
-<div class="section" id="get">
-<h2>.get()<a class="headerlink" href="#get" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="method-get">
+<h2><cite>method</cite> .get <cite>()</cite><a class="headerlink" href="#method-get" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><dl class="simple">
 <dt>Returns</dt><dd><p>An <a href="#id3"><span class="problematic" id="id4">`ObjectManager`_</span></a> wrapping the object that’s related to the parent. It
@@ -210,8 +208,8 @@ sends a <code class="docutils literal notranslate"><span class="pre">GET</span><
 </div></div>
 </div></blockquote>
 </div>
-<div class="section" id="set-target">
-<h2>.set(target?)<a class="headerlink" href="#set-target" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="method-set-target">
+<h2><cite>method</cite> .set <cite>(target?)</cite><a class="headerlink" href="#method-set-target" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Sets the object related to the parent object. This is an alternative to
 setting the foreign id directly on the parent. It sends a <code class="docutils literal notranslate"><span class="pre">PUT</span></code> request to

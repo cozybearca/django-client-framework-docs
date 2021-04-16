@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>ObjectManager&lt;T&gt; &mdash; Django Client Framework  documentation</title>
+  <title>class ObjectManager &lt;T: Model&gt;: T &mdash; Django Client Framework  documentation</title>
   
 
   
@@ -138,7 +138,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>ObjectManager&lt;T&gt;</li>
+      <li><cite>class</cite> ObjectManager <cite>&lt;T: Model&gt;: T</cite></li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -157,17 +157,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="objectmanager-t">
-<span id="objectmanager"></span><h1>ObjectManager&lt;T&gt;<a class="headerlink" href="#objectmanager-t" title="Permalink to this headline">¶</a></h1>
-<p>A generic class where <code class="docutils literal notranslate"><span class="pre">T</span></code> is constrained by <a class="reference internal" href="index.html#model"><span class="std std-ref">Model</span></a>. This class provides
+  <div class="section" id="class-objectmanager-t-model-t">
+<span id="objectmanager"></span><h1><cite>class</cite> ObjectManager <cite>&lt;T: Model&gt;: T</cite><a class="headerlink" href="#class-objectmanager-t-model-t" title="Permalink to this headline">¶</a></h1>
+<p>A generic class where <code class="docutils literal notranslate"><span class="pre">T</span></code> is constrained by <a class="reference internal" href="index.html#model"><span class="std std-ref">class Model</span></a>. This class provides
 the ability to modify an model object. When constructing an <a class="reference internal" href="#objectmanager">ObjectManager</a>
 instance, an model object is passed into the <a class="reference internal" href="#objectmanager">ObjectManager</a> class constructor.
 Any field that’s available on the model objects becomes available on the
 <a class="reference internal" href="#objectmanager">ObjectManager</a> object. In addition, the <a class="reference internal" href="#objectmanager">ObjectManager</a> object provides
 methods that are used to modify the wrapped model object, and save the changes
 to the backend.</p>
-<div class="section" id="constructor">
-<h2>Constructor<a class="headerlink" href="#constructor" title="Permalink to this headline">¶</a></h2>
+<p><strong>Constructor</strong></p>
 <p>Pass the model object into the <a class="reference internal" href="#objectmanager">ObjectManager</a> constructor.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -189,9 +188,8 @@ creating one yourself.</p>
 alias.</p>
 </div>
 <p><strong>Methods</strong></p>
-</div>
-<div class="section" id="refresh">
-<h2>.refresh()<a class="headerlink" href="#refresh" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="method-refresh">
+<h2><cite>method</cite> .refresh <cite>()</cite><a class="headerlink" href="#method-refresh" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Pulls data from the server and updates the local data.
 It sends a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request to the server.</p>
@@ -205,8 +203,8 @@ It sends a <code class="docutils literal notranslate"><span class="pre">GET</spa
 </div></div>
 </div></blockquote>
 </div>
-<div class="section" id="save">
-<span id="objectmanager-save"></span><h2>.save()<a class="headerlink" href="#save" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="method-save">
+<span id="objectmanager-save"></span><h2><cite>method</cite> .save <cite>()</cite><a class="headerlink" href="#method-save" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Updates the server with properties that have been changed on the object. It
 sends a <code class="docutils literal notranslate"><span class="pre">PATCH</span></code> request to the server.</p>
@@ -222,8 +220,8 @@ sends a <code class="docutils literal notranslate"><span class="pre">PATCH</span
 </div></div>
 </div></blockquote>
 </div>
-<div class="section" id="update-data">
-<span id="objectmanager-update"></span><h2>.update(data)<a class="headerlink" href="#update-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="method-update-data">
+<span id="objectmanager-update"></span><h2><cite>method</cite> .update <cite>(data)</cite><a class="headerlink" href="#method-update-data" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Updates the server with a dictionary, and also saves the changes locally. It
 sends a <code class="docutils literal notranslate"><span class="pre">PATCH</span></code> request to the server.</p>
@@ -243,8 +241,8 @@ sends a <code class="docutils literal notranslate"><span class="pre">PATCH</span
 </div>
 </div></div>
 </div>
-<div class="section" id="delete">
-<h2>.delete()<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="method-delete">
+<h2><cite>method</cite> .delete <cite>()</cite><a class="headerlink" href="#method-delete" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Removes the data from the server. It sends a DELETE request to the server.</p>
 <div class="sphinx-tabs docutils container">

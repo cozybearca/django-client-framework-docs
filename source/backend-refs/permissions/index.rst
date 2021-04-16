@@ -35,7 +35,7 @@
 
 .. _has_perms_shortcut:
 
-`func` has_perms_shortcut `( user_or_group, model_or_instance, perms, field_name=None ) -> bool`
+`func` has_perms_shortcut `(user_or_group, model_or_instance, perms, field_name=None ) -> bool`
 ===========================================================================================================================
 
     .. code-block:: py

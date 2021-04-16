@@ -91,40 +91,36 @@
 <li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introduction to the Framework</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend-refs/index.html">Backend API Reference</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Client Libraries Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#model">Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#collectionmanager-t">CollectionManager&lt;T&gt;</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#constructor">Constructor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#page-query-pagination">.page(query, pagination)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#get-query">.get(query)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#create-data">.create(data)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#get-or-create-query-defaults">.get_or_create(query, defaults)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#update-or-create-query-defaults">.update_or_create(query, defaults)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#class-model"><cite>class</cite> Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#class-collectionmanager-t-model"><cite>class</cite> CollectionManager <cite>&lt;T:Model&gt;</cite></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#method-page-query-pagination"><cite>method</cite> .page <cite>(query, pagination)</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#method-get-query"><cite>method</cite> .get <cite>(query)</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#method-create-data"><cite>method</cite> .create <cite>(data)</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#method-get-or-create-query-defaults"><cite>method</cite> .get_or_create <cite>(query, defaults)</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#method-update-or-create-query-defaults"><cite>method</cite> .update_or_create <cite>(query, defaults)</cite></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#objectmanager-t">ObjectManager&lt;T&gt;</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">Constructor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#refresh">.refresh()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#save">.save()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#update-data">.update(data)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#delete">.delete()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#class-objectmanager-t-model-t"><cite>class</cite> ObjectManager <cite>&lt;T: Model&gt;: T</cite></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#method-refresh"><cite>method</cite> .refresh <cite>()</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#method-save"><cite>method</cite> .save <cite>()</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#method-update-data"><cite>method</cite> .update <cite>(data)</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#method-delete"><cite>method</cite> .delete <cite>()</cite></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#relatedcollectionmanager-t-p">RelatedCollectionManager&lt;T, P&gt;</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id3">Constructor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#relatedcollectionmanager-page">.page(query, pagination)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#get-query-pagination">.get(query, pagination)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#add-ids-ids">.add_ids(ids)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#set-ids-ids">.set_ids(ids)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#remove-ids-ids">.remove_ids(ids)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#add-objs">.add(objs)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#set-objs">.set(objs)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#remove-objs">.remove(objs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#class-relatedcollectionmanager-t-model-p-model"><cite>class</cite> RelatedCollectionManager <cite>&lt;T:Model, P:Model&gt;</cite></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#method-page-query-pagination-disamb-relatedcollectionmanager"><cite>method</cite> .page <cite>(query, pagination)</cite> <code class="docutils literal notranslate"><span class="pre">disamb-RelatedCollectionManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#method-get-query-pagination"><cite>method</cite> .get <cite>(query, pagination)</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#method-add-ids-ids"><cite>method</cite> .add_ids <cite>(ids)</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#method-set-ids-ids"><cite>method</cite> .set_ids <cite>(ids)</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#method-remove-ids-ids"><cite>method</cite> .remove_ids <cite>(ids)</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#method-add-objs"><cite>method</cite> .add <cite>(objs)</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#method-set-objs"><cite>method</cite> .set <cite>(objs)</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#method-remove-objs"><cite>method</cite> .remove <cite>(objs)</cite></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#relatedobjectmanager-t-p">RelatedObjectManager&lt;T, P&gt;</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id5">Constructor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#get">.get()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#set-target">.set(target?)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#class-relatedobjectmanager-t-model-p-model"><cite>class</cite> RelatedObjectManager <cite>&lt;T:Model, P:Model&gt;</cite></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#method-get"><cite>method</cite> .get <cite>()</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#method-set-target"><cite>method</cite> .set <cite>(target?)</cite></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#designing-for-a-type-safe-api">Designing for a type-safe API</a><ul>
@@ -204,8 +200,8 @@
             
   <div class="section" id="client-libraries-reference">
 <h1>Client Libraries Reference<a class="headerlink" href="#client-libraries-reference" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="model">
-<span id="id1"></span><h2>Model<a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="class-model">
+<span id="model"></span><h2><cite>class</cite> Model<a class="headerlink" href="#class-model" title="Permalink to this headline">¶</a></h2>
 <p>Similar to the <a class="reference external" href="https://docs.djangoproject.com/en/3.1/ref/models/instances">Model class in Django</a>, <cite>Model</cite> is
 the base class of all user defined models in the frontend. The implementation
 varies between the frontend languages, but generally, the <cite>Model</cite> base class
@@ -237,14 +233,13 @@ new one.</p>
 </div>
 </div></div>
 </div>
-<div class="section" id="collectionmanager-t">
-<span id="collectionmanager"></span><h2>CollectionManager&lt;T&gt;<a class="headerlink" href="#collectionmanager-t" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="class-collectionmanager-t-model">
+<span id="collectionmanager"></span><h2><cite>class</cite> CollectionManager <cite>&lt;T:Model&gt;</cite><a class="headerlink" href="#class-collectionmanager-t-model" title="Permalink to this headline">¶</a></h2>
 <p>A generic class where <code class="docutils literal notranslate"><span class="pre">T</span></code> is constrained by <a class="reference internal" href="#model">Model</a>. This class provides the
 access to backend objects. You should use this class to retrieve an
 <code class="docutils literal notranslate"><span class="pre">ObjectManager</span></code> for an model object, instead of creating an <code class="docutils literal notranslate"><span class="pre">ObjectManager</span></code>
 directly.</p>
-<div class="section" id="constructor">
-<h3>Constructor<a class="headerlink" href="#constructor" title="Permalink to this headline">¶</a></h3>
+<p><strong>Constructor</strong></p>
 <p>Implementation varies. For TypeScript and Kotlin, you need to pass the
 constructor of <code class="docutils literal notranslate"><span class="pre">T</span></code> in to the constructor, because the type information is
 erased during the runtime.</p>
@@ -263,9 +258,8 @@ class, so that you can retrieve the <code class="docutils literal notranslate"><
 </div></div>
 </div>
 <p><strong>Methods</strong></p>
-</div>
-<div class="section" id="page-query-pagination">
-<span id="collectionmanager-page"></span><h3>.page(query, pagination)<a class="headerlink" href="#page-query-pagination" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="method-page-query-pagination">
+<span id="collectionmanager-page"></span><h3><cite>method</cite> .page <cite>(query, pagination)</cite><a class="headerlink" href="#method-page-query-pagination" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Returns a filtered collection of the model objects, with the desired
 pagination. It sends a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request to the server.</p>
@@ -342,20 +336,20 @@ reverse order. Use <code class="docutils literal notranslate"><span class="pre">
 </div></div>
 </div></blockquote>
 </div>
-<div class="section" id="get-query">
-<span id="collectionmanager-get"></span><h3>.get(query)<a class="headerlink" href="#get-query" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="method-get-query">
+<span id="collectionmanager-get"></span><h3><cite>method</cite> .get <cite>(query)</cite><a class="headerlink" href="#method-get-query" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><p>This method does the same thing as <a class="reference internal" href="#collectionmanager-page"><span class="std std-ref">.page(query, pagination)</span></a> except
+<div><p>This method does the same thing as <a class="reference internal" href="#collectionmanager-page"><span class="std std-ref">method .page (query, pagination)</span></a> except
 that it expects exactly one object to be returned from the server. If less
 or more than one object is returned, an InvalidObjectCount error is thrown.</p>
 <dl class="simple">
-<dt>Returns</dt><dd><p>An <a class="reference internal" href="#objectmanager"><span class="std std-ref">ObjectManager&lt;T&gt;</span></a> object wrapping the model.</p>
+<dt>Returns</dt><dd><p>An <a class="reference internal" href="#objectmanager"><span class="std std-ref">class ObjectManager &lt;T: Model&gt;: T</span></a> object wrapping the model.</p>
 </dd>
 </dl>
 </div></blockquote>
 </div>
-<div class="section" id="create-data">
-<span id="collectionmanager-create"></span><h3>.create(data)<a class="headerlink" href="#create-data" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="method-create-data">
+<span id="collectionmanager-create"></span><h3><cite>method</cite> .create <cite>(data)</cite><a class="headerlink" href="#method-create-data" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Saves an object on the server with the provided dictionary of data. It sends
 a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request to the server.</p>
@@ -373,21 +367,21 @@ a <code class="docutils literal notranslate"><span class="pre">POST</span></code
 </div>
 </div></div>
 <dl class="simple">
-<dt>Returns</dt><dd><p>An <a class="reference internal" href="#objectmanager"><span class="std std-ref">ObjectManager&lt;T&gt;</span></a> object wrapping the created model.</p>
+<dt>Returns</dt><dd><p>An <a class="reference internal" href="#objectmanager"><span class="std std-ref">class ObjectManager &lt;T: Model&gt;: T</span></a> object wrapping the created model.</p>
 </dd>
 </dl>
 </div></blockquote>
 </div>
-<div class="section" id="get-or-create-query-defaults">
-<span id="collectionmanager-get-or-create"></span><h3>.get_or_create(query, defaults)<a class="headerlink" href="#get-or-create-query-defaults" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="method-get-or-create-query-defaults">
+<span id="collectionmanager-get-or-create"></span><h3><cite>method</cite> .get_or_create <cite>(query, defaults)</cite><a class="headerlink" href="#method-get-or-create-query-defaults" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><p>First tries to <a class="reference internal" href="#collectionmanager-get"><span class="std std-ref">.get(query)</span></a> the object with the query
+<div><p>First tries to <a class="reference internal" href="#collectionmanager-get"><span class="std std-ref">method .get (query)</span></a> the object with the query
 dictionary. If the object does not exist, then
-<a class="reference internal" href="#collectionmanager-create"><span class="std std-ref">.create(data)</span></a> the object by using the combined values
+<a class="reference internal" href="#collectionmanager-create"><span class="std std-ref">method .create (data)</span></a> the object by using the combined values
 on query and defaults. It sends a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request, and if the object does
 not exist, then sends a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request.</p>
 <dl class="simple">
-<dt>Returns</dt><dd><p>An <a class="reference internal" href="#objectmanager"><span class="std std-ref">ObjectManager&lt;T&gt;</span></a> object wrapping the model.</p>
+<dt>Returns</dt><dd><p>An <a class="reference internal" href="#objectmanager"><span class="std std-ref">class ObjectManager &lt;T: Model&gt;: T</span></a> object wrapping the model.</p>
 </dd>
 </dl>
 <div class="sphinx-tabs docutils container">
@@ -406,16 +400,16 @@ not exist, then sends a <code class="docutils literal notranslate"><span class="
 </div></div>
 </div></blockquote>
 </div>
-<div class="section" id="update-or-create-query-defaults">
-<span id="collectionmanager-update-or-create"></span><h3>.update_or_create(query, defaults)<a class="headerlink" href="#update-or-create-query-defaults" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="method-update-or-create-query-defaults">
+<span id="collectionmanager-update-or-create"></span><h3><cite>method</cite> .update_or_create <cite>(query, defaults)</cite><a class="headerlink" href="#method-update-or-create-query-defaults" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><p>First tries to <a class="reference internal" href="#collectionmanager-get"><span class="std std-ref">.get(query)</span></a> the object with the
+<div><p>First tries to <a class="reference internal" href="#collectionmanager-get"><span class="std std-ref">method .get (query)</span></a> the object with the
 <code class="docutils literal notranslate"><span class="pre">query</span></code> dictionary. If the object does not exist, then it follows the
-<a class="reference internal" href="#collectionmanager-get-or-create"><span class="std std-ref">.get_or_create(query, defaults)</span></a> logic. If the object already
+<a class="reference internal" href="#collectionmanager-get-or-create"><span class="std std-ref">method .get_or_create (query, defaults)</span></a> logic. If the object already
 exists, then it updates the object with values in the <code class="docutils literal notranslate"><span class="pre">defaults</span></code>
 dictionary. When updating, sends a <code class="docutils literal notranslate"><span class="pre">PATCH</span></code> request.</p>
 <dl class="simple">
-<dt>Returns</dt><dd><p>An <a class="reference internal" href="#objectmanager"><span class="std std-ref">ObjectManager&lt;T&gt;</span></a> object wrapping the model.</p>
+<dt>Returns</dt><dd><p>An <a class="reference internal" href="#objectmanager"><span class="std std-ref">class ObjectManager &lt;T: Model&gt;: T</span></a> object wrapping the model.</p>
 </dd>
 </dl>
 <div class="sphinx-tabs docutils container">
@@ -435,17 +429,16 @@ dictionary. When updating, sends a <code class="docutils literal notranslate"><s
 </div></blockquote>
 </div>
 </div>
-<div class="section" id="objectmanager-t">
-<span id="objectmanager"></span><h2>ObjectManager&lt;T&gt;<a class="headerlink" href="#objectmanager-t" title="Permalink to this headline">¶</a></h2>
-<p>A generic class where <code class="docutils literal notranslate"><span class="pre">T</span></code> is constrained by <a class="reference internal" href="#model"><span class="std std-ref">Model</span></a>. This class provides
+<div class="section" id="class-objectmanager-t-model-t">
+<span id="objectmanager"></span><h2><cite>class</cite> ObjectManager <cite>&lt;T: Model&gt;: T</cite><a class="headerlink" href="#class-objectmanager-t-model-t" title="Permalink to this headline">¶</a></h2>
+<p>A generic class where <code class="docutils literal notranslate"><span class="pre">T</span></code> is constrained by <a class="reference internal" href="#model"><span class="std std-ref">class Model</span></a>. This class provides
 the ability to modify an model object. When constructing an <a class="reference internal" href="#objectmanager">ObjectManager</a>
 instance, an model object is passed into the <a class="reference internal" href="#objectmanager">ObjectManager</a> class constructor.
 Any field that’s available on the model objects becomes available on the
 <a class="reference internal" href="#objectmanager">ObjectManager</a> object. In addition, the <a class="reference internal" href="#objectmanager">ObjectManager</a> object provides
 methods that are used to modify the wrapped model object, and save the changes
 to the backend.</p>
-<div class="section" id="id2">
-<h3>Constructor<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p><strong>Constructor</strong></p>
 <p>Pass the model object into the <a class="reference internal" href="#objectmanager">ObjectManager</a> constructor.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -467,9 +460,8 @@ creating one yourself.</p>
 alias.</p>
 </div>
 <p><strong>Methods</strong></p>
-</div>
-<div class="section" id="refresh">
-<h3>.refresh()<a class="headerlink" href="#refresh" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="method-refresh">
+<h3><cite>method</cite> .refresh <cite>()</cite><a class="headerlink" href="#method-refresh" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Pulls data from the server and updates the local data.
 It sends a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request to the server.</p>
@@ -483,8 +475,8 @@ It sends a <code class="docutils literal notranslate"><span class="pre">GET</spa
 </div></div>
 </div></blockquote>
 </div>
-<div class="section" id="save">
-<span id="objectmanager-save"></span><h3>.save()<a class="headerlink" href="#save" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="method-save">
+<span id="objectmanager-save"></span><h3><cite>method</cite> .save <cite>()</cite><a class="headerlink" href="#method-save" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Updates the server with properties that have been changed on the object. It
 sends a <code class="docutils literal notranslate"><span class="pre">PATCH</span></code> request to the server.</p>
@@ -500,15 +492,15 @@ sends a <code class="docutils literal notranslate"><span class="pre">PATCH</span
 </div></div>
 </div></blockquote>
 </div>
-<div class="section" id="update-data">
-<span id="objectmanager-update"></span><h3>.update(data)<a class="headerlink" href="#update-data" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="method-update-data">
+<span id="objectmanager-update"></span><h3><cite>method</cite> .update <cite>(data)</cite><a class="headerlink" href="#method-update-data" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Updates the server with a dictionary, and also saves the changes locally. It
 sends a <code class="docutils literal notranslate"><span class="pre">PATCH</span></code> request to the server.</p>
 </div></blockquote>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a href="#id6"><span class="problematic" id="id7">`The Design Decision for Type-safety`_</span></a>.</p>
+<p><a href="#id1"><span class="problematic" id="id2">`The Design Decision for Type-safety`_</span></a>.</p>
 </div>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-9-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-9-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-9-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-9-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">product</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Product</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">...</span>
@@ -521,8 +513,8 @@ sends a <code class="docutils literal notranslate"><span class="pre">PATCH</span
 </div>
 </div></div>
 </div>
-<div class="section" id="delete">
-<h3>.delete()<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="method-delete">
+<h3><cite>method</cite> .delete <cite>()</cite><a class="headerlink" href="#method-delete" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Removes the data from the server. It sends a DELETE request to the server.</p>
 <div class="sphinx-tabs docutils container">
@@ -535,13 +527,12 @@ sends a <code class="docutils literal notranslate"><span class="pre">PATCH</span
 </div></blockquote>
 </div>
 </div>
-<div class="section" id="relatedcollectionmanager-t-p">
-<span id="relatedcollectionmanager"></span><h2>RelatedCollectionManager&lt;T, P&gt;<a class="headerlink" href="#relatedcollectionmanager-t-p" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="class-relatedcollectionmanager-t-model-p-model">
+<span id="relatedcollectionmanager"></span><h2><cite>class</cite> RelatedCollectionManager <cite>&lt;T:Model, P:Model&gt;</cite><a class="headerlink" href="#class-relatedcollectionmanager-t-model-p-model" title="Permalink to this headline">¶</a></h2>
 <p>A generic class where <code class="docutils literal notranslate"><span class="pre">T</span></code> and <code class="docutils literal notranslate"><span class="pre">P</span></code> are constrained by <a class="reference internal" href="#model">Model</a>. This class
 provides the ability access and modify many-to-one or many-to-many object
 relations.</p>
-<div class="section" id="id3">
-<h3>Constructor<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p><strong>Constructor</strong></p>
 <p>Implementation varies. Most commonly, three values are passed into the constructor:</p>
 <blockquote>
 <div><ol class="arabic simple">
@@ -571,14 +562,12 @@ this case:</p>
 </pre></div>
 </div>
 </div></div>
-</div>
-<div class="section" id="relatedcollectionmanager-page">
-<span id="id4"></span><h3>.page(query, pagination)<a class="headerlink" href="#relatedcollectionmanager-page" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="method-page-query-pagination-disamb-relatedcollectionmanager">
+<span id="relatedcollectionmanager-page1"></span><h3><cite>method</cite> .page <cite>(query, pagination)</cite> <code class="docutils literal notranslate"><span class="pre">disamb-RelatedCollectionManager</span></code><a class="headerlink" href="#method-page-query-pagination-disamb-relatedcollectionmanager" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>This method is agnostic to <a class="reference internal" href="#collectionmanager-page">CollectionManager.page(…)</a>, but to retrieve a
 collection of related model objects. It sends a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request to the
 server.</p>
-</div></blockquote>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-12-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-12-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-12-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-12-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">brand</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Brand</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">...</span> <span class="c1">// assumes id is 1</span>
 <span class="kd">let</span> <span class="nx">products</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">brand</span><span class="p">.</span><span class="nx">products</span><span class="p">.</span><span class="nx">page</span><span class="p">({</span>
@@ -590,17 +579,18 @@ server.</p>
 </pre></div>
 </div>
 </div></div>
+</div></blockquote>
 </div>
-<div class="section" id="get-query-pagination">
-<span id="relatedcollectionmanager-get"></span><h3>.get(query, pagination)<a class="headerlink" href="#get-query-pagination" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="method-get-query-pagination">
+<span id="relatedcollectionmanager-get"></span><h3><cite>method</cite> .get <cite>(query, pagination)</cite><a class="headerlink" href="#method-get-query-pagination" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>This method is agnostic to <a class="reference internal" href="#collectionmanager-get">CollectionManager.get(…)</a>, but to retrieve a
 collection of related model objects. It sends a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request to the
 server.</p>
 </div></blockquote>
 </div>
-<div class="section" id="add-ids-ids">
-<span id="relatedcollectionmanager-add-ids"></span><h3>.add_ids(ids)<a class="headerlink" href="#add-ids-ids" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="method-add-ids-ids">
+<span id="relatedcollectionmanager-add-ids"></span><h3><cite>method</cite> .add_ids <cite>(ids)</cite><a class="headerlink" href="#method-add-ids-ids" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Creates object relations using object ids. It sends a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request to
 the server.</p>
@@ -618,8 +608,8 @@ the server.</p>
 </div></div>
 </div></blockquote>
 </div>
-<div class="section" id="set-ids-ids">
-<span id="relatedcollectionmanager-set-ids"></span><h3>.set_ids(ids)<a class="headerlink" href="#set-ids-ids" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="method-set-ids-ids">
+<span id="relatedcollectionmanager-set-ids"></span><h3><cite>method</cite> .set_ids <cite>(ids)</cite><a class="headerlink" href="#method-set-ids-ids" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Clear the object relations first, before adding new ones using the object
 ids. It sends a <code class="docutils literal notranslate"><span class="pre">PUT</span></code> request to the server.</p>
@@ -637,8 +627,8 @@ ids. It sends a <code class="docutils literal notranslate"><span class="pre">PUT
 </div></div>
 </div></blockquote>
 </div>
-<div class="section" id="remove-ids-ids">
-<span id="relatedcollectionmanager-remove-ids"></span><h3>.remove_ids(ids)<a class="headerlink" href="#remove-ids-ids" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="method-remove-ids-ids">
+<span id="relatedcollectionmanager-remove-ids"></span><h3><cite>method</cite> .remove_ids <cite>(ids)</cite><a class="headerlink" href="#method-remove-ids-ids" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Removes object relations using object ids. The method only removes the
 relation. It does not delete the objects. It sends a <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> request to
@@ -657,8 +647,8 @@ the server.</p>
 </div></div>
 </div></blockquote>
 </div>
-<div class="section" id="add-objs">
-<h3>.add(objs)<a class="headerlink" href="#add-objs" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="method-add-objs">
+<h3><cite>method</cite> .add <cite>(objs)</cite><a class="headerlink" href="#method-add-objs" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Same as <a class="reference internal" href="#relatedcollectionmanager-add-ids">RelatedCollectionManager.add_ids(…)</a> but takes a set of
 <a class="reference internal" href="#objectmanager">ObjectManager</a> objects instead.</p>
@@ -668,8 +658,8 @@ the server.</p>
 </dl>
 </div></blockquote>
 </div>
-<div class="section" id="set-objs">
-<h3>.set(objs)<a class="headerlink" href="#set-objs" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="method-set-objs">
+<h3><cite>method</cite> .set <cite>(objs)</cite><a class="headerlink" href="#method-set-objs" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Same as <a class="reference internal" href="#relatedcollectionmanager-set-ids">RelatedCollectionManager.set_ids(…)</a> but takes a set of
 <a class="reference internal" href="#objectmanager">ObjectManager</a> objects instead.</p>
@@ -679,8 +669,8 @@ the server.</p>
 </dl>
 </div></blockquote>
 </div>
-<div class="section" id="remove-objs">
-<h3>.remove(objs)<a class="headerlink" href="#remove-objs" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="method-remove-objs">
+<h3><cite>method</cite> .remove <cite>(objs)</cite><a class="headerlink" href="#method-remove-objs" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Same as <a class="reference internal" href="#relatedcollectionmanager-remove-ids">RelatedCollectionManager.remove_ids(…)</a> but takes a set of
 <a class="reference internal" href="#objectmanager">ObjectManager</a> objects instead.</p>
@@ -692,12 +682,11 @@ collection.</p>
 </div></blockquote>
 </div>
 </div>
-<div class="section" id="relatedobjectmanager-t-p">
-<span id="relatedobjectmanager"></span><h2>RelatedObjectManager&lt;T, P&gt;<a class="headerlink" href="#relatedobjectmanager-t-p" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="class-relatedobjectmanager-t-model-p-model">
+<span id="relatedobjectmanager"></span><h2><cite>class</cite> RelatedObjectManager <cite>&lt;T:Model, P:Model&gt;</cite><a class="headerlink" href="#class-relatedobjectmanager-t-model-p-model" title="Permalink to this headline">¶</a></h2>
 <p>A generic class where <code class="docutils literal notranslate"><span class="pre">T</span></code> and <code class="docutils literal notranslate"><span class="pre">P</span></code> are constrained by <a class="reference internal" href="#model">Model</a>. This class
 provides the ability access and modify one-to-one relations between two object.</p>
-<div class="section" id="id5">
-<h3>Constructor<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p><strong>Constructor</strong></p>
 <p>Implementation varies. Most commonly, three values are passed into the constructor:</p>
 <blockquote>
 <div><ol class="arabic simple">
@@ -727,9 +716,8 @@ this case:</p>
 </pre></div>
 </div>
 </div></div>
-</div>
-<div class="section" id="get">
-<h3>.get()<a class="headerlink" href="#get" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="method-get">
+<h3><cite>method</cite> .get <cite>()</cite><a class="headerlink" href="#method-get" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="simple">
 <dt>Returns</dt><dd><p>An <a class="reference internal" href="#objectmanager">ObjectManager</a> wrapping the object that’s related to the parent. It
@@ -745,8 +733,8 @@ sends a <code class="docutils literal notranslate"><span class="pre">GET</span><
 </div></div>
 </div></blockquote>
 </div>
-<div class="section" id="set-target">
-<h3>.set(target?)<a class="headerlink" href="#set-target" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="method-set-target">
+<h3><cite>method</cite> .set <cite>(target?)</cite><a class="headerlink" href="#method-set-target" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Sets the object related to the parent object. This is an alternative to
 setting the foreign id directly on the parent. It sends a <code class="docutils literal notranslate"><span class="pre">PUT</span></code> request to
@@ -795,7 +783,7 @@ language only allows access on defined properties.</p>
 <a class="reference internal" href="#collectionmanager-page">CollectionManager.page(…)</a> type safe? There are two types of difficulties we
 must take into consideration. First, you need to realize that the backend modal
 API such as <code class="docutils literal notranslate"><span class="pre">PATCH</span> <span class="pre">/product/1</span></code> does not only accept valid properties that are
-defined on the model. In fact, the backend could use <span class="xref std std-ref">DelegateSerializer</span>
+defined on the model. In fact, the backend could use <a class="reference internal" href="../backend-refs/serializers/DelegateSerializer.html#delegateserializer"><span class="std std-ref">class DelegateSerializer extends Serializer</span></a>
 to accept a variaty of key-value pairs. For instance, if a <cite>User</cite> model API is
 designed to change user password, the backend will expect an request such as:</p>
 <div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span>// PATCH /user/1
@@ -806,7 +794,7 @@ designed to change user password, the backend will expect an request such as:</p
 }
 </pre></div>
 </div>
-<p>The backend can achieve this with the <span class="xref std std-ref">DelegateSerializer</span> class. However,
+<p>The backend can achieve this with the <a class="reference internal" href="../backend-refs/serializers/DelegateSerializer.html#delegateserializer"><span class="std std-ref">class DelegateSerializer extends Serializer</span></a> class. However,
 neither <code class="docutils literal notranslate"><span class="pre">old_password</span></code> and <code class="docutils literal notranslate"><span class="pre">new_password</span></code> are keys on the <cite>User</cite> model.</p>
 <p>To resolve this issue, we can consider making the <a class="reference internal" href="#objectmanager-update">ObjectManager.update(…)</a> a
 generic method such as:</p>

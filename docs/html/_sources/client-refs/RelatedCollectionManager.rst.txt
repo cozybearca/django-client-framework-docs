@@ -1,14 +1,13 @@
 .. _RelatedCollectionManager:
 
-RelatedCollectionManager<T, P>
-==============================
+`class` RelatedCollectionManager `<T:Model, P:Model>`
+============================================================================================
 
 A generic class where ``T`` and ``P`` are constrained by `Model`_. This class
 provides the ability access and modify many-to-one or many-to-many object
 relations.
 
-Constructor
------------
+**Constructor**
 
 Implementation varies. Most commonly, three values are passed into the constructor:
 
@@ -38,32 +37,33 @@ this case:
         }
 
 
-.. _RelatedCollectionManager.page(...):
+.. _RelatedCollectionManager.page1:
 
-.page(query, pagination)
-------------------------
+`method` .page `(query, pagination)` ``disamb-RelatedCollectionManager``
+-----------------------------------------------------------------------------
 
     This method is agnostic to `CollectionManager.page(...)`_, but to retrieve a
     collection of related model objects. It sends a ``GET`` request to the
     server.
 
-.. tabs::
+    .. tabs::
 
-    .. code-tab:: ts
+        .. code-tab:: ts
 
-        let brand: ObjectManager<Brand> = ... // assumes id is 1
-        let products = await brand.products.page({
-            query: {
-                name__contains: "xy"
-            }
-        })
-        // GET /brand/1/products?name__contains=xy
+            let brand: ObjectManager<Brand> = ... // assumes id is 1
+            let products = await brand.products.page({
+                query: {
+                    name__contains: "xy"
+                }
+            })
+            // GET /brand/1/products?name__contains=xy
+
 
 
 .. _RelatedCollectionManager.get(...):
 
-.get(query, pagination)
-------------------------
+`method` .get `(query, pagination)`
+----------------------------------------
 
     This method is agnostic to `CollectionManager.get(...)`_, but to retrieve a
     collection of related model objects. It sends a ``GET`` request to the
@@ -73,8 +73,8 @@ this case:
 
 .. _RelatedCollectionManager.add_ids(...):
 
-.add_ids(ids)
--------------
+`method` .add_ids `(ids)`
+----------------------------
 
     Creates object relations using object ids. It sends a ``POST`` request to
     the server.
@@ -94,8 +94,8 @@ this case:
 
 .. _RelatedCollectionManager.set_ids(...):
 
-.set_ids(ids)
-----------------
+`method` .set_ids `(ids)`
+-------------------------------
 
     Clear the object relations first, before adding new ones using the object
     ids. It sends a ``PUT`` request to the server.
@@ -116,8 +116,8 @@ this case:
 
 .. _RelatedCollectionManager.remove_ids(...):
 
-.remove_ids(ids)
-----------------
+`method` .remove_ids `(ids)`
+-------------------------------
 
     Removes object relations using object ids. The method only removes the
     relation. It does not delete the objects. It sends a ``DELETE`` request to
@@ -137,8 +137,8 @@ this case:
             // DELETE /brand/1/product [1]
 
 
-.add(objs)
------------
+`method` .add `(objs)`
+--------------------------
 
     Same as `RelatedCollectionManager.add_ids(...)`_ but takes a set of
     `ObjectManager`_ objects instead.
@@ -147,8 +147,8 @@ this case:
         A set of `ObjectManager`_ objects whose ids are added to the collection.
 
 
-.set(objs)
--------------
+`method` .set `(objs)`
+--------------------------
 
     Same as `RelatedCollectionManager.set_ids(...)`_ but takes a set of
     `ObjectManager`_ objects instead.
@@ -157,8 +157,8 @@ this case:
         A set of `ObjectManager`_ objects whose ids are set as the collection.
 
 
-.remove(objs)
--------------
+`method` .remove `(objs)`
+---------------------------------
 
     Same as `RelatedCollectionManager.remove_ids(...)`_ but takes a set of
     `ObjectManager`_ objects instead.

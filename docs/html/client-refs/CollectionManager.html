@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>CollectionManager&lt;T&gt; &mdash; Django Client Framework  documentation</title>
+  <title>class CollectionManager &lt;T:Model&gt; &mdash; Django Client Framework  documentation</title>
   
 
   
@@ -138,7 +138,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>CollectionManager&lt;T&gt;</li>
+      <li><cite>class</cite> CollectionManager <cite>&lt;T:Model&gt;</cite></li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -157,14 +157,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="collectionmanager-t">
-<span id="collectionmanager"></span><h1>CollectionManager&lt;T&gt;<a class="headerlink" href="#collectionmanager-t" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="class-collectionmanager-t-model">
+<span id="collectionmanager"></span><h1><cite>class</cite> CollectionManager <cite>&lt;T:Model&gt;</cite><a class="headerlink" href="#class-collectionmanager-t-model" title="Permalink to this headline">¶</a></h1>
 <p>A generic class where <code class="docutils literal notranslate"><span class="pre">T</span></code> is constrained by <a href="#id1"><span class="problematic" id="id2">`Model`_</span></a>. This class provides the
 access to backend objects. You should use this class to retrieve an
 <code class="docutils literal notranslate"><span class="pre">ObjectManager</span></code> for an model object, instead of creating an <code class="docutils literal notranslate"><span class="pre">ObjectManager</span></code>
 directly.</p>
-<div class="section" id="constructor">
-<h2>Constructor<a class="headerlink" href="#constructor" title="Permalink to this headline">¶</a></h2>
+<p><strong>Constructor</strong></p>
 <p>Implementation varies. For TypeScript and Kotlin, you need to pass the
 constructor of <code class="docutils literal notranslate"><span class="pre">T</span></code> in to the constructor, because the type information is
 erased during the runtime.</p>
@@ -183,9 +182,8 @@ class, so that you can retrieve the <code class="docutils literal notranslate"><
 </div></div>
 </div>
 <p><strong>Methods</strong></p>
-</div>
-<div class="section" id="page-query-pagination">
-<span id="collectionmanager-page"></span><h2>.page(query, pagination)<a class="headerlink" href="#page-query-pagination" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="method-page-query-pagination">
+<span id="collectionmanager-page"></span><h2><cite>method</cite> .page <cite>(query, pagination)</cite><a class="headerlink" href="#method-page-query-pagination" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Returns a filtered collection of the model objects, with the desired
 pagination. It sends a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request to the server.</p>
@@ -262,20 +260,20 @@ reverse order. Use <code class="docutils literal notranslate"><span class="pre">
 </div></div>
 </div></blockquote>
 </div>
-<div class="section" id="get-query">
-<span id="collectionmanager-get"></span><h2>.get(query)<a class="headerlink" href="#get-query" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="method-get-query">
+<span id="collectionmanager-get"></span><h2><cite>method</cite> .get <cite>(query)</cite><a class="headerlink" href="#method-get-query" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>This method does the same thing as <a class="reference internal" href="index.html#collectionmanager-page"><span class="std std-ref">.page(query, pagination)</span></a> except
+<div><p>This method does the same thing as <a class="reference internal" href="index.html#collectionmanager-page"><span class="std std-ref">method .page (query, pagination)</span></a> except
 that it expects exactly one object to be returned from the server. If less
 or more than one object is returned, an InvalidObjectCount error is thrown.</p>
 <dl class="simple">
-<dt>Returns</dt><dd><p>An <a class="reference internal" href="index.html#objectmanager"><span class="std std-ref">ObjectManager&lt;T&gt;</span></a> object wrapping the model.</p>
+<dt>Returns</dt><dd><p>An <a class="reference internal" href="index.html#objectmanager"><span class="std std-ref">class ObjectManager &lt;T: Model&gt;: T</span></a> object wrapping the model.</p>
 </dd>
 </dl>
 </div></blockquote>
 </div>
-<div class="section" id="create-data">
-<span id="collectionmanager-create"></span><h2>.create(data)<a class="headerlink" href="#create-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="method-create-data">
+<span id="collectionmanager-create"></span><h2><cite>method</cite> .create <cite>(data)</cite><a class="headerlink" href="#method-create-data" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Saves an object on the server with the provided dictionary of data. It sends
 a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request to the server.</p>
@@ -293,21 +291,21 @@ a <code class="docutils literal notranslate"><span class="pre">POST</span></code
 </div>
 </div></div>
 <dl class="simple">
-<dt>Returns</dt><dd><p>An <a class="reference internal" href="index.html#objectmanager"><span class="std std-ref">ObjectManager&lt;T&gt;</span></a> object wrapping the created model.</p>
+<dt>Returns</dt><dd><p>An <a class="reference internal" href="index.html#objectmanager"><span class="std std-ref">class ObjectManager &lt;T: Model&gt;: T</span></a> object wrapping the created model.</p>
 </dd>
 </dl>
 </div></blockquote>
 </div>
-<div class="section" id="get-or-create-query-defaults">
-<span id="collectionmanager-get-or-create"></span><h2>.get_or_create(query, defaults)<a class="headerlink" href="#get-or-create-query-defaults" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="method-get-or-create-query-defaults">
+<span id="collectionmanager-get-or-create"></span><h2><cite>method</cite> .get_or_create <cite>(query, defaults)</cite><a class="headerlink" href="#method-get-or-create-query-defaults" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>First tries to <a class="reference internal" href="index.html#collectionmanager-get"><span class="std std-ref">.get(query)</span></a> the object with the query
+<div><p>First tries to <a class="reference internal" href="index.html#collectionmanager-get"><span class="std std-ref">method .get (query)</span></a> the object with the query
 dictionary. If the object does not exist, then
-<a class="reference internal" href="index.html#collectionmanager-create"><span class="std std-ref">.create(data)</span></a> the object by using the combined values
+<a class="reference internal" href="index.html#collectionmanager-create"><span class="std std-ref">method .create (data)</span></a> the object by using the combined values
 on query and defaults. It sends a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request, and if the object does
 not exist, then sends a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request.</p>
 <dl class="simple">
-<dt>Returns</dt><dd><p>An <a class="reference internal" href="index.html#objectmanager"><span class="std std-ref">ObjectManager&lt;T&gt;</span></a> object wrapping the model.</p>
+<dt>Returns</dt><dd><p>An <a class="reference internal" href="index.html#objectmanager"><span class="std std-ref">class ObjectManager &lt;T: Model&gt;: T</span></a> object wrapping the model.</p>
 </dd>
 </dl>
 <div class="sphinx-tabs docutils container">
@@ -326,16 +324,16 @@ not exist, then sends a <code class="docutils literal notranslate"><span class="
 </div></div>
 </div></blockquote>
 </div>
-<div class="section" id="update-or-create-query-defaults">
-<span id="collectionmanager-update-or-create"></span><h2>.update_or_create(query, defaults)<a class="headerlink" href="#update-or-create-query-defaults" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="method-update-or-create-query-defaults">
+<span id="collectionmanager-update-or-create"></span><h2><cite>method</cite> .update_or_create <cite>(query, defaults)</cite><a class="headerlink" href="#method-update-or-create-query-defaults" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>First tries to <a class="reference internal" href="index.html#collectionmanager-get"><span class="std std-ref">.get(query)</span></a> the object with the
+<div><p>First tries to <a class="reference internal" href="index.html#collectionmanager-get"><span class="std std-ref">method .get (query)</span></a> the object with the
 <code class="docutils literal notranslate"><span class="pre">query</span></code> dictionary. If the object does not exist, then it follows the
-<a class="reference internal" href="index.html#collectionmanager-get-or-create"><span class="std std-ref">.get_or_create(query, defaults)</span></a> logic. If the object already
+<a class="reference internal" href="index.html#collectionmanager-get-or-create"><span class="std std-ref">method .get_or_create (query, defaults)</span></a> logic. If the object already
 exists, then it updates the object with values in the <code class="docutils literal notranslate"><span class="pre">defaults</span></code>
 dictionary. When updating, sends a <code class="docutils literal notranslate"><span class="pre">PATCH</span></code> request.</p>
 <dl class="simple">
-<dt>Returns</dt><dd><p>An <a class="reference internal" href="index.html#objectmanager"><span class="std std-ref">ObjectManager&lt;T&gt;</span></a> object wrapping the model.</p>
+<dt>Returns</dt><dd><p>An <a class="reference internal" href="index.html#objectmanager"><span class="std std-ref">class ObjectManager &lt;T: Model&gt;: T</span></a> object wrapping the model.</p>
 </dd>
 </dl>
 <div class="sphinx-tabs docutils container">

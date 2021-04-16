@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>RelatedCollectionManager&lt;T, P&gt; &mdash; Django Client Framework  documentation</title>
+  <title>class RelatedCollectionManager &lt;T:Model, P:Model&gt; &mdash; Django Client Framework  documentation</title>
   
 
   
@@ -138,7 +138,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>RelatedCollectionManager&lt;T, P&gt;</li>
+      <li><cite>class</cite> RelatedCollectionManager <cite>&lt;T:Model, P:Model&gt;</cite></li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -157,13 +157,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="relatedcollectionmanager-t-p">
-<span id="relatedcollectionmanager"></span><h1>RelatedCollectionManager&lt;T, P&gt;<a class="headerlink" href="#relatedcollectionmanager-t-p" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="class-relatedcollectionmanager-t-model-p-model">
+<span id="relatedcollectionmanager"></span><h1><cite>class</cite> RelatedCollectionManager <cite>&lt;T:Model, P:Model&gt;</cite><a class="headerlink" href="#class-relatedcollectionmanager-t-model-p-model" title="Permalink to this headline">¶</a></h1>
 <p>A generic class where <code class="docutils literal notranslate"><span class="pre">T</span></code> and <code class="docutils literal notranslate"><span class="pre">P</span></code> are constrained by <a href="#id1"><span class="problematic" id="id2">`Model`_</span></a>. This class
 provides the ability access and modify many-to-one or many-to-many object
 relations.</p>
-<div class="section" id="constructor">
-<h2>Constructor<a class="headerlink" href="#constructor" title="Permalink to this headline">¶</a></h2>
+<p><strong>Constructor</strong></p>
 <p>Implementation varies. Most commonly, three values are passed into the constructor:</p>
 <blockquote>
 <div><ol class="arabic simple">
@@ -193,14 +192,12 @@ this case:</p>
 </pre></div>
 </div>
 </div></div>
-</div>
-<div class="section" id="page-query-pagination">
-<span id="relatedcollectionmanager-page"></span><h2>.page(query, pagination)<a class="headerlink" href="#page-query-pagination" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="method-page-query-pagination-disamb-relatedcollectionmanager">
+<span id="relatedcollectionmanager-page1"></span><h2><cite>method</cite> .page <cite>(query, pagination)</cite> <code class="docutils literal notranslate"><span class="pre">disamb-RelatedCollectionManager</span></code><a class="headerlink" href="#method-page-query-pagination-disamb-relatedcollectionmanager" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>This method is agnostic to <a href="#id3"><span class="problematic" id="id4">`CollectionManager.page(...)`_</span></a>, but to retrieve a
 collection of related model objects. It sends a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request to the
 server.</p>
-</div></blockquote>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-VHlwZVNjcmlwdA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-1-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tab" tabindex="0">TypeScript</button></div><div aria-labelledby="tab-1-VHlwZVNjcmlwdA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-1-VHlwZVNjcmlwdA==" name="VHlwZVNjcmlwdA==" role="tabpanel" tabindex="0"><div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">brand</span>: <span class="kt">ObjectManager</span><span class="o">&lt;</span><span class="nx">Brand</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">...</span> <span class="c1">// assumes id is 1</span>
 <span class="kd">let</span> <span class="nx">products</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">brand</span><span class="p">.</span><span class="nx">products</span><span class="p">.</span><span class="nx">page</span><span class="p">({</span>
@@ -212,17 +209,18 @@ server.</p>
 </pre></div>
 </div>
 </div></div>
+</div></blockquote>
 </div>
-<div class="section" id="get-query-pagination">
-<span id="relatedcollectionmanager-get"></span><h2>.get(query, pagination)<a class="headerlink" href="#get-query-pagination" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="method-get-query-pagination">
+<span id="relatedcollectionmanager-get"></span><h2><cite>method</cite> .get <cite>(query, pagination)</cite><a class="headerlink" href="#method-get-query-pagination" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>This method is agnostic to <a href="#id5"><span class="problematic" id="id6">`CollectionManager.get(...)`_</span></a>, but to retrieve a
 collection of related model objects. It sends a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request to the
 server.</p>
 </div></blockquote>
 </div>
-<div class="section" id="add-ids-ids">
-<span id="relatedcollectionmanager-add-ids"></span><h2>.add_ids(ids)<a class="headerlink" href="#add-ids-ids" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="method-add-ids-ids">
+<span id="relatedcollectionmanager-add-ids"></span><h2><cite>method</cite> .add_ids <cite>(ids)</cite><a class="headerlink" href="#method-add-ids-ids" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Creates object relations using object ids. It sends a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request to
 the server.</p>
@@ -240,8 +238,8 @@ the server.</p>
 </div></div>
 </div></blockquote>
 </div>
-<div class="section" id="set-ids-ids">
-<span id="relatedcollectionmanager-set-ids"></span><h2>.set_ids(ids)<a class="headerlink" href="#set-ids-ids" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="method-set-ids-ids">
+<span id="relatedcollectionmanager-set-ids"></span><h2><cite>method</cite> .set_ids <cite>(ids)</cite><a class="headerlink" href="#method-set-ids-ids" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Clear the object relations first, before adding new ones using the object
 ids. It sends a <code class="docutils literal notranslate"><span class="pre">PUT</span></code> request to the server.</p>
@@ -259,8 +257,8 @@ ids. It sends a <code class="docutils literal notranslate"><span class="pre">PUT
 </div></div>
 </div></blockquote>
 </div>
-<div class="section" id="remove-ids-ids">
-<span id="relatedcollectionmanager-remove-ids"></span><h2>.remove_ids(ids)<a class="headerlink" href="#remove-ids-ids" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="method-remove-ids-ids">
+<span id="relatedcollectionmanager-remove-ids"></span><h2><cite>method</cite> .remove_ids <cite>(ids)</cite><a class="headerlink" href="#method-remove-ids-ids" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Removes object relations using object ids. The method only removes the
 relation. It does not delete the objects. It sends a <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> request to
@@ -279,8 +277,8 @@ the server.</p>
 </div></div>
 </div></blockquote>
 </div>
-<div class="section" id="add-objs">
-<h2>.add(objs)<a class="headerlink" href="#add-objs" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="method-add-objs">
+<h2><cite>method</cite> .add <cite>(objs)</cite><a class="headerlink" href="#method-add-objs" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Same as <a class="reference internal" href="#relatedcollectionmanager-add-ids">RelatedCollectionManager.add_ids(…)</a> but takes a set of
 <a href="#id7"><span class="problematic" id="id8">`ObjectManager`_</span></a> objects instead.</p>
@@ -290,8 +288,8 @@ the server.</p>
 </dl>
 </div></blockquote>
 </div>
-<div class="section" id="set-objs">
-<h2>.set(objs)<a class="headerlink" href="#set-objs" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="method-set-objs">
+<h2><cite>method</cite> .set <cite>(objs)</cite><a class="headerlink" href="#method-set-objs" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Same as <a class="reference internal" href="#relatedcollectionmanager-set-ids">RelatedCollectionManager.set_ids(…)</a> but takes a set of
 <a href="#id11"><span class="problematic" id="id12">`ObjectManager`_</span></a> objects instead.</p>
@@ -301,8 +299,8 @@ the server.</p>
 </dl>
 </div></blockquote>
 </div>
-<div class="section" id="remove-objs">
-<h2>.remove(objs)<a class="headerlink" href="#remove-objs" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="method-remove-objs">
+<h2><cite>method</cite> .remove <cite>(objs)</cite><a class="headerlink" href="#method-remove-objs" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Same as <a class="reference internal" href="#relatedcollectionmanager-remove-ids">RelatedCollectionManager.remove_ids(…)</a> but takes a set of
 <a href="#id15"><span class="problematic" id="id16">`ObjectManager`_</span></a> objects instead.</p>
