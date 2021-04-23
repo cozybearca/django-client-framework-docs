@@ -327,7 +327,7 @@ but you have no permission to view it</cite>.</p>
     <span class="k">if</span> <span class="n">user</span> <span class="n">can</span> <span class="n">read</span> <span class="n">the</span> <span class="n">created</span> <span class="nb">object</span><span class="p">:</span>
         <span class="n">respond</span> <span class="mi">201</span> <span class="n">OK</span> <span class="k">with</span> <span class="n">the</span> <span class="n">created</span> <span class="nb">object</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">respond</span> <span class="mi">204</span> <span class="n">OK</span> <span class="k">with</span> <span class="n">message</span> <span class="s2">&quot;the object is created but you have no permission to view it&quot;</span>
+        <span class="n">respond</span> <span class="mi">204</span> <span class="n">No</span> <span class="n">Content</span> <span class="k">with</span> <span class="n">message</span> <span class="s2">&quot;the object is created but you have no permission to view it&quot;</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="k">raise</span> <span class="n">PermissionDenied</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s2">&quot;create&quot;</span><span class="p">)</span>
 </pre></div>
@@ -364,7 +364,7 @@ updated but you have no permission to view it</cite>.</p>
 <span class="k">if</span> <span class="n">user</span> <span class="n">can</span> <span class="n">read</span> <span class="nb">object</span><span class="p">:</span>
     <span class="n">respond</span> <span class="mi">200</span> <span class="n">OK</span> <span class="k">with</span> <span class="n">updated</span> <span class="nb">object</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">respond</span> <span class="mi">204</span> <span class="n">OK</span> <span class="k">with</span> <span class="n">message</span> <span class="s2">&quot;the object is updated but you have no permission to view it&quot;</span>
+    <span class="n">respond</span> <span class="mi">204</span> <span class="n">No</span> <span class="n">Content</span> <span class="k">with</span> <span class="n">message</span> <span class="s2">&quot;the object is updated but you have no permission to view it&quot;</span>
 </pre></div>
 </div>
 </dd>
@@ -391,11 +391,11 @@ the ones to which the user has the <code class="docutils literal notranslate"><s
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">POST</span></code></dt><dd><p>The authenticated user must have the <cite>object-field-level</cite> <code class="docutils literal notranslate"><span class="pre">write</span></code>
 permissions for the parent object (ie, being able to write to the
-brand’s <cite>.products</cite> field). In addition, for each related objects being
-posted, the user must have the <cite>object-field-level</cite> <code class="docutils literal notranslate"><span class="pre">write</span></code> permission
-on the reverse field. (eg, being able to write to each product’s
-<cite>.brand</cite> field.) When the object relations are created, the result is
-displayed following the <code class="docutils literal notranslate"><span class="pre">GET</span></code> algorithm.</p>
+brand’s <code class="docutils literal notranslate"><span class="pre">.products</span></code> field). In addition, for each related objects
+being posted, the user must have the <cite>object-field-level</cite> <code class="docutils literal notranslate"><span class="pre">write</span></code>
+permission on the reverse field. (eg, being able to write to each
+product’s <code class="docutils literal notranslate"><span class="pre">.brand</span></code> field.) When the object relations are created, the
+result is displayed following the <code class="docutils literal notranslate"><span class="pre">GET</span></code> algorithm.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">user</span> <span class="n">can</span> <span class="n">write</span> <span class="n">to</span> <span class="n">the</span> <span class="n">relation</span> <span class="n">field</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">each</span> <span class="n">related</span> <span class="nb">object</span> <span class="n">to</span> <span class="n">be</span> <span class="n">posted</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">user</span> <span class="n">can</span> <span class="n">write</span> <span class="n">to</span> <span class="n">the</span> <span class="n">reverse</span> <span class="n">relation</span> <span class="n">field</span><span class="p">:</span>
@@ -467,7 +467,7 @@ field).</p>
                 <span class="k">if</span> <span class="n">user</span> <span class="n">can</span> <span class="n">read</span> <span class="n">the</span> <span class="n">related</span> <span class="nb">object</span><span class="p">:</span>
                     <span class="n">respond</span> <span class="mi">200</span> <span class="n">OK</span> <span class="k">with</span> <span class="n">data</span>
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="n">respond</span> <span class="mi">204</span> <span class="n">OK</span> <span class="k">with</span> <span class="n">message</span> <span class="s2">&quot;the relation is updated but you have no permission to view it&quot;</span>
+                    <span class="n">respond</span> <span class="mi">204</span> <span class="n">No</span> <span class="n">Content</span> <span class="k">with</span> <span class="n">message</span> <span class="s2">&quot;the relation is updated but you have no permission to view it&quot;</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="n">PermissionDenied</span><span class="p">(</span><span class="n">related</span> <span class="nb">object</span><span class="p">,</span> <span class="n">reverse</span> <span class="n">field</span><span class="p">,</span> <span class="s2">&quot;write&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>

@@ -180,7 +180,7 @@ requests, the handling algorithm is as the following:
                 if user can read the created object:
                     respond 201 OK with the created object
                 else:
-                    respond 204 OK with message "the object is created but you have no permission to view it"
+                    respond 204 No Content with message "the object is created but you have no permission to view it"
             else:
                 raise PermissionDenied(model, "create")
 
@@ -218,7 +218,7 @@ requests, the handling algorithm is as the following:
             if user can read object:
                 respond 200 OK with updated object
             else:
-                respond 204 OK with message "the object is updated but you have no permission to view it"
+                respond 204 No Content with message "the object is updated but you have no permission to view it"
 
 
 
@@ -246,11 +246,11 @@ requests, the handling algorithm is as the following:
     ``POST``
         The authenticated user must have the `object-field-level` ``write``
         permissions for the parent object (ie, being able to write to the
-        brand's `.products` field). In addition, for each related objects being
-        posted, the user must have the `object-field-level` ``write`` permission
-        on the reverse field. (eg, being able to write to each product's
-        `.brand` field.) When the object relations are created, the result is
-        displayed following the ``GET`` algorithm.
+        brand's ``.products`` field). In addition, for each related objects
+        being posted, the user must have the `object-field-level` ``write``
+        permission on the reverse field. (eg, being able to write to each
+        product's ``.brand`` field.) When the object relations are created, the
+        result is displayed following the ``GET`` algorithm.
 
         .. code-block::
 
@@ -333,7 +333,7 @@ requests, the handling algorithm is as the following:
                             if user can read the related object:
                                 respond 200 OK with data
                             else:
-                                respond 204 OK with message "the relation is updated but you have no permission to view it"
+                                respond 204 No Content with message "the relation is updated but you have no permission to view it"
                         else:
                             raise PermissionDenied(related object, reverse field, "write")
             else:

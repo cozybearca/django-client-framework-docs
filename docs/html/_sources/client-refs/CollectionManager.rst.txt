@@ -42,12 +42,11 @@ erased during the runtime.
     pagination. It sends a ``GET`` request to the server.
 
     query
-        A dictionary of query parameters that eventually get encoded as the query
-        parts of the URL. The key names are agnostic to :django:`Django's QuerySet
-        API <models/querysets>`. Keys such as ``id__in`` (with an array of ids as
-        the value) are supported. See :django:`Django's Field lookups
-        <models/querysets/#field-lookups>`. Any value of the list/array type will
-        have ``[]`` appended after the key name.
+        A dictionary of query parameters that eventually get encoded as the
+        query parts of the URL. The key names are agnostic to :django:`Django's
+        QuerySet API <models/querysets>`. Keys such as ``id__in`` (with an array
+        of ids as the value) are supported. See :django:`Django's Field lookups
+        <models/querysets/#field-lookups>`.
 
         For example, a query dictionary of (in JSON format)
 

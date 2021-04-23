@@ -27,10 +27,10 @@ The following HTTP methods are supported for each type of routes:
             * ``_limit``: an integer indicating how many results per page to include
             * ``_order_by``: This is agnostic to Django's :django:`.order_by() <models/querysets/#order-by>` QuerySet API. Adding ``-`` before the key name sorts the property in the reverse order. Use ``,`` to join multiple keys.
             * Any key names that are agnostic to :django:`Django's QuerySet
-              API <models/querysets>`. Keys such as ``id__in`` (with an array of ids as
-              the value) are supported. See :django:`Django's Field lookups
-              <models/querysets/#field-lookups>`. Any value of the list/array type must
-              have ``[]`` appended after the key name.
+              API <models/querysets>`. Keys such as ``id__in[]`` are supported.
+              See :django:`Django's Field lookups
+              <models/querysets/#field-lookups>`. Any value of the list/array
+              type must have ``[]`` appended after the key name.
 
         Example:
             .. code-block::
@@ -84,13 +84,12 @@ The following HTTP methods are supported for each type of routes:
 
                 [1,2,3]
 
-    ``DELETE``: Unlink some related objects from the parent object.
+    ``DELETE``: Unlinks some related objects from the parent object.
 
         Accepted JSON body:
             A list of object ids.
 
-    ``PATCH``: Link and unlink some related objects (the differences of the
-    current list).
+    ``PATCH``: Set the related objects to the specified set.
 
         Accepted JSON body:
             A list of object ids.

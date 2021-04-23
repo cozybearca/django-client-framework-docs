@@ -242,7 +242,7 @@ data in seconds.</p>
 <p>This abstract model class provides the permission structure for its subclasses.</p>
 <p><strong>Inheritance</strong></p>
 <p>Subclasses of <a class="reference internal" href="#accesscontrolled">AccessControlled</a> can optionally override the
-<cite>.get_permissionmanager_class(cls)</cite> which returns a <a href="#id1"><span class="problematic" id="id2">`.PermissionManager`_</span></a> class.</p>
+<cite>.get_permissionmanager_class(cls)</cite> which returns a <a class="reference internal" href="#accesscontrolled-permissionmanager">AccessControlled.PermissionManager</a> class.</p>
 <div class="section" id="classmethod-get-permissionmanager-class-cls">
 <span id="accesscontrolled-get-permissionmanager-class"></span><h4><cite>classmethod</cite> .get_permissionmanager_class <cite>(cls)</cite><a class="headerlink" href="#classmethod-get-permissionmanager-class-cls" title="Permalink to this headline">¶</a></h4>
 <blockquote>
@@ -439,7 +439,7 @@ the permission is applied to the model/object.</p>
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>See defails about <a class="reference internal" href="../intro/manage-backend-permissions.html#permission-concepts-and-management"><span class="std std-ref">Permission Concepts and Management</span></a>.</p>
+<p>See defails about <a class="reference internal" href="../intro/index.html#permission-concepts-and-management"><span class="std std-ref">Permission Concepts and Management</span></a>.</p>
 </div>
 </div></blockquote>
 </div>
@@ -450,7 +450,7 @@ the permission is applied to the model/object.</p>
 </pre></div>
 </div>
 <p>Checks if the user/group has a particular model/object/field permission.
-Agnostic to <a href="#id3"><span class="problematic" id="id4">`add_perms_shortcut(...)`_</span></a>. This function respects the inclusion of
+Agnostic to <a href="#id1"><span class="problematic" id="id2">`add_perms_shortcut(...)`_</span></a>. This function respects the inclusion of
 permissions, ie <cite>model &gt; object &gt; model field &gt; object field</cite>. Also take into
 account the permissions assigned on the <code class="docutils literal notranslate"><span class="pre">default_groups.anyone</span></code> group.</p>
 <dl class="simple">
@@ -470,7 +470,7 @@ account the permissions assigned on the <code class="docutils literal notranslat
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>See defails about <a class="reference internal" href="../intro/manage-backend-permissions.html#permission-concepts-and-management"><span class="std std-ref">Permission Concepts and Management</span></a>.</p>
+<p>See defails about <a class="reference internal" href="../intro/index.html#permission-concepts-and-management"><span class="std std-ref">Permission Concepts and Management</span></a>.</p>
 </div>
 </div></blockquote>
 </div>

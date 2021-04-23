@@ -188,11 +188,10 @@ class, so that you can retrieve the <code class="docutils literal notranslate"><
 <div><p>Returns a filtered collection of the model objects, with the desired
 pagination. It sends a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request to the server.</p>
 <dl>
-<dt>query</dt><dd><p>A dictionary of query parameters that eventually get encoded as the query
-parts of the URL. The key names are agnostic to <a class="reference external" href="https://docs.djangoproject.com/en/3.1/ref/models/querysets">Django’s QuerySet
-API</a>. Keys such as <code class="docutils literal notranslate"><span class="pre">id__in</span></code> (with an array of ids as
-the value) are supported. See <a class="reference external" href="https://docs.djangoproject.com/en/3.1/ref/models/querysets/#field-lookups">Django’s Field lookups</a>. Any value of the list/array type will
-have <code class="docutils literal notranslate"><span class="pre">[]</span></code> appended after the key name.</p>
+<dt>query</dt><dd><p>A dictionary of query parameters that eventually get encoded as the
+query parts of the URL. The key names are agnostic to <a class="reference external" href="https://docs.djangoproject.com/en/3.1/ref/models/querysets">Django’s
+QuerySet API</a>. Keys such as <code class="docutils literal notranslate"><span class="pre">id__in</span></code> (with an array
+of ids as the value) are supported. See <a class="reference external" href="https://docs.djangoproject.com/en/3.1/ref/models/querysets/#field-lookups">Django’s Field lookups</a>.</p>
 <p>For example, a query dictionary of (in JSON format)</p>
 <div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;id__in&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>

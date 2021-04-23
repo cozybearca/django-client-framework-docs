@@ -183,9 +183,9 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">_limit</span></code>: an integer indicating how many results per page to include</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">_order_by</span></code>: This is agnostic to Django’s <a class="reference external" href="https://docs.djangoproject.com/en/3.1/ref/models/querysets/#order-by">.order_by()</a> QuerySet API. Adding <code class="docutils literal notranslate"><span class="pre">-</span></code> before the key name sorts the property in the reverse order. Use <code class="docutils literal notranslate"><span class="pre">,</span></code> to join multiple keys.</p></li>
 <li><p>Any key names that are agnostic to <a class="reference external" href="https://docs.djangoproject.com/en/3.1/ref/models/querysets">Django’s QuerySet
-API</a>. Keys such as <code class="docutils literal notranslate"><span class="pre">id__in</span></code> (with an array of ids as
-the value) are supported. See <a class="reference external" href="https://docs.djangoproject.com/en/3.1/ref/models/querysets/#field-lookups">Django’s Field lookups</a>. Any value of the list/array type must
-have <code class="docutils literal notranslate"><span class="pre">[]</span></code> appended after the key name.</p></li>
+API</a>. Keys such as <code class="docutils literal notranslate"><span class="pre">id__in[]</span></code> are supported.
+See <a class="reference external" href="https://docs.djangoproject.com/en/3.1/ref/models/querysets/#field-lookups">Django’s Field lookups</a>. Any value of the list/array
+type must have <code class="docutils literal notranslate"><span class="pre">[]</span></code> appended after the key name.</p></li>
 </ul>
 </dd>
 <dt>Example:</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>GET /product?id__in[]=1&amp;id__in[]=2&amp;_page=1&amp;_order_by=-id
@@ -250,15 +250,14 @@ filtered result is empty.</p>
 </dd>
 </dl>
 </div></blockquote>
-<p><code class="docutils literal notranslate"><span class="pre">DELETE</span></code>: Unlink some related objects from the parent object.</p>
+<p><code class="docutils literal notranslate"><span class="pre">DELETE</span></code>: Unlinks some related objects from the parent object.</p>
 <blockquote>
 <div><dl class="simple">
 <dt>Accepted JSON body:</dt><dd><p>A list of object ids.</p>
 </dd>
 </dl>
 </div></blockquote>
-<p><code class="docutils literal notranslate"><span class="pre">PATCH</span></code>: Link and unlink some related objects (the differences of the
-current list).</p>
+<p><code class="docutils literal notranslate"><span class="pre">PATCH</span></code>: Set the related objects to the specified set.</p>
 <blockquote>
 <div><dl>
 <dt>Accepted JSON body:</dt><dd><p>A list of object ids.</p>

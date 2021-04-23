@@ -12,7 +12,7 @@ This abstract model class provides the permission structure for its subclasses.
 **Inheritance**
 
 Subclasses of `AccessControlled`_ can optionally override the
-`.get_permissionmanager_class(cls)` which returns a `.PermissionManager`_ class.
+`.get_permissionmanager_class(cls)` which returns a `AccessControlled.PermissionManager`_ class.
 
 
 .. _AccessControlled.get_permissionmanager_class():
