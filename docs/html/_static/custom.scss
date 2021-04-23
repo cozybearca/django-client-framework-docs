@@ -108,14 +108,13 @@ nav {
   a[href^="#module-"],
   a[href^="#const-"] {
     white-space: nowrap;
-    // overflow-x: hidden;
+    overflow-x: hidden;
     text-overflow: ellipsis;
     cite:first-of-type {
       display: none;
     }
     cite {
       font-size: 65%;
-      color: #333;
       font-family: monospace;
     }
     code {

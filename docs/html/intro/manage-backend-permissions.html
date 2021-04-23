@@ -255,6 +255,229 @@ using the <code class="docutils literal notranslate"><span class="pre">&#64;regi
 </dd>
 </dl>
 </div>
+<div class="section" id="permissions-for-restful-requests">
+<h2>Permissions for RESTful requests<a class="headerlink" href="#permissions-for-restful-requests" title="Permalink to this headline">¶</a></h2>
+<p>The permission system has the following designs:</p>
+<blockquote>
+<div><p>1. A <code class="docutils literal notranslate"><span class="pre">PermissionDenied</span></code> exception can be raised from anywhere of the
+application. A <code class="docutils literal notranslate"><span class="pre">PermissionDenied</span></code> exception can optionally include four
+attributes: the <cite>model</cite>, the <cite>instance</cite>, the <cite>field</cite>, and the <cite>action</cite>,
+depending on the context of what user is accessing. When <code class="docutils literal notranslate"><span class="pre">DEBUG=False</span></code> in
+<code class="docutils literal notranslate"><span class="pre">settings.py</span></code>, if user’s modification action raises <code class="docutils literal notranslate"><span class="pre">PermissionDenied</span></code>
+and user has no <code class="docutils literal notranslate"><span class="pre">read</span></code> permission on the context, the server responds with
+a <code class="docutils literal notranslate"><span class="pre">404</span> <span class="pre">Not</span> <span class="pre">Found</span></code> instead. This is for hiding the existence of an object
+whenever possible.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">handling</span> <span class="n">PermissionDenied</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">action</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">DEBUG</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">instance</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">user</span> <span class="n">cannot</span> <span class="n">read</span> <span class="n">instance</span> <span class="n">field</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">NotFound</span><span class="p">(</span><span class="n">instance</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="n">original</span> <span class="n">PermissionDenied</span> <span class="n">exception</span>
+</pre></div>
+</div>
+<p>2. When modifying a related object relation, (eg. modifying a <cite>product</cite>’s
+<cite>brand</cite>), the user must have the <code class="docutils literal notranslate"><span class="pre">write</span></code> permission for all the following
+three kinds of fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>the relation field on the parent object (eg. the <cite>product</cite> instance’s <code class="docutils literal notranslate"><span class="pre">.brand</span></code> field)</p></li>
+<li><p>the reverse relation field of the old related object if not <code class="docutils literal notranslate"><span class="pre">None</span></code> (eg. the old <cite>brand</cite> instance’s <code class="docutils literal notranslate"><span class="pre">.products</span></code> field, in order to remove the original relation)</p></li>
+<li><p>the reverse relation field of the new related object if not <code class="docutils literal notranslate"><span class="pre">None</span></code> (eg. the new <cite>brand</cite> instance’s <code class="docutils literal notranslate"><span class="pre">.products</span></code> field, in order to add the new relation)</p></li>
+</ul>
+</div></blockquote>
+<p>Similarly, when adding or removing objects in a relation collection, (eg.
+adding to or removing from a <cite>brand</cite>’s <cite>products</cite> set), the user must have
+the <code class="docutils literal notranslate"><span class="pre">write</span></code> permission for all the following three kinds of fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>the relation field on the parent object (eg. the <cite>brand</cite> instance’s <code class="docutils literal notranslate"><span class="pre">.products</span></code> field)</p></li>
+<li><p>the reverse relation field of the old related objects (eg, the <code class="docutils literal notranslate"><span class="pre">.brand</span></code> field for every old <cite>product</cite> being removed from the <cite>brand</cite>’s <code class="docutils literal notranslate"><span class="pre">.products</span></code> set)</p></li>
+<li><p>the reverse relation field of the new related objects (eg, the <code class="docutils literal notranslate"><span class="pre">.brand</span></code> field for every new <cite>proudct</cite> being added to the <cite>brand</cite>’s <code class="docutils literal notranslate"><span class="pre">.products</span></code> set)</p></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p>The permission system affects the RESTful API request handlers. For each type of
+requests, the handling algorithm is as the following:</p>
+<p><strong>Collection API</strong>, <cite>eg, /product/</cite></p>
+<blockquote>
+<div><dl>
+<dt><code class="docutils literal notranslate"><span class="pre">GET</span></code></dt><dd><p>When visiting a model collection, only objects that the authenticated
+user has permission to view are displayed. If the user has no <code class="docutils literal notranslate"><span class="pre">read</span></code>
+permission on any object of the model, then the result is an empty list.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">each</span> <span class="nb">object</span> <span class="n">of</span> <span class="n">the</span> <span class="n">model</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">user</span> <span class="n">can</span> <span class="n">read</span> <span class="nb">object</span><span class="p">:</span>
+        <span class="n">include</span> <span class="nb">object</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">page</span> <span class="n">result</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">exclude</span> <span class="nb">object</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">page</span> <span class="n">result</span>
+        <span class="n">include</span> <span class="n">a</span> <span class="n">message</span> <span class="s2">&quot;some results are hidden&quot;</span>
+
+<span class="n">respond</span> <span class="mi">200</span> <span class="n">OK</span> <span class="k">with</span> <span class="n">the</span> <span class="n">filtered</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">objects</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">POST</span></code></dt><dd><p>When creating an object, the authenticated user must have the <code class="docutils literal notranslate"><span class="pre">create</span></code>
+permission on the model class; otherwise, the server responses with a
+<code class="docutils literal notranslate"><span class="pre">403</span> <span class="pre">Permission</span> <span class="pre">Denied</span></code> error. In addition, if the user has the
+<code class="docutils literal notranslate"><span class="pre">read</span></code> permission on the object created, then the server responses
+with the <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">201</span></code> and the created data; otherwise, the server
+responses with <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">201</span></code> and a message saying <cite>the object is created
+but you have no permission to view it</cite>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">user</span> <span class="n">can</span> <span class="n">create</span> <span class="nb">object</span><span class="p">:</span>
+    <span class="n">create</span> <span class="nb">object</span>
+    <span class="k">if</span> <span class="n">user</span> <span class="n">can</span> <span class="n">read</span> <span class="n">the</span> <span class="n">created</span> <span class="nb">object</span><span class="p">:</span>
+        <span class="n">respond</span> <span class="mi">201</span> <span class="n">OK</span> <span class="k">with</span> <span class="n">the</span> <span class="n">created</span> <span class="nb">object</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">respond</span> <span class="mi">204</span> <span class="n">OK</span> <span class="k">with</span> <span class="n">message</span> <span class="s2">&quot;the object is created but you have no permission to view it&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="n">PermissionDenied</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s2">&quot;create&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Object API</strong>, <cite>eg, /product/1</cite></p>
+<blockquote>
+<div><dl>
+<dt><code class="docutils literal notranslate"><span class="pre">GET</span></code></dt><dd><p>When visiting a model object, the object is only displayed if the
+authenticated user has the <cite>object-level</cite> <code class="docutils literal notranslate"><span class="pre">read</span></code> permission.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">user</span> <span class="n">can</span> <span class="n">read</span> <span class="nb">object</span><span class="p">:</span>
+    <span class="n">respond</span> <span class="mi">200</span> <span class="n">OK</span> <span class="k">with</span> <span class="nb">object</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="n">PermissionDenied</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="s2">&quot;read&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">PATCH</span></code></dt><dd><p>When updating a model object, the authenticated user must have the
+<cite>field-level</cite> <code class="docutils literal notranslate"><span class="pre">write</span></code> permissions for each field that is modified.
+When the object is updated, if the user has the <code class="docutils literal notranslate"><span class="pre">read</span></code> permission,
+then the server responses with <code class="docutils literal notranslate"><span class="pre">200</span> <span class="pre">OK</span></code> and the object data; otherwise
+the server responses with <code class="docutils literal notranslate"><span class="pre">200</span> <span class="pre">OK</span></code> and a message saying <cite>the object is
+updated but you have no permission to view it</cite>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">each</span> <span class="n">field</span> <span class="n">being</span> <span class="n">modified</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">user</span> <span class="n">can</span> <span class="n">write</span> <span class="n">to</span> <span class="n">field</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">field</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">relation</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">FieldIsReadOnly</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="n">field</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">modify</span> <span class="n">field</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">PermissionDenied</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="s2">&quot;write&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">user</span> <span class="n">can</span> <span class="n">read</span> <span class="nb">object</span><span class="p">:</span>
+    <span class="n">respond</span> <span class="mi">200</span> <span class="n">OK</span> <span class="k">with</span> <span class="n">updated</span> <span class="nb">object</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">respond</span> <span class="mi">204</span> <span class="n">OK</span> <span class="k">with</span> <span class="n">message</span> <span class="s2">&quot;the object is updated but you have no permission to view it&quot;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Related Collection API</strong>, <cite>eg, /brand/1/products</cite></p>
+<blockquote>
+<div><dl>
+<dt><code class="docutils literal notranslate"><span class="pre">GET</span></code></dt><dd><p>The authenticated user must have the <cite>object-field-level</cite> <code class="docutils literal notranslate"><span class="pre">read</span></code>
+permission for the parent object (eg, being able to read the <cite>brand</cite>
+instance’s <code class="docutils literal notranslate"><span class="pre">.products</span></code> field). Among the set of related objects, only
+the ones to which the user has the <code class="docutils literal notranslate"><span class="pre">read</span></code> permission are displayed.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">user</span> <span class="n">can</span> <span class="n">read</span> <span class="n">the</span> <span class="n">relation</span> <span class="n">field</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">each</span> <span class="n">related</span> <span class="nb">object</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">user</span> <span class="n">can</span> <span class="n">read</span> <span class="n">the</span> <span class="nb">object</span><span class="p">:</span>
+            <span class="n">include</span> <span class="n">the</span> <span class="nb">object</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">result</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">exclude</span> <span class="n">the</span> <span class="nb">object</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">result</span>
+    <span class="n">respond</span> <span class="mi">200</span> <span class="n">OK</span> <span class="k">with</span> <span class="n">the</span> <span class="n">filtered</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">result</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="n">PermissionDenied</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="s2">&quot;read&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">POST</span></code></dt><dd><p>The authenticated user must have the <cite>object-field-level</cite> <code class="docutils literal notranslate"><span class="pre">write</span></code>
+permissions for the parent object (ie, being able to write to the
+brand’s <cite>.products</cite> field). In addition, for each related objects being
+posted, the user must have the <cite>object-field-level</cite> <code class="docutils literal notranslate"><span class="pre">write</span></code> permission
+on the reverse field. (eg, being able to write to each product’s
+<cite>.brand</cite> field.) When the object relations are created, the result is
+displayed following the <code class="docutils literal notranslate"><span class="pre">GET</span></code> algorithm.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">user</span> <span class="n">can</span> <span class="n">write</span> <span class="n">to</span> <span class="n">the</span> <span class="n">relation</span> <span class="n">field</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">each</span> <span class="n">related</span> <span class="nb">object</span> <span class="n">to</span> <span class="n">be</span> <span class="n">posted</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">user</span> <span class="n">can</span> <span class="n">write</span> <span class="n">to</span> <span class="n">the</span> <span class="n">reverse</span> <span class="n">relation</span> <span class="n">field</span><span class="p">:</span>
+            <span class="n">create</span> <span class="n">the</span> <span class="n">relation</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">PermissionDenied</span><span class="p">(</span><span class="n">related</span> <span class="nb">object</span><span class="p">,</span> <span class="n">reverse</span> <span class="n">field</span><span class="p">,</span> <span class="s2">&quot;write&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="n">PermissionDenied</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="s2">&quot;write&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">DELETE</span></code></dt><dd><p>This requires the same permissions as <code class="docutils literal notranslate"><span class="pre">POST</span></code> except the context is for
+deleting relations instead of creating.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">user</span> <span class="n">can</span> <span class="n">write</span> <span class="n">to</span> <span class="n">the</span> <span class="n">relation</span> <span class="n">field</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">each</span> <span class="n">related</span> <span class="nb">object</span> <span class="n">to</span> <span class="n">be</span> <span class="n">removed</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">user</span> <span class="n">write</span> <span class="n">to</span> <span class="n">the</span> <span class="n">reverse</span> <span class="n">relation</span> <span class="n">field</span><span class="p">:</span>
+            <span class="n">remove</span> <span class="n">the</span> <span class="n">relation</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">PermissionDenied</span><span class="p">(</span><span class="n">related</span> <span class="nb">object</span><span class="p">,</span> <span class="n">reverse</span> <span class="n">field</span><span class="p">,</span> <span class="s2">&quot;write&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="n">PermissionDenied</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="s2">&quot;write&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">PATCH</span></code></dt><dd><p>This is equivalent to <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> and <code class="docutils literal notranslate"><span class="pre">POST</span></code> combined.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">user</span> <span class="n">can</span> <span class="n">write</span> <span class="n">to</span> <span class="n">the</span> <span class="n">relation</span> <span class="n">field</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">each</span> <span class="n">related</span> <span class="nb">object</span> <span class="n">deleted</span> <span class="ow">or</span> <span class="n">posted</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">user</span> <span class="n">write</span> <span class="n">to</span> <span class="n">the</span> <span class="n">reverse</span> <span class="n">relation</span> <span class="n">field</span><span class="p">:</span>
+            <span class="n">remove</span> <span class="ow">or</span> <span class="n">create</span> <span class="n">the</span> <span class="n">relation</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">PermissionDenied</span><span class="p">(</span><span class="n">related</span> <span class="nb">object</span><span class="p">,</span> <span class="n">reverse</span> <span class="n">field</span><span class="p">,</span> <span class="s2">&quot;write&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="n">PermissionDenied</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="s2">&quot;write&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Related Object API</strong>, <cite>eg, /product/1/brand</cite></p>
+<blockquote>
+<div><dl>
+<dt><code class="docutils literal notranslate"><span class="pre">GET</span></code></dt><dd><p>The authenticated user must have the <cite>object-field-level</cite> <code class="docutils literal notranslate"><span class="pre">read</span></code>
+permission for the parent object (ie, being able to read the product
+instance’s <cite>.brand</cite> field), as well as the <cite>object-level</cite> <code class="docutils literal notranslate"><span class="pre">read</span></code>
+permission for the related object (ie, being able to read the <cite>brand</cite>
+object).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">user</span> <span class="n">can</span> <span class="n">read</span> <span class="n">the</span> <span class="n">parent</span> <span class="n">field</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">user</span> <span class="n">can</span> <span class="n">read</span> <span class="n">the</span> <span class="n">related</span> <span class="nb">object</span><span class="p">:</span>
+        <span class="n">respond</span> <span class="mi">200</span> <span class="n">OK</span> <span class="k">with</span> <span class="n">data</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">PermissionDenied</span><span class="p">(</span><span class="n">related</span> <span class="nb">object</span><span class="p">,</span> <span class="s2">&quot;read&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="n">PermissionDenied</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="s2">&quot;read&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">PATCH</span></code></dt><dd><p>The authenticated user must have the <cite>object-field</cite> level <code class="docutils literal notranslate"><span class="pre">write</span></code>
+permission for the parent object (ie, being able to write the
+<cite>product</cite>’s <code class="docutils literal notranslate"><span class="pre">.brand</span></code> field). In addition, for both the current and the
+new related object (unless <code class="docutils literal notranslate"><span class="pre">None</span></code>), the user must have the
+<cite>object-field</cite> level <code class="docutils literal notranslate"><span class="pre">write</span></code> permission for the reverse field (ie,
+being able to write the current and the new <cite>brand</cite>’s <code class="docutils literal notranslate"><span class="pre">.products</span></code>
+field).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">user</span> <span class="n">can</span> <span class="n">write</span> <span class="n">to</span> <span class="n">the</span> <span class="n">parent</span> <span class="n">field</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">both</span> <span class="n">the</span> <span class="n">current</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">new</span> <span class="n">related</span> <span class="nb">object</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">object</span> <span class="nb">object</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">user</span> <span class="n">can</span> <span class="n">write</span> <span class="n">to</span> <span class="n">the</span> <span class="n">reverse</span> <span class="n">field</span><span class="p">:</span>
+                <span class="n">create</span> <span class="n">relation</span>
+                <span class="k">if</span> <span class="n">user</span> <span class="n">can</span> <span class="n">read</span> <span class="n">the</span> <span class="n">related</span> <span class="nb">object</span><span class="p">:</span>
+                    <span class="n">respond</span> <span class="mi">200</span> <span class="n">OK</span> <span class="k">with</span> <span class="n">data</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">respond</span> <span class="mi">204</span> <span class="n">OK</span> <span class="k">with</span> <span class="n">message</span> <span class="s2">&quot;the relation is updated but you have no permission to view it&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">PermissionDenied</span><span class="p">(</span><span class="n">related</span> <span class="nb">object</span><span class="p">,</span> <span class="n">reverse</span> <span class="n">field</span><span class="p">,</span> <span class="s2">&quot;write&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="n">PermissionDenied</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="s2">&quot;write&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div></blockquote>
+</div>
 </div>
 
 
