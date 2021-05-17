@@ -180,7 +180,7 @@ requests, the handling algorithm is as the following:
                 if user can read the created object:
                     respond 201 OK with the created object
                 else:
-                    respond 204 No Content with message "the object is created but you have no permission to view it"
+                    respond 200 OK with message "the object is created but you have no permission to view it"
             else:
                 raise PermissionDenied(model, "create")
 
@@ -218,7 +218,7 @@ requests, the handling algorithm is as the following:
             if user can read object:
                 respond 200 OK with updated object
             else:
-                respond 204 No Content with message "the object is updated but you have no permission to view it"
+                respond 200 OK with message "the object is updated but you have no permission to view it"
 
 
 
@@ -333,7 +333,7 @@ requests, the handling algorithm is as the following:
                             if user can read the related object:
                                 respond 200 OK with data
                             else:
-                                respond 204 No Content with message "the relation is updated but you have no permission to view it"
+                                respond 200 OK with message "the relation is updated but you have no permission to view it"
                         else:
                             raise PermissionDenied(related object, reverse field, "write")
             else:
